@@ -1,0 +1,6522 @@
+[
+  {
+    "date": "24/03/2017 14:19:00 CET",
+    "price": "12.151",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:18:46 CET",
+    "price": "12.152",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:18:30 CET",
+    "price": "12.151",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:18:15 CET",
+    "price": "12.151",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:18:00 CET",
+    "price": "12.157",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:17:45 CET",
+    "price": "12.156",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:17:30 CET",
+    "price": "12.153",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:17:15 CET",
+    "price": "12.154",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:17:01 CET",
+    "price": "12.154",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:16:45 CET",
+    "price": "12.145",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:16:30 CET",
+    "price": "12.139",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:16:15 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:16:00 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:15:45 CET",
+    "price": "12.139",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:15:30 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:15:15 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:15:00 CET",
+    "price": "12.139",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:14:45 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:14:30 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:14:15 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:14:00 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:13:45 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:13:30 CET",
+    "price": "12.139",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:13:15 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:13:00 CET",
+    "price": "12.134",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:12:46 CET",
+    "price": "12.132",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:12:30 CET",
+    "price": "12.134",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:12:15 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:12:00 CET",
+    "price": "12.132",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:11:45 CET",
+    "price": "12.133",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:11:30 CET",
+    "price": "12.134",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:11:15 CET",
+    "price": "12.136",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:11:00 CET",
+    "price": "12.133",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:10:45 CET",
+    "price": "12.132",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:10:30 CET",
+    "price": "12.132",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:10:15 CET",
+    "price": "12.136",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:10:00 CET",
+    "price": "12.133",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:09:45 CET",
+    "price": "12.131",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:09:30 CET",
+    "price": "12.131",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:09:15 CET",
+    "price": "12.134",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:09:00 CET",
+    "price": "12.131",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:08:46 CET",
+    "price": "12.131",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:08:30 CET",
+    "price": "12.136",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:08:15 CET",
+    "price": "12.136",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:08:01 CET",
+    "price": "12.135",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:07:45 CET",
+    "price": "12.136",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:07:30 CET",
+    "price": "12.135",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:07:15 CET",
+    "price": "12.134",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:07:00 CET",
+    "price": "12.131",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:06:45 CET",
+    "price": "12.133",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:06:30 CET",
+    "price": "12.133",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:06:15 CET",
+    "price": "12.14",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:06:00 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:05:45 CET",
+    "price": "12.141",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:05:30 CET",
+    "price": "12.128",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:05:15 CET",
+    "price": "12.126",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:05:00 CET",
+    "price": "12.121",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:04:45 CET",
+    "price": "12.122",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:04:31 CET",
+    "price": "12.12",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:04:15 CET",
+    "price": "12.139",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:04:00 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:03:45 CET",
+    "price": "12.107",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:03:30 CET",
+    "price": "12.125",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:03:15 CET",
+    "price": "12.125",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:03:00 CET",
+    "price": "12.127",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:02:46 CET",
+    "price": "12.125",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:02:30 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:02:15 CET",
+    "price": "12.137",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:02:00 CET",
+    "price": "12.136",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:01:45 CET",
+    "price": "12.136",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:01:30 CET",
+    "price": "12.138",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:01:15 CET",
+    "price": "12.134",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:01:00 CET",
+    "price": "12.14",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:00:45 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:00:30 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:00:16 CET",
+    "price": "12.089",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 14:00:00 CET",
+    "price": "12.09",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:59:45 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:59:30 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:59:15 CET",
+    "price": "12.09",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:59:00 CET",
+    "price": "12.09",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:58:45 CET",
+    "price": "12.093",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:58:30 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:58:15 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:58:00 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:57:45 CET",
+    "price": "12.103",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:57:30 CET",
+    "price": "12.101",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:57:15 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:57:00 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:56:45 CET",
+    "price": "12.057",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:56:30 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:56:15 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:56:01 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:55:45 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:55:30 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:55:15 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:55:00 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:54:45 CET",
+    "price": "12.047",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:54:30 CET",
+    "price": "12.045",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:54:15 CET",
+    "price": "12.005",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:54:00 CET",
+    "price": "11.996",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:53:45 CET",
+    "price": "11.996",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:53:30 CET",
+    "price": "11.996",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:53:15 CET",
+    "price": "11.995",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:53:00 CET",
+    "price": "11.991",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:52:45 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:52:30 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:52:15 CET",
+    "price": "12.004",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:52:00 CET",
+    "price": "12.012",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:51:45 CET",
+    "price": "12.012",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:51:30 CET",
+    "price": "12.113",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:51:15 CET",
+    "price": "12.113",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:51:00 CET",
+    "price": "12.127",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:50:45 CET",
+    "price": "12.127",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:50:30 CET",
+    "price": "12.126",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:50:15 CET",
+    "price": "12.129",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:50:00 CET",
+    "price": "12.128",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:49:45 CET",
+    "price": "12.127",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:49:30 CET",
+    "price": "12.127",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:49:15 CET",
+    "price": "12.114",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:49:00 CET",
+    "price": "12.114",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:48:45 CET",
+    "price": "12.108",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:48:30 CET",
+    "price": "12.11",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:48:15 CET",
+    "price": "12.106",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:48:00 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:47:45 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:47:30 CET",
+    "price": "11.763",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:47:15 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:47:00 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:46:45 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:46:30 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:46:15 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:46:00 CET",
+    "price": "11.735",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:45:45 CET",
+    "price": "12.175",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:45:30 CET",
+    "price": "12.175",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:45:15 CET",
+    "price": "12.176",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:45:00 CET",
+    "price": "12.176",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:44:45 CET",
+    "price": "12.146",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:44:30 CET",
+    "price": "12.149",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:44:15 CET",
+    "price": "12.15",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:44:01 CET",
+    "price": "12.148",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:43:45 CET",
+    "price": "12.148",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:43:30 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:43:15 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:43:00 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:42:45 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:42:30 CET",
+    "price": "11.759",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:42:16 CET",
+    "price": "11.759",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:42:00 CET",
+    "price": "11.77",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:41:45 CET",
+    "price": "11.77",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:41:30 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:41:15 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:41:00 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:40:45 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:40:30 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:40:15 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:40:00 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:39:45 CET",
+    "price": "11.759",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:39:30 CET",
+    "price": "11.763",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:39:15 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:39:01 CET",
+    "price": "11.763",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:38:45 CET",
+    "price": "11.763",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:38:30 CET",
+    "price": "11.763",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:38:15 CET",
+    "price": "11.758",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:38:00 CET",
+    "price": "11.758",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:37:45 CET",
+    "price": "11.757",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:37:30 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:37:15 CET",
+    "price": "11.759",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:37:00 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:36:45 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:36:30 CET",
+    "price": "11.756",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:36:15 CET",
+    "price": "11.757",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:36:00 CET",
+    "price": "11.77",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:35:45 CET",
+    "price": "11.766",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:35:30 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:35:15 CET",
+    "price": "11.76",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:35:00 CET",
+    "price": "11.758",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:34:45 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:34:30 CET",
+    "price": "11.759",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:34:15 CET",
+    "price": "11.775",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:34:00 CET",
+    "price": "11.779",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:33:46 CET",
+    "price": "11.778",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:33:30 CET",
+    "price": "11.781",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:33:15 CET",
+    "price": "11.776",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:33:00 CET",
+    "price": "11.779",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:32:45 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:32:30 CET",
+    "price": "11.778",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:32:15 CET",
+    "price": "11.779",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:32:00 CET",
+    "price": "11.779",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:31:45 CET",
+    "price": "11.78",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:31:30 CET",
+    "price": "11.778",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:31:15 CET",
+    "price": "11.789",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:31:00 CET",
+    "price": "11.779",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:30:45 CET",
+    "price": "11.78",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:30:30 CET",
+    "price": "11.717",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:30:15 CET",
+    "price": "11.638",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:30:00 CET",
+    "price": "10.714",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:29:45 CET",
+    "price": "11.449",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:29:30 CET",
+    "price": "11.94",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:29:15 CET",
+    "price": "12.383",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:29:00 CET",
+    "price": "12.211",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:28:45 CET",
+    "price": "12.193",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:28:30 CET",
+    "price": "12.194",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:28:15 CET",
+    "price": "12.194",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:28:00 CET",
+    "price": "12.194",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:27:45 CET",
+    "price": "12.195",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:27:30 CET",
+    "price": "12.201",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:27:15 CET",
+    "price": "11.775",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:27:00 CET",
+    "price": "11.775",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:26:45 CET",
+    "price": "11.775",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:26:30 CET",
+    "price": "11.775",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:26:15 CET",
+    "price": "11.775",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:26:00 CET",
+    "price": "11.785",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:25:45 CET",
+    "price": "11.884",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:25:30 CET",
+    "price": "11.894",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:25:15 CET",
+    "price": "11.898",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:25:00 CET",
+    "price": "11.898",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:24:45 CET",
+    "price": "11.897",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:24:30 CET",
+    "price": "11.898",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:24:15 CET",
+    "price": "11.894",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:24:00 CET",
+    "price": "11.899",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:23:46 CET",
+    "price": "11.907",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:23:30 CET",
+    "price": "12.197",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:23:15 CET",
+    "price": "12.197",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:23:00 CET",
+    "price": "12.197",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:22:45 CET",
+    "price": "12.193",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:22:30 CET",
+    "price": "12.20",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:22:15 CET",
+    "price": "12.204",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:22:00 CET",
+    "price": "12.204",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:21:46 CET",
+    "price": "12.204",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:21:30 CET",
+    "price": "11.912",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:21:15 CET",
+    "price": "11.913",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:21:00 CET",
+    "price": "11.908",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:20:45 CET",
+    "price": "11.908",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:20:30 CET",
+    "price": "11.909",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:20:15 CET",
+    "price": "12.197",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:20:00 CET",
+    "price": "12.198",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:19:45 CET",
+    "price": "12.198",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:19:30 CET",
+    "price": "12.198",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:19:15 CET",
+    "price": "12.197",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:19:00 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:18:45 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:18:30 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:18:15 CET",
+    "price": "12.201",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:18:00 CET",
+    "price": "12.20",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:17:45 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:17:30 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:17:15 CET",
+    "price": "12.204",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:17:00 CET",
+    "price": "12.201",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:16:45 CET",
+    "price": "12.20",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:16:30 CET",
+    "price": "12.201",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:16:15 CET",
+    "price": "12.203",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:16:00 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:15:45 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:15:30 CET",
+    "price": "12.202",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:15:15 CET",
+    "price": "12.201",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:15:00 CET",
+    "price": "12.203",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:14:45 CET",
+    "price": "12.203",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:14:30 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:14:15 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:14:00 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:13:45 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:13:30 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:13:15 CET",
+    "price": "12.203",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:13:00 CET",
+    "price": "12.204",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:12:45 CET",
+    "price": "12.203",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:12:30 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:12:15 CET",
+    "price": "12.208",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:12:00 CET",
+    "price": "12.212",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:11:46 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:11:30 CET",
+    "price": "12.206",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:11:15 CET",
+    "price": "12.193",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:11:00 CET",
+    "price": "12.192",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:10:45 CET",
+    "price": "12.192",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:10:30 CET",
+    "price": "12.19",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:10:15 CET",
+    "price": "12.192",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:10:00 CET",
+    "price": "12.205",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:09:45 CET",
+    "price": "12.195",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:09:30 CET",
+    "price": "12.189",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:09:15 CET",
+    "price": "12.187",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:09:01 CET",
+    "price": "12.183",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:08:45 CET",
+    "price": "12.183",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:08:30 CET",
+    "price": "12.177",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:08:15 CET",
+    "price": "11.891",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:08:00 CET",
+    "price": "12.158",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:07:45 CET",
+    "price": "12.158",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:07:30 CET",
+    "price": "12.159",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:07:15 CET",
+    "price": "12.16",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:07:00 CET",
+    "price": "12.157",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:06:45 CET",
+    "price": "12.156",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:06:30 CET",
+    "price": "12.16",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:06:15 CET",
+    "price": "12.158",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:06:00 CET",
+    "price": "12.157",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:05:45 CET",
+    "price": "12.159",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:05:30 CET",
+    "price": "12.158",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:05:15 CET",
+    "price": "12.158",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:05:00 CET",
+    "price": "12.158",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:04:45 CET",
+    "price": "12.157",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:04:30 CET",
+    "price": "12.155",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:04:15 CET",
+    "price": "12.156",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:04:00 CET",
+    "price": "12.132",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:03:45 CET",
+    "price": "12.15",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:03:30 CET",
+    "price": "12.154",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:03:15 CET",
+    "price": "12.154",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:03:00 CET",
+    "price": "12.156",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:02:45 CET",
+    "price": "12.147",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:02:31 CET",
+    "price": "12.152",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:02:15 CET",
+    "price": "12.153",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:02:00 CET",
+    "price": "12.153",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:01:45 CET",
+    "price": "12.146",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:01:30 CET",
+    "price": "11.874",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:01:15 CET",
+    "price": "11.862",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:01:00 CET",
+    "price": "11.861",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:00:45 CET",
+    "price": "11.862",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:00:30 CET",
+    "price": "11.851",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:00:15 CET",
+    "price": "11.865",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 13:00:01 CET",
+    "price": "11.859",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:59:45 CET",
+    "price": "11.859",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:59:30 CET",
+    "price": "11.856",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:59:15 CET",
+    "price": "11.848",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:59:00 CET",
+    "price": "11.848",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:58:45 CET",
+    "price": "11.847",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:58:30 CET",
+    "price": "11.847",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:58:15 CET",
+    "price": "11.837",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:58:00 CET",
+    "price": "11.839",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:57:45 CET",
+    "price": "11.838",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:57:30 CET",
+    "price": "11.831",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:57:15 CET",
+    "price": "11.83",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:57:00 CET",
+    "price": "11.834",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:56:45 CET",
+    "price": "11.826",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:56:30 CET",
+    "price": "11.817",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:56:15 CET",
+    "price": "11.814",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:56:00 CET",
+    "price": "11.829",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:55:45 CET",
+    "price": "11.828",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:55:30 CET",
+    "price": "11.83",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:55:15 CET",
+    "price": "11.829",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:55:00 CET",
+    "price": "11.832",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:54:45 CET",
+    "price": "11.832",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:54:30 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:54:15 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:54:00 CET",
+    "price": "12.092",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:53:45 CET",
+    "price": "12.092",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:53:30 CET",
+    "price": "12.097",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:53:15 CET",
+    "price": "12.098",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:53:00 CET",
+    "price": "12.10",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:52:45 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:52:31 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:52:15 CET",
+    "price": "12.096",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:52:00 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:51:45 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:51:30 CET",
+    "price": "12.093",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:51:15 CET",
+    "price": "12.094",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:51:00 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:50:45 CET",
+    "price": "12.101",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:50:30 CET",
+    "price": "12.097",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:50:15 CET",
+    "price": "12.096",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:50:00 CET",
+    "price": "12.096",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:49:46 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:49:30 CET",
+    "price": "12.10",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:49:15 CET",
+    "price": "12.101",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:49:01 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:48:45 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:48:30 CET",
+    "price": "12.098",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:48:15 CET",
+    "price": "12.098",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:48:00 CET",
+    "price": "12.084",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:47:45 CET",
+    "price": "12.085",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:47:30 CET",
+    "price": "12.086",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:47:15 CET",
+    "price": "12.094",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:47:00 CET",
+    "price": "12.093",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:46:45 CET",
+    "price": "12.096",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:46:30 CET",
+    "price": "12.093",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:46:15 CET",
+    "price": "12.093",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:46:00 CET",
+    "price": "12.089",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:45:45 CET",
+    "price": "12.094",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:45:30 CET",
+    "price": "12.096",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:45:15 CET",
+    "price": "12.096",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:45:00 CET",
+    "price": "12.096",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:44:46 CET",
+    "price": "12.093",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:44:30 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:44:15 CET",
+    "price": "12.093",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:44:00 CET",
+    "price": "12.092",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:43:45 CET",
+    "price": "12.103",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:43:30 CET",
+    "price": "12.104",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:43:15 CET",
+    "price": "12.10",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:43:00 CET",
+    "price": "12.102",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:42:45 CET",
+    "price": "12.10",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:42:30 CET",
+    "price": "12.10",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:42:15 CET",
+    "price": "12.101",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:42:00 CET",
+    "price": "12.099",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:41:45 CET",
+    "price": "12.103",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:41:30 CET",
+    "price": "12.10",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:41:15 CET",
+    "price": "12.10",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:41:00 CET",
+    "price": "12.098",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:40:45 CET",
+    "price": "12.097",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:40:31 CET",
+    "price": "12.09",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:40:15 CET",
+    "price": "12.088",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:40:00 CET",
+    "price": "12.09",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:39:46 CET",
+    "price": "12.081",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:39:30 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:39:15 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:39:00 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:38:45 CET",
+    "price": "12.079",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:38:30 CET",
+    "price": "12.079",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:38:15 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:38:00 CET",
+    "price": "12.075",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:37:45 CET",
+    "price": "12.075",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:37:30 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:37:15 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:37:00 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:36:45 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:36:30 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:36:15 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:36:00 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:35:45 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:35:30 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:35:15 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:35:00 CET",
+    "price": "11.798",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:34:45 CET",
+    "price": "12.103",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:34:30 CET",
+    "price": "12.065",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:34:15 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:34:00 CET",
+    "price": "12.065",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:33:45 CET",
+    "price": "12.062",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:33:30 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:33:15 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:33:00 CET",
+    "price": "12.086",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:32:45 CET",
+    "price": "11.796",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:32:30 CET",
+    "price": "11.795",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:32:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:32:00 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:31:45 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:31:31 CET",
+    "price": "12.064",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:31:15 CET",
+    "price": "11.793",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:31:00 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:30:45 CET",
+    "price": "12.064",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:30:30 CET",
+    "price": "12.061",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:30:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:30:00 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:29:45 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:29:30 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:29:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:29:00 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:28:45 CET",
+    "price": "12.061",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:28:30 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:28:15 CET",
+    "price": "12.055",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:28:01 CET",
+    "price": "12.056",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:27:45 CET",
+    "price": "12.049",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:27:30 CET",
+    "price": "12.047",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:27:15 CET",
+    "price": "12.047",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:27:00 CET",
+    "price": "12.046",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:26:45 CET",
+    "price": "12.046",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:26:30 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:26:15 CET",
+    "price": "12.057",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:26:00 CET",
+    "price": "12.057",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:25:45 CET",
+    "price": "12.079",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:25:30 CET",
+    "price": "12.079",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:25:15 CET",
+    "price": "12.056",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:25:00 CET",
+    "price": "12.079",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:24:45 CET",
+    "price": "12.057",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:24:30 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:24:15 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:24:00 CET",
+    "price": "12.081",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:23:45 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:23:30 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:23:15 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:23:00 CET",
+    "price": "12.058",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:22:46 CET",
+    "price": "12.058",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:22:30 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:22:15 CET",
+    "price": "12.065",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:22:00 CET",
+    "price": "12.062",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:21:45 CET",
+    "price": "12.061",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:21:30 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:21:15 CET",
+    "price": "12.066",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:21:00 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:20:45 CET",
+    "price": "12.066",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:20:30 CET",
+    "price": "12.058",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:20:15 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:20:00 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:19:45 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:19:30 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:19:15 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:19:00 CET",
+    "price": "12.065",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:18:46 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:18:30 CET",
+    "price": "12.073",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:18:15 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:18:00 CET",
+    "price": "12.073",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:17:45 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:17:30 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:17:15 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:17:01 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:16:45 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:16:30 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:16:15 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:16:00 CET",
+    "price": "12.083",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:15:45 CET",
+    "price": "12.088",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:15:30 CET",
+    "price": "12.084",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:15:15 CET",
+    "price": "12.086",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:15:00 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:14:45 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:14:30 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:14:15 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:14:00 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:13:45 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:13:30 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:13:15 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:13:00 CET",
+    "price": "12.088",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:12:46 CET",
+    "price": "12.086",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:12:30 CET",
+    "price": "12.095",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:12:15 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:12:00 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:11:46 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:11:30 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:11:15 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:11:00 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:10:45 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:10:30 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:10:15 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:10:00 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:09:45 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:09:30 CET",
+    "price": "12.075",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:09:16 CET",
+    "price": "12.075",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:09:00 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:08:45 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:08:30 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:08:15 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:08:00 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:07:45 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:07:30 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:07:15 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:07:00 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:06:45 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:06:30 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:06:15 CET",
+    "price": "12.075",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:06:01 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:05:45 CET",
+    "price": "12.073",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:05:30 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:05:15 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:05:00 CET",
+    "price": "12.073",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:04:45 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:04:30 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:04:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:04:00 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:03:45 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:03:30 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:03:15 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:03:00 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:02:45 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:02:30 CET",
+    "price": "12.075",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:02:15 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:02:00 CET",
+    "price": "12.073",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:01:45 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:01:30 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:01:15 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:01:00 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:00:45 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:00:30 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:00:15 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 12:00:00 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:59:45 CET",
+    "price": "12.065",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:59:30 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:59:15 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:59:00 CET",
+    "price": "12.065",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:58:45 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:58:30 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:58:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:58:00 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:57:45 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:57:30 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:57:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:57:00 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:56:46 CET",
+    "price": "12.079",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:56:30 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:56:15 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:56:01 CET",
+    "price": "12.079",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:55:45 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:55:30 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:55:15 CET",
+    "price": "12.081",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:55:00 CET",
+    "price": "12.083",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:54:45 CET",
+    "price": "12.083",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:54:30 CET",
+    "price": "12.08",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:54:15 CET",
+    "price": "12.085",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:54:00 CET",
+    "price": "12.081",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:53:45 CET",
+    "price": "12.082",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:53:31 CET",
+    "price": "12.08",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:53:15 CET",
+    "price": "12.082",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:53:00 CET",
+    "price": "12.082",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:52:45 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:52:30 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:52:15 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:52:00 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:51:45 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:51:30 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:51:15 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:51:00 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:50:45 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:50:30 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:50:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:50:00 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:49:45 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:49:30 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:49:15 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:49:00 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:48:45 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:48:30 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:48:15 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:48:00 CET",
+    "price": "12.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:47:45 CET",
+    "price": "12.065",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:47:30 CET",
+    "price": "12.064",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:47:16 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:47:00 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:46:45 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:46:30 CET",
+    "price": "12.064",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:46:15 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:46:00 CET",
+    "price": "12.064",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:45:45 CET",
+    "price": "12.058",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:45:30 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:45:15 CET",
+    "price": "12.06",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:45:00 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:44:45 CET",
+    "price": "12.018",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:44:30 CET",
+    "price": "12.019",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:44:15 CET",
+    "price": "12.012",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:44:00 CET",
+    "price": "12.008",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:43:45 CET",
+    "price": "12.012",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:43:30 CET",
+    "price": "12.018",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:43:15 CET",
+    "price": "12.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:43:01 CET",
+    "price": "12.021",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:42:45 CET",
+    "price": "12.021",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:42:30 CET",
+    "price": "12.024",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:42:15 CET",
+    "price": "12.071",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:42:00 CET",
+    "price": "12.072",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:41:45 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:41:30 CET",
+    "price": "12.073",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:41:15 CET",
+    "price": "12.073",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:41:00 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:40:45 CET",
+    "price": "12.063",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:40:30 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:40:15 CET",
+    "price": "12.069",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:40:00 CET",
+    "price": "12.066",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:39:45 CET",
+    "price": "12.064",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:39:30 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:39:15 CET",
+    "price": "12.068",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:39:00 CET",
+    "price": "12.066",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:38:45 CET",
+    "price": "12.066",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:38:30 CET",
+    "price": "12.067",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:38:15 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:38:00 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:37:45 CET",
+    "price": "12.082",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:37:30 CET",
+    "price": "12.081",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:37:15 CET",
+    "price": "12.08",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:37:00 CET",
+    "price": "12.082",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:36:45 CET",
+    "price": "12.08",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:36:30 CET",
+    "price": "12.037",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:36:15 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:36:00 CET",
+    "price": "12.091",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:35:45 CET",
+    "price": "12.044",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:35:30 CET",
+    "price": "12.045",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:35:15 CET",
+    "price": "12.044",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:35:00 CET",
+    "price": "12.038",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:34:45 CET",
+    "price": "12.034",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:34:30 CET",
+    "price": "12.035",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:34:15 CET",
+    "price": "12.036",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:34:00 CET",
+    "price": "12.031",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:33:45 CET",
+    "price": "12.03",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:33:30 CET",
+    "price": "12.034",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:33:15 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:33:00 CET",
+    "price": "12.033",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:32:45 CET",
+    "price": "12.036",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:32:30 CET",
+    "price": "12.03",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:32:15 CET",
+    "price": "12.038",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:32:00 CET",
+    "price": "12.037",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:31:45 CET",
+    "price": "12.03",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:31:30 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:31:15 CET",
+    "price": "12.08",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:31:00 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:30:45 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:30:30 CET",
+    "price": "12.083",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:30:15 CET",
+    "price": "12.086",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:30:00 CET",
+    "price": "12.083",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:29:45 CET",
+    "price": "12.081",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:29:30 CET",
+    "price": "12.08",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:29:15 CET",
+    "price": "12.074",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:29:00 CET",
+    "price": "12.078",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:28:45 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:28:30 CET",
+    "price": "12.077",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:28:16 CET",
+    "price": "12.076",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:28:00 CET",
+    "price": "12.085",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:27:45 CET",
+    "price": "12.081",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:27:31 CET",
+    "price": "12.092",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:27:15 CET",
+    "price": "12.084",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:27:00 CET",
+    "price": "12.083",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:26:45 CET",
+    "price": "12.054",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:26:30 CET",
+    "price": "12.051",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:26:15 CET",
+    "price": "12.054",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:26:00 CET",
+    "price": "12.053",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:25:45 CET",
+    "price": "12.053",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:25:30 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:25:15 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:25:00 CET",
+    "price": "11.784",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:24:45 CET",
+    "price": "11.786",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:24:30 CET",
+    "price": "11.784",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:24:15 CET",
+    "price": "11.787",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:24:00 CET",
+    "price": "11.786",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:23:45 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:23:30 CET",
+    "price": "11.783",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:23:15 CET",
+    "price": "11.781",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:23:00 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:22:45 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:22:30 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:22:15 CET",
+    "price": "11.781",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:22:00 CET",
+    "price": "11.785",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:21:45 CET",
+    "price": "11.781",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:21:30 CET",
+    "price": "11.779",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:21:15 CET",
+    "price": "11.777",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:21:00 CET",
+    "price": "11.776",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:20:45 CET",
+    "price": "11.775",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:20:30 CET",
+    "price": "11.782",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:20:15 CET",
+    "price": "11.777",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:20:00 CET",
+    "price": "11.778",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:19:45 CET",
+    "price": "11.785",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:19:30 CET",
+    "price": "11.784",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:19:15 CET",
+    "price": "11.783",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:19:00 CET",
+    "price": "11.766",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:18:45 CET",
+    "price": "11.765",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:18:30 CET",
+    "price": "11.762",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:18:15 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:18:00 CET",
+    "price": "11.761",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:17:46 CET",
+    "price": "11.751",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:17:30 CET",
+    "price": "11.747",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:17:15 CET",
+    "price": "11.747",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:17:00 CET",
+    "price": "11.745",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:16:45 CET",
+    "price": "11.742",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:16:30 CET",
+    "price": "11.744",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:16:15 CET",
+    "price": "11.741",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:16:00 CET",
+    "price": "11.741",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:15:45 CET",
+    "price": "11.745",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:15:30 CET",
+    "price": "11.743",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:15:15 CET",
+    "price": "11.742",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:15:00 CET",
+    "price": "11.741",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:14:45 CET",
+    "price": "11.741",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:14:31 CET",
+    "price": "11.743",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:14:15 CET",
+    "price": "11.743",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:14:00 CET",
+    "price": "11.733",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:13:45 CET",
+    "price": "11.736",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:13:31 CET",
+    "price": "11.733",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:13:15 CET",
+    "price": "11.738",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:13:00 CET",
+    "price": "11.738",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:12:45 CET",
+    "price": "11.738",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:12:30 CET",
+    "price": "11.738",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:12:15 CET",
+    "price": "11.732",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:12:00 CET",
+    "price": "11.732",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:11:45 CET",
+    "price": "11.731",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:11:30 CET",
+    "price": "11.743",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:11:15 CET",
+    "price": "11.743",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:11:00 CET",
+    "price": "11.733",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:10:45 CET",
+    "price": "11.733",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:10:30 CET",
+    "price": "11.735",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:10:15 CET",
+    "price": "11.745",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:10:00 CET",
+    "price": "11.744",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:09:45 CET",
+    "price": "11.744",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:09:30 CET",
+    "price": "11.739",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:09:15 CET",
+    "price": "11.735",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:09:00 CET",
+    "price": "11.735",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:08:45 CET",
+    "price": "11.737",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:08:30 CET",
+    "price": "11.734",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:08:15 CET",
+    "price": "11.742",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:08:00 CET",
+    "price": "11.742",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:07:45 CET",
+    "price": "11.744",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:07:30 CET",
+    "price": "11.741",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:07:15 CET",
+    "price": "11.741",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:07:00 CET",
+    "price": "11.741",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:06:45 CET",
+    "price": "12.019",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:06:31 CET",
+    "price": "12.019",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:06:15 CET",
+    "price": "12.019",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:06:00 CET",
+    "price": "12.04",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:05:45 CET",
+    "price": "12.039",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:05:30 CET",
+    "price": "12.008",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:05:15 CET",
+    "price": "12.008",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:05:00 CET",
+    "price": "12.036",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:04:45 CET",
+    "price": "12.026",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:04:30 CET",
+    "price": "12.029",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:04:15 CET",
+    "price": "12.025",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:04:00 CET",
+    "price": "12.025",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:03:46 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:03:30 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:03:15 CET",
+    "price": "12.007",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:03:00 CET",
+    "price": "12.007",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:02:45 CET",
+    "price": "12.008",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:02:30 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:02:15 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:02:00 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:01:45 CET",
+    "price": "12.027",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:01:30 CET",
+    "price": "12.027",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:01:16 CET",
+    "price": "12.005",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:01:00 CET",
+    "price": "12.005",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:00:45 CET",
+    "price": "12.003",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:00:31 CET",
+    "price": "12.004",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:00:15 CET",
+    "price": "12.004",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 11:00:00 CET",
+    "price": "12.025",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:59:45 CET",
+    "price": "12.008",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:59:30 CET",
+    "price": "12.025",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:59:15 CET",
+    "price": "12.024",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:59:00 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:58:45 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:58:30 CET",
+    "price": "12.027",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:58:15 CET",
+    "price": "12.026",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:58:00 CET",
+    "price": "12.013",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:57:45 CET",
+    "price": "12.017",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:57:30 CET",
+    "price": "12.012",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:57:15 CET",
+    "price": "12.017",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:57:00 CET",
+    "price": "12.015",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:56:45 CET",
+    "price": "12.007",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:56:30 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:56:15 CET",
+    "price": "12.003",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:56:00 CET",
+    "price": "11.997",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:55:45 CET",
+    "price": "11.997",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:55:30 CET",
+    "price": "11.991",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:55:15 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:55:00 CET",
+    "price": "12.005",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:54:45 CET",
+    "price": "12.002",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:54:30 CET",
+    "price": "12.003",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:54:15 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:54:00 CET",
+    "price": "12.003",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:53:45 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:53:31 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:53:15 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:53:00 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:52:45 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:52:31 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:52:15 CET",
+    "price": "12.007",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:52:00 CET",
+    "price": "12.007",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:51:45 CET",
+    "price": "12.006",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:51:30 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:51:15 CET",
+    "price": "12.017",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:51:00 CET",
+    "price": "12.017",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:50:45 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:50:30 CET",
+    "price": "12.019",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:50:15 CET",
+    "price": "12.018",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:50:00 CET",
+    "price": "12.018",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:49:45 CET",
+    "price": "12.02",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:49:30 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:49:15 CET",
+    "price": "12.001",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:49:00 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:48:45 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:48:30 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:48:15 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:48:00 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:47:45 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:47:30 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:47:15 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:47:00 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:46:45 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:46:30 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:46:15 CET",
+    "price": "12.014",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:46:00 CET",
+    "price": "12.014",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:45:45 CET",
+    "price": "12.014",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:45:30 CET",
+    "price": "12.014",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:45:15 CET",
+    "price": "12.013",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:45:00 CET",
+    "price": "12.012",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:44:46 CET",
+    "price": "12.014",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:44:30 CET",
+    "price": "12.014",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:44:15 CET",
+    "price": "12.01",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:44:00 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:43:45 CET",
+    "price": "12.014",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:43:30 CET",
+    "price": "12.015",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:43:15 CET",
+    "price": "12.017",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:43:00 CET",
+    "price": "12.005",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:42:45 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:42:30 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:42:16 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:42:00 CET",
+    "price": "12.00",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:41:45 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:41:30 CET",
+    "price": "12.003",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:41:15 CET",
+    "price": "12.01",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:41:00 CET",
+    "price": "12.008",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:40:45 CET",
+    "price": "12.001",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:40:30 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:40:15 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:40:00 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:39:45 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:39:30 CET",
+    "price": "12.01",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:39:15 CET",
+    "price": "12.011",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:39:00 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:38:45 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:38:30 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:38:15 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:38:00 CET",
+    "price": "12.001",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:37:45 CET",
+    "price": "12.002",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:37:30 CET",
+    "price": "12.016",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:37:15 CET",
+    "price": "12.015",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:37:00 CET",
+    "price": "12.015",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:36:45 CET",
+    "price": "12.009",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:36:30 CET",
+    "price": "12.005",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:36:15 CET",
+    "price": "12.002",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:36:01 CET",
+    "price": "11.996",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:35:45 CET",
+    "price": "11.987",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:35:30 CET",
+    "price": "11.997",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:35:15 CET",
+    "price": "12.019",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:35:00 CET",
+    "price": "12.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:34:45 CET",
+    "price": "12.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:34:30 CET",
+    "price": "12.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:34:15 CET",
+    "price": "12.024",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:34:00 CET",
+    "price": "12.027",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:33:45 CET",
+    "price": "12.032",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:33:30 CET",
+    "price": "12.034",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:33:15 CET",
+    "price": "12.036",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:33:00 CET",
+    "price": "12.026",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:32:45 CET",
+    "price": "12.024",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:32:30 CET",
+    "price": "12.024",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:32:15 CET",
+    "price": "12.024",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:32:00 CET",
+    "price": "12.028",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:31:45 CET",
+    "price": "12.021",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:31:30 CET",
+    "price": "12.021",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:31:15 CET",
+    "price": "12.027",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:31:00 CET",
+    "price": "12.026",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:30:45 CET",
+    "price": "12.026",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:30:30 CET",
+    "price": "12.024",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:30:15 CET",
+    "price": "12.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:30:00 CET",
+    "price": "12.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:29:45 CET",
+    "price": "12.022",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:29:30 CET",
+    "price": "12.02",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:29:15 CET",
+    "price": "12.022",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:29:00 CET",
+    "price": "12.032",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:28:45 CET",
+    "price": "11.988",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:28:30 CET",
+    "price": "11.984",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:28:15 CET",
+    "price": "11.987",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:28:00 CET",
+    "price": "11.986",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:27:45 CET",
+    "price": "11.984",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:27:30 CET",
+    "price": "11.984",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:27:15 CET",
+    "price": "11.997",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:27:00 CET",
+    "price": "11.999",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:26:45 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:26:30 CET",
+    "price": "11.993",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:26:15 CET",
+    "price": "11.994",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:26:00 CET",
+    "price": "11.992",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:25:45 CET",
+    "price": "11.987",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:25:30 CET",
+    "price": "11.985",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:25:15 CET",
+    "price": "11.988",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:25:01 CET",
+    "price": "12.001",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:24:45 CET",
+    "price": "11.998",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:24:30 CET",
+    "price": "11.994",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:24:15 CET",
+    "price": "11.991",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:24:00 CET",
+    "price": "11.994",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:23:45 CET",
+    "price": "11.994",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:23:30 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:23:15 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:23:00 CET",
+    "price": "11.592",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:22:45 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:22:30 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:22:15 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:22:00 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:21:45 CET",
+    "price": "11.592",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:21:30 CET",
+    "price": "11.601",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:21:15 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:21:00 CET",
+    "price": "11.599",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:20:45 CET",
+    "price": "11.604",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:20:30 CET",
+    "price": "11.603",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:20:15 CET",
+    "price": "11.605",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:20:00 CET",
+    "price": "11.607",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:19:45 CET",
+    "price": "11.607",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:19:30 CET",
+    "price": "11.61",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:19:15 CET",
+    "price": "11.609",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:19:00 CET",
+    "price": "11.609",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:18:45 CET",
+    "price": "11.608",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:18:30 CET",
+    "price": "11.597",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:18:15 CET",
+    "price": "11.60",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:18:00 CET",
+    "price": "11.606",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:17:45 CET",
+    "price": "11.604",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:17:30 CET",
+    "price": "11.602",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:17:15 CET",
+    "price": "11.611",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:17:00 CET",
+    "price": "11.613",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:16:45 CET",
+    "price": "11.608",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:16:30 CET",
+    "price": "11.609",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:16:15 CET",
+    "price": "11.607",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:16:00 CET",
+    "price": "11.609",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:15:45 CET",
+    "price": "11.608",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:15:31 CET",
+    "price": "11.611",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:15:15 CET",
+    "price": "11.601",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:15:00 CET",
+    "price": "11.585",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:14:45 CET",
+    "price": "11.556",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:14:30 CET",
+    "price": "11.587",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:14:15 CET",
+    "price": "11.581",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:14:00 CET",
+    "price": "11.59",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:13:45 CET",
+    "price": "11.588",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:13:30 CET",
+    "price": "11.586",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:13:15 CET",
+    "price": "11.587",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:13:01 CET",
+    "price": "11.567",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:12:45 CET",
+    "price": "11.57",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:12:30 CET",
+    "price": "11.591",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:12:15 CET",
+    "price": "11.589",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:12:00 CET",
+    "price": "11.586",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:11:45 CET",
+    "price": "11.559",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:11:30 CET",
+    "price": "11.577",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:11:16 CET",
+    "price": "11.547",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:11:00 CET",
+    "price": "11.553",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:10:45 CET",
+    "price": "11.547",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:10:30 CET",
+    "price": "11.55",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:10:15 CET",
+    "price": "11.543",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:10:00 CET",
+    "price": "11.541",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:09:45 CET",
+    "price": "11.536",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:09:30 CET",
+    "price": "11.541",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:09:15 CET",
+    "price": "11.55",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:09:00 CET",
+    "price": "11.553",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:08:45 CET",
+    "price": "11.554",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:08:30 CET",
+    "price": "11.55",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:08:15 CET",
+    "price": "11.552",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:08:00 CET",
+    "price": "11.552",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:07:45 CET",
+    "price": "11.554",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:07:30 CET",
+    "price": "11.548",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:07:15 CET",
+    "price": "11.547",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:07:00 CET",
+    "price": "11.55",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:06:45 CET",
+    "price": "11.546",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:06:30 CET",
+    "price": "11.542",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:06:15 CET",
+    "price": "11.542",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:06:00 CET",
+    "price": "11.54",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:05:45 CET",
+    "price": "11.545",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:05:30 CET",
+    "price": "11.534",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:05:15 CET",
+    "price": "11.537",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:05:00 CET",
+    "price": "11.542",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:04:45 CET",
+    "price": "11.541",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:04:31 CET",
+    "price": "11.546",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:04:15 CET",
+    "price": "11.539",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:04:00 CET",
+    "price": "11.54",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:03:46 CET",
+    "price": "11.539",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:03:30 CET",
+    "price": "11.535",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:03:15 CET",
+    "price": "11.541",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:03:00 CET",
+    "price": "11.539",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:02:45 CET",
+    "price": "11.538",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:02:30 CET",
+    "price": "11.54",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:02:15 CET",
+    "price": "11.538",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:02:00 CET",
+    "price": "11.541",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:01:45 CET",
+    "price": "11.532",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:01:30 CET",
+    "price": "11.532",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:01:15 CET",
+    "price": "11.527",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:01:00 CET",
+    "price": "11.533",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:00:45 CET",
+    "price": "11.531",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:00:30 CET",
+    "price": "11.52",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:00:15 CET",
+    "price": "11.541",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 10:00:00 CET",
+    "price": "11.47",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:59:45 CET",
+    "price": "11.465",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:59:30 CET",
+    "price": "11.63",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:59:15 CET",
+    "price": "11.633",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:59:00 CET",
+    "price": "11.631",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:58:45 CET",
+    "price": "11.637",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:58:30 CET",
+    "price": "11.633",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:58:15 CET",
+    "price": "11.633",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:58:00 CET",
+    "price": "11.636",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:57:46 CET",
+    "price": "11.635",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:57:30 CET",
+    "price": "11.635",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:57:15 CET",
+    "price": "11.633",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:57:00 CET",
+    "price": "11.64",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:56:45 CET",
+    "price": "11.64",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:56:30 CET",
+    "price": "11.64",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:56:15 CET",
+    "price": "11.643",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:56:00 CET",
+    "price": "11.636",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:55:45 CET",
+    "price": "11.637",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:55:30 CET",
+    "price": "11.636",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:55:15 CET",
+    "price": "11.628",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:55:00 CET",
+    "price": "11.631",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:54:45 CET",
+    "price": "11.629",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:54:30 CET",
+    "price": "11.637",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:54:15 CET",
+    "price": "11.64",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:54:00 CET",
+    "price": "11.629",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:53:45 CET",
+    "price": "11.638",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:53:30 CET",
+    "price": "11.621",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:53:16 CET",
+    "price": "11.627",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:53:00 CET",
+    "price": "11.621",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:52:45 CET",
+    "price": "11.619",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:52:30 CET",
+    "price": "11.614",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:52:15 CET",
+    "price": "11.614",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:52:00 CET",
+    "price": "11.618",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:51:45 CET",
+    "price": "11.636",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:51:30 CET",
+    "price": "11.64",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:51:15 CET",
+    "price": "11.639",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:51:00 CET",
+    "price": "11.636",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:50:45 CET",
+    "price": "11.627",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:50:30 CET",
+    "price": "11.64",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:50:15 CET",
+    "price": "11.625",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:50:00 CET",
+    "price": "11.632",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:49:45 CET",
+    "price": "11.631",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:49:30 CET",
+    "price": "11.626",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:49:15 CET",
+    "price": "11.627",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:49:00 CET",
+    "price": "11.625",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:48:45 CET",
+    "price": "11.625",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:48:30 CET",
+    "price": "11.625",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:48:15 CET",
+    "price": "11.624",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:48:00 CET",
+    "price": "11.634",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:47:45 CET",
+    "price": "11.638",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:47:30 CET",
+    "price": "11.632",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:47:15 CET",
+    "price": "11.633",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:47:00 CET",
+    "price": "11.62",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:46:45 CET",
+    "price": "11.622",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:46:30 CET",
+    "price": "11.606",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:46:15 CET",
+    "price": "11.612",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:46:01 CET",
+    "price": "11.582",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:45:45 CET",
+    "price": "11.60",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:45:30 CET",
+    "price": "11.60",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:45:15 CET",
+    "price": "11.597",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:45:00 CET",
+    "price": "11.59",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:44:45 CET",
+    "price": "11.588",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:44:30 CET",
+    "price": "11.587",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:44:16 CET",
+    "price": "11.585",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:44:00 CET",
+    "price": "11.584",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:43:45 CET",
+    "price": "11.588",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:43:30 CET",
+    "price": "11.588",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:43:15 CET",
+    "price": "11.585",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:43:00 CET",
+    "price": "11.583",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:42:45 CET",
+    "price": "11.582",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:42:31 CET",
+    "price": "11.585",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:42:15 CET",
+    "price": "11.586",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:42:00 CET",
+    "price": "11.595",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:41:45 CET",
+    "price": "11.581",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:41:30 CET",
+    "price": "11.57",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:41:15 CET",
+    "price": "11.581",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:41:00 CET",
+    "price": "11.541",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:40:45 CET",
+    "price": "11.578",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:40:30 CET",
+    "price": "11.58",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:40:15 CET",
+    "price": "11.574",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:40:00 CET",
+    "price": "11.581",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:39:45 CET",
+    "price": "11.589",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:39:30 CET",
+    "price": "11.589",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:39:15 CET",
+    "price": "11.581",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:39:00 CET",
+    "price": "11.578",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:38:45 CET",
+    "price": "11.579",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:38:30 CET",
+    "price": "11.571",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:38:15 CET",
+    "price": "11.584",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:38:00 CET",
+    "price": "11.593",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:37:45 CET",
+    "price": "11.595",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:37:30 CET",
+    "price": "11.599",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:37:15 CET",
+    "price": "11.593",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:37:00 CET",
+    "price": "11.599",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:36:45 CET",
+    "price": "11.599",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:36:30 CET",
+    "price": "11.599",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:36:15 CET",
+    "price": "11.598",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:36:01 CET",
+    "price": "11.604",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:35:45 CET",
+    "price": "11.60",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:35:30 CET",
+    "price": "11.589",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:35:15 CET",
+    "price": "11.582",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:35:00 CET",
+    "price": "11.589",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:34:45 CET",
+    "price": "11.498",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:34:30 CET",
+    "price": "11.491",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:34:15 CET",
+    "price": "11.498",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:34:00 CET",
+    "price": "11.509",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:33:45 CET",
+    "price": "11.494",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:33:30 CET",
+    "price": "11.467",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:33:15 CET",
+    "price": "11.488",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:33:00 CET",
+    "price": "11.509",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:32:45 CET",
+    "price": "11.486",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:32:30 CET",
+    "price": "11.492",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:32:15 CET",
+    "price": "11.492",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:32:00 CET",
+    "price": "11.489",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:31:45 CET",
+    "price": "11.487",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:31:30 CET",
+    "price": "11.489",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:31:15 CET",
+    "price": "11.491",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:31:00 CET",
+    "price": "11.496",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:30:45 CET",
+    "price": "11.505",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:30:30 CET",
+    "price": "11.421",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:30:15 CET",
+    "price": "11.463",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:30:00 CET",
+    "price": "11.433",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:29:45 CET",
+    "price": "11.427",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:29:30 CET",
+    "price": "11.519",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:29:15 CET",
+    "price": "11.511",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:29:00 CET",
+    "price": "11.517",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:28:45 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:28:30 CET",
+    "price": "11.52",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:28:15 CET",
+    "price": "11.53",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:28:00 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:27:45 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:27:30 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:27:15 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:27:00 CET",
+    "price": "11.528",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:26:45 CET",
+    "price": "11.534",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:26:30 CET",
+    "price": "11.53",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:26:15 CET",
+    "price": "11.518",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:26:00 CET",
+    "price": "11.515",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:25:45 CET",
+    "price": "11.521",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:25:30 CET",
+    "price": "11.524",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:25:15 CET",
+    "price": "11.54",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:25:00 CET",
+    "price": "11.532",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:24:45 CET",
+    "price": "11.517",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:24:31 CET",
+    "price": "11.515",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:24:15 CET",
+    "price": "11.51",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:24:00 CET",
+    "price": "11.508",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:23:45 CET",
+    "price": "11.512",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:23:30 CET",
+    "price": "11.514",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:23:15 CET",
+    "price": "11.51",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:23:00 CET",
+    "price": "11.534",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:22:46 CET",
+    "price": "11.53",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:22:30 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:22:15 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:22:00 CET",
+    "price": "11.528",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:21:45 CET",
+    "price": "11.528",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:21:30 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:21:15 CET",
+    "price": "11.525",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:21:00 CET",
+    "price": "11.531",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:20:45 CET",
+    "price": "11.53",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:20:30 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:20:15 CET",
+    "price": "11.527",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:20:00 CET",
+    "price": "11.532",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:19:45 CET",
+    "price": "11.529",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:19:30 CET",
+    "price": "11.53",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:19:16 CET",
+    "price": "11.526",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:19:00 CET",
+    "price": "11.522",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:18:45 CET",
+    "price": "11.53",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:18:30 CET",
+    "price": "11.533",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:18:15 CET",
+    "price": "11.522",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:18:00 CET",
+    "price": "11.53",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:17:45 CET",
+    "price": "11.517",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:17:30 CET",
+    "price": "11.512",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:17:15 CET",
+    "price": "11.51",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:17:00 CET",
+    "price": "11.51",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:16:46 CET",
+    "price": "11.513",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:16:30 CET",
+    "price": "11.514",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:16:15 CET",
+    "price": "11.506",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:16:01 CET",
+    "price": "11.517",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:15:45 CET",
+    "price": "11.508",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:15:30 CET",
+    "price": "11.516",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:15:15 CET",
+    "price": "11.509",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:15:00 CET",
+    "price": "11.50",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:14:45 CET",
+    "price": "11.503",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:14:30 CET",
+    "price": "11.503",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:14:15 CET",
+    "price": "11.502",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:14:00 CET",
+    "price": "11.512",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:13:45 CET",
+    "price": "11.504",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:13:30 CET",
+    "price": "11.508",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:13:15 CET",
+    "price": "11.499",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:13:00 CET",
+    "price": "11.502",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:12:45 CET",
+    "price": "11.496",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:12:30 CET",
+    "price": "11.499",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:12:15 CET",
+    "price": "11.501",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:12:00 CET",
+    "price": "11.499",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:11:45 CET",
+    "price": "11.494",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:11:30 CET",
+    "price": "11.50",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:11:15 CET",
+    "price": "11.501",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:11:00 CET",
+    "price": "11.48",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:10:45 CET",
+    "price": "11.473",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:10:30 CET",
+    "price": "11.473",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:10:15 CET",
+    "price": "11.474",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:10:00 CET",
+    "price": "11.442",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:09:45 CET",
+    "price": "11.441",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:09:30 CET",
+    "price": "11.44",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:09:15 CET",
+    "price": "11.452",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:09:00 CET",
+    "price": "11.451",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:08:45 CET",
+    "price": "11.448",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:08:30 CET",
+    "price": "11.447",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:08:15 CET",
+    "price": "11.455",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:08:00 CET",
+    "price": "11.445",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:07:45 CET",
+    "price": "11.442",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:07:30 CET",
+    "price": "11.424",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:07:15 CET",
+    "price": "11.359",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:07:00 CET",
+    "price": "11.369",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:06:45 CET",
+    "price": "11.37",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:06:30 CET",
+    "price": "11.396",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:06:15 CET",
+    "price": "11.41",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:06:00 CET",
+    "price": "11.414",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:45 CET",
+    "price": "11.408",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:30 CET",
+    "price": "11.404",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:15 CET",
+    "price": "11.414",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:00 CET",
+    "price": "11.377",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:45 CET",
+    "price": "11.386",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:30 CET",
+    "price": "11.398",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:15 CET",
+    "price": "11.396",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:00 CET",
+    "price": "11.386",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:45 CET",
+    "price": "11.383",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:30 CET",
+    "price": "11.323",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:15 CET",
+    "price": "11.315",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:00 CET",
+    "price": "11.315",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:46 CET",
+    "price": "11.273",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:30 CET",
+    "price": "11.198",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:15 CET",
+    "price": "11.178",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:00 CET",
+    "price": "11.03",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:45 CET",
+    "price": "11.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:30 CET",
+    "price": "11.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:15 CET",
+    "price": "11.119",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:01 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:45 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:30 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:15 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:00 CET",
+    "price": "11.70",
+    "type": "Official opening index"
+  },
+  {
+    "date": "24/03/2017 09:06:30 CET",
+    "price": "11.396",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:06:15 CET",
+    "price": "11.41",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:06:00 CET",
+    "price": "11.414",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:45 CET",
+    "price": "11.408",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:30 CET",
+    "price": "11.404",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:15 CET",
+    "price": "11.414",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:05:00 CET",
+    "price": "11.377",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:45 CET",
+    "price": "11.386",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:30 CET",
+    "price": "11.398",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:15 CET",
+    "price": "11.396",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:04:00 CET",
+    "price": "11.386",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:45 CET",
+    "price": "11.383",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:30 CET",
+    "price": "11.323",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:15 CET",
+    "price": "11.315",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:03:00 CET",
+    "price": "11.315",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:46 CET",
+    "price": "11.273",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:30 CET",
+    "price": "11.198",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:15 CET",
+    "price": "11.178",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:02:00 CET",
+    "price": "11.03",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:45 CET",
+    "price": "11.023",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:30 CET",
+    "price": "11.07",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:15 CET",
+    "price": "11.119",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:01:01 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:45 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:30 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:15 CET",
+    "price": "11.70",
+    "type": "Real-time index"
+  },
+  {
+    "date": "24/03/2017 09:00:00 CET",
+    "price": "11.70",
+    "type": "Official opening index"
+  }
+]
