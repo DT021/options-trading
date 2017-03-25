@@ -1,5 +1,6 @@
 const fs = require('fs');
 const DataParser = {
+    callback: null,
     DIR: './data/',
     collection: [],
     numberOfFiles: 0,
@@ -14,7 +15,8 @@ const DataParser = {
         6: 'saturday'
     },
     data: {},
-    init() {
+    init(_callback) {
+        this.callback = _callback;
         this.getFiles();
     },
     getFiles() {
@@ -26,7 +28,7 @@ const DataParser = {
                 if (fs.statSync(filePath).isFile()) {
                     fs.readFile(filePath, 'utf8', function(err, data) {
                         if (err) {
-                            return console.log(err);
+                            return cFonsole.log(err);
                         }
                         DataParser.concatFiles(data);
                     });
@@ -54,20 +56,14 @@ const DataParser = {
                     date: arr[0],
                     prices: {}
                 };
-            this.createTimeObj(key, item, arr[1]);
-
-            if (index == 0) {
-
-                //2017-03-24T16:28:39+00:00
-                console.log(this.data);
-            }
+            this.createTimeObj(key, item, arr[1],item.date);
 
         }.bind(this));
         this.writeFile();
-        this.findMean();
+        this.callback();
     },
-    createTimeObj(key, item, timeSting) {
-        let arr = timeSting.split(':');
+    createTimeObj(key, item, timeString,date) {
+        let arr = timeString.split(':');
         let mins = Number(arr[1]) < 35 ? '00' : '35';
         let hour = arr[0];
         if (!this.data[key].prices[`${hour}_${mins}`]) {
@@ -76,61 +72,42 @@ const DataParser = {
             };
         }
 
+        let dateObj = new Date();
+        dateObj.setHours(hour);
+        dateObj.setMinutes(arr[1]);
+        dateObj.setSeconds(arr[2]);
+
+        console.log('----');
+
+
+        let hasItem = this.hasItem(this.data[key].prices[`${hour}_${mins}`],date);
+        console.log('hasItem',hasItem);
+        if(hasItem) return;
         this.data[key].prices[`${hour}_${mins}`].priceCollection.push({
-            time: timeSting,
+            time: timeString,
+            date: date,
+            timeNumber: dateObj.getTime(),
             price: item.price
         });
+
+        this.data[key].prices[`${hour}_${mins}`].priceCollection.sort(function(a, b) {
+             return a.timeNumber - b.timeNumber;
+        });
+
+    },
+    hasItem: function(item,date){
+        let found = false;
+        item.priceCollection.forEach(function(time){
+            if(time.date == date) found = true;
+        });
+        return found;
     },
     writeFile() {
         fs.writeFile('./data.json', JSON.stringify(this.data, null, 2), function(err) {
             if (err) return console.log(err);
             console.log('saved');
         });
-    },
-    findMean() {
-        let key = Object.keys(this.data)[0];
-        for (let dateKey in this.data) {
-            let item = this.data[dateKey];
-
-            for (let timeKey in item.prices) {
-                let result = 0;
-                let highest = 0;
-                let lowest = 0;
-                let obj = item.prices[timeKey];
-                let length = obj.priceCollection.length;
-                obj.priceCollection.forEach(function(item) {
-                    let price = Number(item.price)
-                    result += price;
-                    if (price > highest) highest = price;
-                    if (!lowest) lowest = price;
-                    if (price < lowest) lowest = price;
-                });
-                let mean = (result / length);
-                let varianceResults = 0;
-                obj.priceCollection.forEach(function(item) {
-                    let price = Number(item.price);
-                    varianceResults += Math.pow(price - mean,2);
-                });
-                let variance = Math.sqrt(varianceResults / (length - 1));
-                let deviationLowset = mean - variance;
-                let deviationHighest = variance + mean;
-                console.log('At ',timeKey);
-                console.log('MEAN was ',mean);
-                console.log('Highest was ',highest);
-                console.log('Lowest was ',lowest);
-                console.log('variance ',variance);
-                console.log('standard deviation lowest ',deviationLowset);
-                console.log('standard deviation highest ',deviationHighest);
-            }
-        }
     }
-
-
-   // let timeKey = Object.keys(this.data[key].prices)[0];
-   // let obj = this.data[key].prices[timeKey];
-
-
-
 };
 
 module.exports = DataParser;
