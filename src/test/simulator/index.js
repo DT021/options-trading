@@ -8,7 +8,7 @@ const Server = {
     collection: null,
     timeIndex: 0,
     tickIndex: 0,
-    tickDuration: 500,
+    tickDuration: 50,
     timer: null,
     ws: null,
     init() {
@@ -47,6 +47,7 @@ const Server = {
         this.sendMessage('days', Object.keys(Data));
     },
     start(dateIndex) {
+         clearTimeout(this.timer);
         this.collection = this.sortPricesByTime(Data[dateIndex].prices);
         this.tickIndex = 0;
         this.timeIndex = 0;
@@ -81,7 +82,10 @@ const Server = {
     },
     getTick() {
         let time = this.collection[this.timeIndex];
-        if (!time) return;
+        if (!time) {
+            this.sendMessage('end',{});
+          return;  
+        } 
         let item = this.collection[this.timeIndex].value.priceCollection[this.tickIndex];
         if (!item) {
             this.tickIndex = 0;

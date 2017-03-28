@@ -151,44 +151,6 @@ function evaluate(page, func) {
     var fn = "function() { return (" + func.toString() + ").apply(this, " + JSON.stringify(args) + ");}";
     return page.evaluate(fn);
 }
-/*
-page.onLoadFinished = function() {
-    setTimeout(function() {
-        setTimeout(function() {
-            var tableData = evaluate(page, function() {
-                var data = [];
-                var trCollection = document.querySelectorAll('#priceChartIntradayTable tbody tr');
-                for (var a = 0; a < trCollection.length; a++) {
-                    var obj = {
-                        date: '',
-                        price: ''
-                    };
-                    var tr = trCollection[a];
-                    var td = tr.querySelectorAll('td');
-                    if (td[1]) obj.date = td[1].innerHTML;
-                    if (td[1]) obj.price = td[2].innerHTML;
-                    if (td[4]) obj.type = td[4].innerHTML;
-
-                    data.push(obj);
-                }
-                return JSON.stringify(data, null, 2);
-
-            });
-            screenshot(tableData);
-        }.bind(this), 300);
-
-
-        //click on dropdown to increase number of rows
-
-    }.bind(this), 3000);
-
-}
-
-function writeData(data) {
-    fs.write('data-1.json', data, 'w');
-
-}
-*/
 
 
 HistoricalDataService.init();

@@ -659,13 +659,52 @@
       "mean": "12.36",
       "highestPrice": 12.461,
       "lowestPrice": 12.157,
-      "variance": "0.10",
-      "deviationLowest": "12.26",
+      "variance": "0.09",
+      "deviationLowest": "12.27",
       "deviationHighest": "12.46",
-      "numberOfRaises": 54,
-      "numberOfFalls": 52,
-      "raiseOdds": "50.94%",
-      "fallOdds": "49.06%"
+      "numberOfRaises": 64,
+      "numberOfFalls": 62,
+      "raiseOdds": "50.79%",
+      "fallOdds": "49.21%"
+    },
+    {
+      "time": "15:35",
+      "mean": "12.28",
+      "highestPrice": 12.371,
+      "lowestPrice": 12.218,
+      "variance": "0.03",
+      "deviationLowest": "12.24",
+      "deviationHighest": "12.31",
+      "numberOfRaises": 48,
+      "numberOfFalls": 48,
+      "raiseOdds": "50.00%",
+      "fallOdds": "50.00%"
+    },
+    {
+      "time": "16:00",
+      "mean": "11.94",
+      "highestPrice": 12.219,
+      "lowestPrice": 11.576,
+      "variance": "0.18",
+      "deviationLowest": "11.76",
+      "deviationHighest": "12.11",
+      "numberOfRaises": 57,
+      "numberOfFalls": 58,
+      "raiseOdds": "49.57%",
+      "fallOdds": "50.43%"
+    },
+    {
+      "time": "16:35",
+      "mean": "11.88",
+      "highestPrice": 11.884,
+      "lowestPrice": 11.884,
+      "variance": "NaN",
+      "deviationLowest": "NaN",
+      "deviationHighest": "NaN",
+      "numberOfRaises": 0,
+      "numberOfFalls": 0,
+      "raiseOdds": "NaN%",
+      "fallOdds": "NaN%"
     }
   ]
 }

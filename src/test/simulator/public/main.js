@@ -3,6 +3,17 @@
      var Simulator = {
          dayCollection: [],
          dropdown: null,
+         prevoiusTick: null,
+         currentTick: null,
+         direction: '',
+         nextContract: null,
+         contractStarted: false,
+         currentTickCount: 0,
+         strategyCode: null,
+         numberOfWins: 0,
+         numberOfLoses: 0,
+         currentBalance: 0,
+         contractPurchasePrice: 0,
          ws: null,
          config: {
              type: 'line',
@@ -10,40 +21,47 @@
                  scales: {
                      yAxes: [{
                          display: true,
-                                ticks: {
-                                    suggestedMin:10, 
+                         ticks: {
+                             suggestedMin: 10,
 
-                                }
-                     }]
+                         }
+                     }],
+                     xAxes: [{
+                         display: true,
+                         scaleLabel: {
+                             display: true,
+                             labelString: 'Time'
+                         }
+                     }],
                  }
              },
-             data:{
-                labels: [],
-                datasets: [{
-                 label: "My First dataset",
-                 fill: false,
-                 lineTension: 0.1,
-                 backgroundColor: "rgba(75,192,192,0.4)",
-                 borderColor: "rgba(75,192,192,1)",
-                 borderCapStyle: 'butt',
-                 borderDash: [],
-                 borderDashOffset: 0.0,
-                 borderJoinStyle: 'miter',
-                 pointBorderColor: "rgba(75,192,192,1)",
-                 pointBackgroundColor: "#fff",
-                 pointBorderWidth: 1,
-                 pointHoverRadius: 5,
-                 pointHoverBackgroundColor: "rgba(75,192,192,1)",
-                 pointHoverBorderColor: "rgba(220,220,220,1)",
-                 pointHoverBorderWidth: 2,
-                 pointRadius: 1,
-                 pointHitRadius: 10,
-                 spanGaps: false,
-                 steppedLine: false,
-                 data: []
-             }]
+             data: {
+                 labels: [],
+                 datasets: [{
+                     label: "Options Trading Simulator",
+                     fill: false,
+                     lineTension: 0.1,
+                     backgroundColor: "rgba(75,192,192,0.4)",
+                     borderColor: "rgba(75,192,192,1)",
+                     borderCapStyle: 'butt',
+                     borderDash: [],
+                     borderDashOffset: 0.0,
+                     borderJoinStyle: 'miter',
+                     pointBorderColor: "rgba(75,192,192,1)",
+                     pointBackgroundColor: "#fff",
+                     pointBorderWidth: 1,
+                     pointHoverRadius: 5,
+                     pointHoverBackgroundColor: "rgba(75,192,192,1)",
+                     pointHoverBorderColor: "rgba(220,220,220,1)",
+                     pointHoverBorderWidth: 2,
+                     pointRadius: 1,
+                     pointHitRadius: 10,
+                     spanGaps: false,
+                     steppedLine: false,
+                     data: []
+                 }]
              }
-             
+
          },
          init() {
              this.setupWebSocket();
@@ -80,23 +98,49 @@
          },
          onMessage(event) {
              let obj = JSON.parse(event.data);
-             console.log(obj);
              switch (obj.key) {
                  case 'days':
                      this.dayCollection = obj.data;
                      this.populatingDaysDropdown();
                      break;
                  case 'tick':
-                     Simulator.updateChart(obj.data);
+                     this.setTickChange(obj.data);
+                     if (this.strategyCode) this.nextContract = this.strategyCode.run(obj.data);
+                     this.checkContract(obj.data);
+                     this.updateChart(obj.data);
+                     break;
+                 case 'end':
+                     this.tickEnd();
                      break;
              }
          },
          onRunClicked() {
              this.run();
          },
+         tickEnd() {
+             console.log('number of wins', this.numberOfWins);
+             console.log('number of loses', this.numberOfLoses);
+             console.log('Balance', this.currentBalance);
+         },
+         setupStrategy() {
+             this.numberOfWins = 0;
+             this.numberOfLoses = 0;
+             this.currentBalance = 0;
+             this.strategyCode = this.testCode();
+             this.currentBalance = this.strategyCode.balance;
+         },
+         setTickChange(obj) {
+             this.prevoiusTick = this.currentTick;
+             this.currentTick = obj.price;
+             this.direction = '';
+             if (this.prevoiusTick > this.currentTick) {
+                 this.direction = 'fall';
+             } else if (this.prevoiusTick < this.currentTick) {
+                 this.direction = 'raise';
+             }
+         },
          populatingDaysDropdown() {
              this.dropdown = document.querySelector('#days-dropdown');
-             console.log(this.dayCollection);
              this.dayCollection.forEach(function(item, index) {
                  let optionElement = document.createElement('option');
                  optionElement.value = index;
@@ -105,6 +149,8 @@
              }.bind(this));
          },
          run() {
+             this.endContract();
+             this.setupStrategy();
              this.send('run', this.dayCollection[this.dropdown.selectedIndex]);
          },
          send(key, data) {
@@ -120,20 +166,93 @@
              var ctx = document.getElementById("myChart").getContext("2d");
              var optionsNoAnimation = { animation: false }
              this.chart = new Chart(ctx, this.config);
-             console.log(this.chart);
          },
          updateChart(item) {
-             if (this.config.data.datasets[0].data.length > 40) {
-                 this.config.data.datasets[0].data.shift();
-                 this.config.data.labels.shift();
-             }
+             /*
+              if (this.config.data.datasets[0].data.length > 40) {
+                  this.config.data.datasets[0].data.shift();
+                  this.config.data.labels.shift();
+              }
+              */
              this.config.data.labels.push(item.time);
              this.config.data.datasets[0].data.push(Number(item.price));
              this.chart.update();
-         }
+         },
+         checkContract(item) {
+             if (this.nextContract && !this.contractStarted) {
+                this.contractPurchasePrice = item.price;
+                 this.contractStarted = true;
+                 this.currentTickCount = 0;
+             } else if (this.nextContract) {
+                 this.currentTickCount++;
+                 if (this.currentTickCount >= this.nextContract.tickDuration) {
+                     this.trade(item.price);
+                     this.endContract();
+                 }
+             }
 
-         //this.chart.options.data[0].dataPoints.push({ y: Number(item.price), x: item.time });
-         // this.chart.render();
+         },
+         endContract() {
+             this.contractStarted = false;
+             this.currentTickCount = 0;
+             this.nextContract = null;
+         },
+         trade(price) {
+             if (this.nextContract.type == 'raise' && this.contractPurchasePrice < price || this.nextContract.type == 'fall' && this.contractPurchasePrice > price) {
+                 console.log('win');
+                 this.numberOfWins++;
+                 this.currentBalance += this.nextContract.stake + (this.nextContract.stake * this.nextContract.payoutPercentage);
+             } else {
+                 console.log('lose');
+                 this.numberOfLoses++;
+                 this.currentBalance -= this.nextContract.stake;
+             }
+             console.log(this.currentBalance);
+         },
+         testCode() {
+             return {
+                 balance: 1000,
+                 previous: 0,
+                 run(item) {
+                     let date = new Date();
+                     let contract;
+                     date.setHours(item.time.split(':')[0]);
+                     date.setMinutes(item.time.split(':')[2]);
+                     if (date.getHours() == 8 && date.getMinutes() > 30 && this.previous > item.price) {
+                         contract = {
+                             type: 'fall',
+                             tickDuration: 5,
+                             stake: 20,
+                             payoutPercentage: 0.81
+                         }
+                     } else if (date.getHours() == 9 && date.getMinutes() < 30 && this.previous < item.price) {
+                         contract = {
+                             type: 'raise',
+                             tickDuration: 5,
+                             stake: 20,
+                             payoutPercentage: 0.81
+                         }
+                     } else if (date.getHours() == 10 && date.getMinutes() < 30 && this.previous < item.price) {
+                         contract = {
+                             type: 'raise',
+                             tickDuration: 5,
+                             stake: 20,
+                             payoutPercentage: 0.81
+                         }
+                     } else if (date.getHours() == 10 && date.getMinutes() > 30 && this.previous > item.price) {
+                         contract = {
+                             type: 'fall',
+                             tickDuration: 5,
+                             stake: 20,
+                             payoutPercentage: 0.81
+                         }
+                     }
+                     this.previous = item.price;
+                     return contract;
+
+                 }
+             };
+         }
      };
 
      Simulator.init();
