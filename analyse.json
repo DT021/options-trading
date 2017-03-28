@@ -1,7 +1,7 @@
 {
   "friday": [
     {
-      "time": "09:00",
+      "time": "8:00",
       "mean": "11.47",
       "highestPrice": 11.7,
       "lowestPrice": 11.023,
@@ -14,7 +14,7 @@
       "fallOdds": "56.80%"
     },
     {
-      "time": "09:35",
+      "time": "8:35",
       "mean": "11.61",
       "highestPrice": 11.643,
       "lowestPrice": 11.465,
@@ -27,7 +27,7 @@
       "fallOdds": "52.87%"
     },
     {
-      "time": "10:00",
+      "time": "9:00",
       "mean": "11.71",
       "highestPrice": 12.036,
       "lowestPrice": 11.47,
@@ -40,7 +40,7 @@
       "fallOdds": "54.92%"
     },
     {
-      "time": "10:35",
+      "time": "9:35",
       "mean": "12.01",
       "highestPrice": 12.028,
       "lowestPrice": 11.987,
@@ -53,7 +53,7 @@
       "fallOdds": "53.85%"
     },
     {
-      "time": "11:00",
+      "time": "10:00",
       "mean": "11.89",
       "highestPrice": 12.092,
       "lowestPrice": 11.731,
@@ -66,7 +66,7 @@
       "fallOdds": "60.19%"
     },
     {
-      "time": "11:35",
+      "time": "10:35",
       "mean": "12.06",
       "highestPrice": 12.091,
       "lowestPrice": 12.008,
@@ -79,7 +79,7 @@
       "fallOdds": "51.85%"
     },
     {
-      "time": "12:00",
+      "time": "11:00",
       "mean": "12.07",
       "highestPrice": 12.103,
       "lowestPrice": 11.793,
@@ -92,7 +92,7 @@
       "fallOdds": "53.98%"
     },
     {
-      "time": "12:35",
+      "time": "11:35",
       "mean": "12.03",
       "highestPrice": 12.104,
       "lowestPrice": 11.798,
@@ -105,7 +105,7 @@
       "fallOdds": "57.89%"
     },
     {
-      "time": "13:00",
+      "time": "12:00",
       "mean": "12.05",
       "highestPrice": 12.383,
       "lowestPrice": 10.714,
@@ -118,7 +118,7 @@
       "fallOdds": "47.66%"
     },
     {
-      "time": "13:35",
+      "time": "12:35",
       "mean": "11.94",
       "highestPrice": 12.176,
       "lowestPrice": 11.735,
@@ -131,7 +131,7 @@
       "fallOdds": "59.72%"
     },
     {
-      "time": "14:00",
+      "time": "13:00",
       "mean": "12.13",
       "highestPrice": 12.157,
       "lowestPrice": 12.075,
@@ -144,7 +144,7 @@
       "fallOdds": "50.00%"
     },
     {
-      "time": "14:35",
+      "time": "13:35",
       "mean": "12.11",
       "highestPrice": 12.143,
       "lowestPrice": 12.037,
@@ -157,7 +157,7 @@
       "fallOdds": "47.62%"
     },
     {
-      "time": "15:00",
+      "time": "14:00",
       "mean": "12.05",
       "highestPrice": 12.225,
       "lowestPrice": 11.97,
@@ -170,7 +170,7 @@
       "fallOdds": "54.78%"
     },
     {
-      "time": "15:35",
+      "time": "14:35",
       "mean": "12.07",
       "highestPrice": 12.141,
       "lowestPrice": 12.029,
@@ -183,7 +183,7 @@
       "fallOdds": "58.90%"
     },
     {
-      "time": "16:00",
+      "time": "15:00",
       "mean": "12.23",
       "highestPrice": 12.394,
       "lowestPrice": 12.102,
@@ -196,7 +196,7 @@
       "fallOdds": "52.14%"
     },
     {
-      "time": "16:35",
+      "time": "15:35",
       "mean": "12.20",
       "highestPrice": 12.315,
       "lowestPrice": 12.156,
@@ -209,7 +209,7 @@
       "fallOdds": "42.67%"
     },
     {
-      "time": "17:00",
+      "time": "16:00",
       "mean": "12.02",
       "highestPrice": 12.205,
       "lowestPrice": 11.653,
@@ -222,7 +222,7 @@
       "fallOdds": "52.29%"
     },
     {
-      "time": "17:35",
+      "time": "16:35",
       "mean": "11.65",
       "highestPrice": 11.654,
       "lowestPrice": 11.654,
@@ -237,7 +237,7 @@
   ],
   "monday": [
     {
-      "time": "09:00",
+      "time": "8:00",
       "mean": "13.21",
       "highestPrice": 13.528,
       "lowestPrice": 11.66,
@@ -250,7 +250,7 @@
       "fallOdds": "45.60%"
     },
     {
-      "time": "09:35",
+      "time": "8:35",
       "mean": "13.41",
       "highestPrice": 13.633,
       "lowestPrice": 13.234,
@@ -263,7 +263,7 @@
       "fallOdds": "67.06%"
     },
     {
-      "time": "10:00",
+      "time": "9:00",
       "mean": "13.50",
       "highestPrice": 13.736,
       "lowestPrice": 13.301,
@@ -276,7 +276,7 @@
       "fallOdds": "31.71%"
     },
     {
-      "time": "10:35",
+      "time": "9:35",
       "mean": "13.24",
       "highestPrice": 13.364,
       "lowestPrice": 13.112,
@@ -289,7 +289,7 @@
       "fallOdds": "43.53%"
     },
     {
-      "time": "11:00",
+      "time": "10:00",
       "mean": "13.15",
       "highestPrice": 13.349,
       "lowestPrice": 12.82,
@@ -302,7 +302,7 @@
       "fallOdds": "30.91%"
     },
     {
-      "time": "11:35",
+      "time": "10:35",
       "mean": "12.90",
       "highestPrice": 13.08,
       "lowestPrice": 12.806,
@@ -315,7 +315,7 @@
       "fallOdds": "74.68%"
     },
     {
-      "time": "12:00",
+      "time": "11:00",
       "mean": "13.18",
       "highestPrice": 13.239,
       "lowestPrice": 13.075,
@@ -328,7 +328,7 @@
       "fallOdds": "56.86%"
     },
     {
-      "time": "12:35",
+      "time": "11:35",
       "mean": "13.27",
       "highestPrice": 13.388,
       "lowestPrice": 13.215,
@@ -341,7 +341,7 @@
       "fallOdds": "43.48%"
     },
     {
-      "time": "13:00",
+      "time": "12:00",
       "mean": "13.37",
       "highestPrice": 13.382,
       "lowestPrice": 13.348,
@@ -354,7 +354,7 @@
       "fallOdds": "47.57%"
     },
     {
-      "time": "13:35",
+      "time": "12:35",
       "mean": "13.36",
       "highestPrice": 13.404,
       "lowestPrice": 13.336,
@@ -367,7 +367,7 @@
       "fallOdds": "47.89%"
     },
     {
-      "time": "14:00",
+      "time": "13:00",
       "mean": "13.62",
       "highestPrice": 13.711,
       "lowestPrice": 13.407,
@@ -380,7 +380,7 @@
       "fallOdds": "56.00%"
     },
     {
-      "time": "14:35",
+      "time": "13:35",
       "mean": "13.71",
       "highestPrice": 13.765,
       "lowestPrice": 13.675,
@@ -393,7 +393,7 @@
       "fallOdds": "63.08%"
     },
     {
-      "time": "15:00",
+      "time": "14:00",
       "mean": "13.82",
       "highestPrice": 13.872,
       "lowestPrice": 13.762,
@@ -406,7 +406,7 @@
       "fallOdds": "51.40%"
     },
     {
-      "time": "15:35",
+      "time": "14:35",
       "mean": "13.80",
       "highestPrice": 13.851,
       "lowestPrice": 13.707,
@@ -419,7 +419,7 @@
       "fallOdds": "44.83%"
     },
     {
-      "time": "16:00",
+      "time": "15:00",
       "mean": "13.72",
       "highestPrice": 13.768,
       "lowestPrice": 13.639,
@@ -432,7 +432,7 @@
       "fallOdds": "48.39%"
     },
     {
-      "time": "16:35",
+      "time": "15:35",
       "mean": "13.58",
       "highestPrice": 13.65,
       "lowestPrice": 13.484,
@@ -445,7 +445,7 @@
       "fallOdds": "42.86%"
     },
     {
-      "time": "17:00",
+      "time": "16:00",
       "mean": "13.37",
       "highestPrice": 13.502,
       "lowestPrice": 12.978,
@@ -458,7 +458,7 @@
       "fallOdds": "41.51%"
     },
     {
-      "time": "17:35",
+      "time": "16:35",
       "mean": "12.98",
       "highestPrice": 12.979,
       "lowestPrice": 12.979,
