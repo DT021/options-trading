@@ -94,8 +94,10 @@ const DataParser = {
         dateObj.setSeconds(arr[2]);
 
 
+
         let hasItem = this.hasItem(this.data[key].prices[`${hour}_${mins}`], date);
         if (hasItem) return;
+
         this.data[key].prices[`${hour}_${mins}`].priceCollection.push({
             time: ('0' + dateObj.getHours()).slice(-2) + ':' + ('0' + dateObj.getMinutes()).slice(-2) + ':' + ('0' + dateObj.getSeconds()).slice(-2),
             date: date,
@@ -123,14 +125,5 @@ const DataParser = {
     }
 };
 
-Date.prototype.stdTimezoneOffset = function() {
-    var jan = new Date(this.getFullYear(), 0, 1);
-    var jul = new Date(this.getFullYear(), 6, 1);
-    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-}
-
-Date.prototype.dst = function() {
-    return this.getTimezoneOffset() < this.stdTimezoneOffset();
-}
 
 module.exports = DataParser;

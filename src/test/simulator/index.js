@@ -14,6 +14,7 @@ const Server = {
     init() {
         this.route();
         this.collection = this.sortPricesByTime(Data['friday'].prices);
+        console.log('server running on http://localhost:3000');
         app.listen(3000);
     },
     route() {
@@ -33,8 +34,13 @@ const Server = {
     },
     onMessage(msg) {
         if (msg == 'ready') {
+            this.sendDays();
+        } else if (msg == 'run') {
             this.start();
         }
+    },
+    sendDays() {
+        this.sendMessage('days',Object.keys(Data);
     },
     start() {
         this.tickIndex = 0;
@@ -45,7 +51,6 @@ const Server = {
         let collection = [];
         for (let timeKey in prices) {
             prices[timeKey].priceCollection.sort(function(a, b) {
-              console.log(a.timeNumber, b.timeNumber);
                 return (a.timeNumber - b.timeNumber);
             });
             collection.push({ key: timeKey, value: prices[timeKey] });
@@ -62,6 +67,13 @@ const Server = {
     next() {
         this.timer = setTimeout(this.getTick.bind(this), this.tickDuration);
     },
+    sendMessage(key, data) {
+        let obj = {
+            key: key,
+            data: data
+        }
+        this.ws.send(JSON.stringify(obj));
+    },
     getTick() {
         let time = this.collection[this.timeIndex];
         if (!time) return;
@@ -73,7 +85,7 @@ const Server = {
             return;
         }
         this.tickIndex++;
-        this.ws.send(JSON.stringify(item));
+        this.sendMessage('tick',Object.keys(item);
         this.next();
     }
 }
