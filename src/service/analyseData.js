@@ -30,6 +30,9 @@ const AnalyseData = {
         });
     },
     analyse() {
+        this.analyseDay();
+    },
+    analyseDay(){
         let key = Object.keys(this.data)[0];
         for (let dateKey in this.data) {
             let item = this.data[dateKey];

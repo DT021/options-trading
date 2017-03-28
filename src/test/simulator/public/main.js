@@ -1,9 +1,25 @@
  window.onload = function() {
 
      var Simulator = {
-         data: {
-             labels: [],
-             datasets: [{
+         dayCollection: [],
+         dropdown: null,
+         ws: null,
+         config: {
+             type: 'line',
+             options: {
+                 scales: {
+                     yAxes: [{
+                         display: true,
+                                ticks: {
+                                    suggestedMin:10, 
+
+                                }
+                     }]
+                 }
+             },
+             data:{
+                labels: [],
+                datasets: [{
                  label: "My First dataset",
                  fill: false,
                  lineTension: 0.1,
@@ -23,33 +39,33 @@
                  pointRadius: 1,
                  pointHitRadius: 10,
                  spanGaps: false,
+                 steppedLine: false,
                  data: []
              }]
+             }
+             
          },
          init() {
              this.setupWebSocket();
              this.createChart();
+             this.addListeners();
+         },
+         addListeners() {
+             let runButton = document.querySelector('#run-button');
+             runButton.addEventListener('click', this.onRunClicked.bind(this));
          },
          setupWebSocket() {
              if ("WebSocket" in window) {
                  console.log("WebSocket is supported by your Browser!");
 
                  // Let us open a web socket
-                 var ws = new WebSocket("ws://localhost:3000/ws");
+                 this.ws = new WebSocket("ws://localhost:3000/ws");
 
-                 ws.onopen = function() {
-                     // Web Socket is connected, send data using send()
-                     ws.send("ready");
-                     console.log("Message is sent...");
-                 };
+                 this.ws.onopen = this.onOpen.bind(this);
 
-                 ws.onmessage = function(evt) {
-                     var received_msg = evt.data;
-                     console.log("Message is received...", received_msg);
-                     Simulator.updateChart(JSON.parse(received_msg));
-                 };
+                 this.ws.onmessage = this.onMessage.bind(this);
 
-                 ws.onclose = function() {
+                 this.ws.onclose = function() {
                      // websocket is closed.
                      console.log("Connection is closed...");
                  };
@@ -58,29 +74,62 @@
                  console.log("WebSocket NOT supported by your Browser!");
              }
          },
+         onOpen() {
+             this.send('ready', {});
+             console.log("Sent READY");
+         },
+         onMessage(event) {
+             let obj = JSON.parse(event.data);
+             console.log(obj);
+             switch (obj.key) {
+                 case 'days':
+                     this.dayCollection = obj.data;
+                     this.populatingDaysDropdown();
+                     break;
+                 case 'tick':
+                     Simulator.updateChart(obj.data);
+                     break;
+             }
+         },
+         onRunClicked() {
+             this.run();
+         },
+         populatingDaysDropdown() {
+             this.dropdown = document.querySelector('#days-dropdown');
+             console.log(this.dayCollection);
+             this.dayCollection.forEach(function(item, index) {
+                 let optionElement = document.createElement('option');
+                 optionElement.value = index;
+                 optionElement.innerHTML = item;
+                 this.dropdown.appendChild(optionElement);
+             }.bind(this));
+         },
+         run() {
+             this.send('run', this.dayCollection[this.dropdown.selectedIndex]);
+         },
+         send(key, data) {
+             let obj = {
+                 key: key,
+                 data: data
+             };
+             this.ws.send(JSON.stringify(obj));
+         },
          createChart() {
              document.getElementById("myChart").width = document.body.clientWidth; //document.width is obsolete
              document.getElementById("myChart").height = document.body.clientHeight; //document.height is obsolete
              var ctx = document.getElementById("myChart").getContext("2d");
              var optionsNoAnimation = { animation: false }
-             this.chart = new Chart(ctx, {
-                 type: 'line',
-             });
-             this.chart.Line(this.data, optionsNoAnimation)
+             this.chart = new Chart(ctx, this.config);
+             console.log(this.chart);
          },
          updateChart(item) {
-             if (this.data.datasets[0].data.length > 40)
-             {
-                this.data.datasets[0].data.shift();
-              this.data.labels.shift();
+             if (this.config.data.datasets[0].data.length > 40) {
+                 this.config.data.datasets[0].data.shift();
+                 this.config.data.labels.shift();
              }
-             this.data.labels.push(item.time);
-             this.data.datasets[0].fill = false;
-             this.data.datasets[0].data.push(Number(item.price));
-             var optionsNoAnimation = {
-                 animation: false
-             }
-             this.chart.Line(this.data, optionsNoAnimation)
+             this.config.data.labels.push(item.time);
+             this.config.data.datasets[0].data.push(Number(item.price));
+             this.chart.update();
          }
 
          //this.chart.options.data[0].dataPoints.push({ y: Number(item.price), x: item.time });

@@ -13,7 +13,7 @@ const Server = {
     ws: null,
     init() {
         this.route();
-        this.collection = this.sortPricesByTime(Data['friday'].prices);
+
         console.log('server running on http://localhost:3000');
         app.listen(3000);
     },
@@ -33,16 +33,21 @@ const Server = {
         clearTimeout(this.timer);
     },
     onMessage(msg) {
-        if (msg == 'ready') {
-            this.sendDays();
-        } else if (msg == 'run') {
-            this.start();
+        let obj = JSON.parse(msg);
+        switch (obj.key) {
+            case 'ready':
+                this.sendDays();
+                break;
+            case 'run':
+                this.start(obj.data);
+                break;
         }
     },
     sendDays() {
-        this.sendMessage('days',Object.keys(Data);
+        this.sendMessage('days', Object.keys(Data));
     },
-    start() {
+    start(dateIndex) {
+        this.collection = this.sortPricesByTime(Data[dateIndex].prices);
         this.tickIndex = 0;
         this.timeIndex = 0;
         this.next();
@@ -85,7 +90,7 @@ const Server = {
             return;
         }
         this.tickIndex++;
-        this.sendMessage('tick',Object.keys(item);
+        this.sendMessage('tick', item);
         this.next();
     }
 }
