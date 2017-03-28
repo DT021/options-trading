@@ -235,6 +235,99 @@
       "fallOdds": "NaN%"
     }
   ],
+  "tuesday": [
+    {
+      "time": "09:00",
+      "mean": "12.60",
+      "highestPrice": 13.007,
+      "lowestPrice": 11.693,
+      "variance": "0.25",
+      "deviationLowest": "12.35",
+      "deviationHighest": "12.86",
+      "numberOfRaises": 74,
+      "numberOfFalls": 52,
+      "raiseOdds": "58.73%",
+      "fallOdds": "41.27%"
+    },
+    {
+      "time": "09:35",
+      "mean": "12.19",
+      "highestPrice": 12.291,
+      "lowestPrice": 12.012,
+      "variance": "0.08",
+      "deviationLowest": "12.11",
+      "deviationHighest": "12.27",
+      "numberOfRaises": 45,
+      "numberOfFalls": 46,
+      "raiseOdds": "49.45%",
+      "fallOdds": "50.55%"
+    },
+    {
+      "time": "10:00",
+      "mean": "12.20",
+      "highestPrice": 12.277,
+      "lowestPrice": 12.037,
+      "variance": "0.07",
+      "deviationLowest": "12.13",
+      "deviationHighest": "12.27",
+      "numberOfRaises": 57,
+      "numberOfFalls": 64,
+      "raiseOdds": "47.11%",
+      "fallOdds": "52.89%"
+    },
+    {
+      "time": "10:35",
+      "mean": "12.25",
+      "highestPrice": 12.266,
+      "lowestPrice": 12.224,
+      "variance": "0.01",
+      "deviationLowest": "12.24",
+      "deviationHighest": "12.26",
+      "numberOfRaises": 34,
+      "numberOfFalls": 38,
+      "raiseOdds": "47.22%",
+      "fallOdds": "52.78%"
+    },
+    {
+      "time": "11:00",
+      "mean": "12.36",
+      "highestPrice": 12.503,
+      "lowestPrice": 12.246,
+      "variance": "0.06",
+      "deviationLowest": "12.30",
+      "deviationHighest": "12.42",
+      "numberOfRaises": 50,
+      "numberOfFalls": 60,
+      "raiseOdds": "45.45%",
+      "fallOdds": "54.55%"
+    },
+    {
+      "time": "11:35",
+      "mean": "12.42",
+      "highestPrice": 12.502,
+      "lowestPrice": 12.376,
+      "variance": "0.04",
+      "deviationLowest": "12.38",
+      "deviationHighest": "12.46",
+      "numberOfRaises": 50,
+      "numberOfFalls": 36,
+      "raiseOdds": "58.14%",
+      "fallOdds": "41.86%"
+    },
+    {
+      "time": "12:00",
+      "mean": "12.36",
+      "highestPrice": 12.381,
+      "lowestPrice": 12.353,
+      "variance": "0.01",
+      "deviationLowest": "12.36",
+      "deviationHighest": "12.37",
+      "numberOfRaises": 14,
+      "numberOfFalls": 7,
+      "raiseOdds": "66.67%",
+      "fallOdds": "33.33%"
+    }
+  ],
   "monday": [
     {
       "time": "09:00",

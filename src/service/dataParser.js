@@ -81,7 +81,6 @@ const DataParser = {
 
 
         let hasItem = this.hasItem(this.data[key].prices[`${hour}_${mins}`],date);
-        console.log('hasItem',hasItem);
         if(hasItem) return;
         this.data[key].prices[`${hour}_${mins}`].priceCollection.push({
             time: timeString,
