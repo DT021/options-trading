@@ -14,6 +14,7 @@
          numberOfLoses: 0,
          currentBalance: 0,
          contractPurchasePrice: 0,
+         isWin: 0,
          ws: null,
          config: {
              type: 'line',
@@ -126,7 +127,7 @@
              this.numberOfWins = 0;
              this.numberOfLoses = 0;
              this.currentBalance = 0;
-             this.strategyCode = this.testCode();
+             this.strategyCode = this.testCode().raiseStrategy;
              this.currentBalance = this.strategyCode.balance;
          },
          setTickChange(obj) {
@@ -152,6 +153,8 @@
              this.endContract();
              this.setupStrategy();
              this.send('run', this.dayCollection[this.dropdown.selectedIndex]);
+             this.config.data.datasets[0].data = [];
+             this.chart.update();
          },
          send(key, data) {
              let obj = {
@@ -180,7 +183,7 @@
          },
          checkContract(item) {
              if (this.nextContract && !this.contractStarted) {
-                this.contractPurchasePrice = item.price;
+                 this.contractPurchasePrice = item.price;
                  this.contractStarted = true;
                  this.currentTickCount = 0;
              } else if (this.nextContract) {
@@ -196,60 +199,121 @@
              this.contractStarted = false;
              this.currentTickCount = 0;
              this.nextContract = null;
+             if (this.strategyCode) this.strategyCode.end({
+                 balance: this.currentBalance,
+                 isWin: this.isWin
+             });
          },
          trade(price) {
              if (this.nextContract.type == 'raise' && this.contractPurchasePrice < price || this.nextContract.type == 'fall' && this.contractPurchasePrice > price) {
-                 console.log('win');
+                 console.log('contract won');
                  this.numberOfWins++;
                  this.currentBalance += this.nextContract.stake + (this.nextContract.stake * this.nextContract.payoutPercentage);
+                 this.isWin = true;
              } else {
-                 console.log('lose');
+                 console.log('contract losed');
                  this.numberOfLoses++;
                  this.currentBalance -= this.nextContract.stake;
+                 this.isWin = false;
              }
-             console.log(this.currentBalance);
+             console.log('balance', this.currentBalance.toFixed(2));
          },
          testCode() {
              return {
-                 balance: 1000,
-                 previous: 0,
-                 run(item) {
-                     let date = new Date();
-                     let contract;
-                     date.setHours(item.time.split(':')[0]);
-                     date.setMinutes(item.time.split(':')[2]);
-                     if (date.getHours() == 8 && date.getMinutes() > 30 && this.previous > item.price) {
-                         contract = {
-                             type: 'fall',
-                             tickDuration: 5,
-                             stake: 20,
-                             payoutPercentage: 0.81
+                 timeStrategy: {
+                     balance: 100,
+                     currentBalance: 100,
+                     balanceBenchmark:100,
+                     previous: 0,
+                     lastResultIsWin: false,
+                     run(item) {
+                         let date = new Date();
+                         let contract;
+                         date.setHours(item.time.split(':')[0]);
+                         date.setMinutes(item.time.split(':')[2]);
+                         if (this.currentBalance <= 20) {
+                             return;
                          }
-                     } else if (date.getHours() == 9 && date.getMinutes() < 30 && this.previous < item.price) {
-                         contract = {
-                             type: 'raise',
-                             tickDuration: 5,
-                             stake: 20,
-                             payoutPercentage: 0.81
+                         if (date.getHours() == 8 && date.getMinutes() > 30 && this.previous > item.price) {
+                             contract = {
+                                 type: 'fall',
+                                 tickDuration: 5,
+                                 stake: 20,
+                                 payoutPercentage: 0.81
+                             }
+                         } else if (date.getHours() == 9 && date.getMinutes() < 30 && this.previous < item.price) {
+                             contract = {
+                                 type: 'raise',
+                                 tickDuration: 5,
+                                 stake: 20,
+                                 payoutPercentage: 0.81
+                             }
+                         } else if (date.getHours() == 10 && date.getMinutes() < 30 && this.previous < item.price) {
+                             contract = {
+                                 type: 'raise',
+                                 tickDuration: 5,
+                                 stake: 20,
+                                 payoutPercentage: 0.81
+                             }
+                         } else if (date.getHours() == 10 && date.getMinutes() > 30 && this.previous > item.price) {
+                             contract = {
+                                 type: 'fall',
+                                 tickDuration: 5,
+                                 stake: 20,
+                                 payoutPercentage: 0.81
+                             }
                          }
-                     } else if (date.getHours() == 10 && date.getMinutes() < 30 && this.previous < item.price) {
-                         contract = {
-                             type: 'raise',
-                             tickDuration: 5,
-                             stake: 20,
-                             payoutPercentage: 0.81
-                         }
-                     } else if (date.getHours() == 10 && date.getMinutes() > 30 && this.previous > item.price) {
-                         contract = {
-                             type: 'fall',
-                             tickDuration: 5,
-                             stake: 20,
-                             payoutPercentage: 0.81
-                         }
-                     }
-                     this.previous = item.price;
-                     return contract;
+                         this.previous = item.price;
+                         return contract;
 
+                     },
+                     end(obj) {
+                         this.currentBalance = obj.balance;
+                         this.lastResultIsWin = obj.isWin;
+
+                     }
+                 },
+                 raiseStrategy: {
+                     balance: 100,
+                     currentBalance: 100,
+                     previous: null,
+                     lastResultIsWin: false,
+                     raiseCount: 0,
+                     run(item) {
+                         let date = new Date();
+                         let contract;
+                         date.setHours(item.time.split(':')[0]);
+                         date.setMinutes(item.time.split(':')[2]);
+                         if (this.currentBalance <= 20) {
+                             return;
+                         }
+                         console.log(this.currentBalance % 100);
+                         if (this.previous) {
+                             if (this.previous < item.price) {
+                                 this.raiseCount++;
+                             } else {
+                                 this.raiseCount = 0;
+                             }
+
+                             if (this.raiseCount == 2) {
+                                 contract = {
+                                     type: 'raise',
+                                     tickDuration: 5,
+                                     stake: 20,
+                                     payoutPercentage: 0.81
+                                 }
+                                 this.raiseCount = 0;
+                             }
+                         }
+                         this.previous = item.price;
+                         return contract;
+
+                     },
+                     end(obj) {
+                         this.currentBalance = obj.balance;
+                         this.lastResultIsWin = obj.isWin;
+
+                     }
                  }
              };
          }
