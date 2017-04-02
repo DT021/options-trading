@@ -21,6 +21,7 @@ const Main = {
     putProposalID: null,
     ended: false,
     numberOfTrades: 0,
+    waitingForProposal:false,
     init() {
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
         this.addListener();
@@ -90,7 +91,7 @@ const Main = {
         "symbol": "R_100"
       }
         */
-
+console.log('proposal');
         this.ws.send(JSON.stringify({
             "proposal": 1,
             "amount": "10",
@@ -109,7 +110,7 @@ const Main = {
         var data = JSON.parse(event.data);
         switch (data.msg_type) {
             case 'authorize':
-                // console.log(data);
+                console.log(data);
                 this.addFunds();
                 break;
             case 'topup_virtual':
@@ -122,7 +123,7 @@ const Main = {
                 if (profit < -50 || profit > 100) {
                     this.ended = true;
                 }
-                console.log('profit', profit);
+                console.log('profit', profit, this.ended );
                 if (!this.started) this.getHistory();
                 break;
             case 'history':
@@ -133,12 +134,13 @@ const Main = {
                 this.getTranscations();
                 break;
             case 'proposal':
-                //  console.log(data);
+                  console.log(data);
                 this.proposalID = data.proposal.id;
+                this.waitingForProposal = false;
                 this.buyContract();
                 break;
             case 'buy':
-                // console.log('buy',data.buy);
+                 console.log('buy',data);
                 this.currentContract = data.buy;
                 break;
             case 'transaction':
@@ -162,7 +164,8 @@ const Main = {
                     //this.isWin(data.tick.quote);
                     this.history.push(data.tick.quote);
                     console.log('ticks update: %o', data.tick.quote);
-                    if (!this.currentContract) {
+                    if (!this.currentContract && !this.waitingForProposal) {
+                      this.waitingForProposal=true;
                         this.previousPrice = data.tick.quote;
                         this.createContract();
 
