@@ -228,9 +228,9 @@ const Main = {
             this.balance -= this.currentStake;
         }
         if (this.strategyFlipCount > 2) {
-            this.currentStake = this.stake;
+            //this.currentStake = this.stake;
             this.strategyFlipCount = 0;
-            this.lossStreak=0;
+            //this.lossStreak=0;
             //flip strategy
             console.log('FLIP STRATEGY');
             this.STRATEGY.ABOVE.TOP = this.STRATEGY.ABOVE.TOP == 'down' ? 'up' : 'down';
@@ -279,6 +279,7 @@ const Main = {
         let highestPrice = 0;
         let latestPrice = this.history[this.history.length - 1];
         let previousPrice = this.history[this.history.length - 999];
+        let lastRangePrice = this.history[this.history.length - 100];
         let lastPrice = this.history[0];
         let futureDirection = '';
 
@@ -295,7 +296,7 @@ const Main = {
         //console.log('previousPrice', previousPrice);
 
         //console.log('closestToTopPercentage', closestToTopPercentage);
-        if (latestPrice > previousPrice) {
+        if (latestPrice > lastRangePrice) {
             if (closestToTopPercentage > 0.95) {
                 //console.log('up 0.9');
                 this.lastStrategy = 'ABOVE_BOTTOM';
