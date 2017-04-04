@@ -24,8 +24,6 @@ const Main = {
     waitingForProposal: false,
     startMartingale: false,
     strategyFlipCount: 0,
-    currentPrice: 0,
-    localWS: null,
     STRATEGY: {
         ABOVE: {
             TOP: 'down',
@@ -48,7 +46,6 @@ const Main = {
     onLoaded() {
         emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
-        this.localWS = new WebSocket('ws://localhost:3000/ws');
         this.addListener();
     },
     onOpen(event) {
@@ -101,7 +98,7 @@ const Main = {
         this.ws.send(JSON.stringify({
             "ticks_history": "R_100",
             "end": "latest",
-            "count": 5000
+            "count": 1000
         }));
     },
     getPriceProposal(type) {
@@ -124,7 +121,7 @@ const Main = {
             "basis": "stake",
             "contract_type": type ? type : "CALL",
             "currency": "USD",
-            "duration": "10",
+            "duration": "5",
             "duration_unit": "t",
             "symbol": "R_100"
         }));
@@ -164,10 +161,10 @@ const Main = {
                 this.history = data.history.prices;
                 this.started = true;
                 this.getTicks();
-                //this.getTranscations();
+                this.getTranscations();
                 break;
             case 'proposal':
-                console.log('proposal', data);
+                 console.log('proposal',data);
                 this.proposalID = data.proposal.id;
                 this.waitingForProposal = false;
                 this.buyContract();
@@ -177,7 +174,7 @@ const Main = {
                 this.currentContract = data.buy;
                 break;
             case 'transaction':
-                // console.log('transaction', data.transaction);
+               console.log('transaction', data.transaction);
                 if (data.transaction.action == 'sell') {
                     this.numberOfTrades++;
                     let isWin = Number(data.transaction.amount) > 0;
@@ -197,13 +194,11 @@ const Main = {
                     //this.isWin(data.tick.quote);
                     this.history.push(data.tick.quote);
                     console.log('ticks update: %o', data.tick.quote);
-                    this.currentPrice = data.tick.quote;
-                    if (!this.currentContract) {
+                    if (!this.currentContract && !this.waitingForProposal) {
+                        this.waitingForProposal = true;
+                        this.previousPrice = data.tick.quote;
                         this.createContract();
 
-                    } else if (this.currentContract) {
-                        this.addTickToContract()
-                        if (this.currentTick >= 4) this.contractEnded();
                     }
 
                 }
@@ -212,90 +207,8 @@ const Main = {
 
     },
     createContract() {
-        //this.checkTrend();
-        // this.getPriceProposal();
-        this.currentTick = 0;
-        let lowestPrice = 0;
-        let highestPrice = 0;
-
-        this.history.forEach(function(price) {
-            if (price < lowestPrice || !lowestPrice) lowestPrice = price;
-            if (price > highestPrice) highestPrice = price;
-        }.bind(this));
-
-        this.currentContract = {
-            type: '',
-            startLowestPrice: lowestPrice,
-            startHighestPrice: highestPrice,
-            startPrice: this.currentPrice,
-            startPricePosition: ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2),
-            endPrice: null,
-            lastTicks: this.history.slice(this.history.length - 6, this.history.length - 1),
-            ticks: [
-                this.currentPrice
-            ],
-            numberOfDowns: 0,
-            numberOfUps: 0,
-            numberOfHistoricDowns: 0,
-            numberOfHistoricUps: 0,
-            numberOfEquals: 0,
-            numberOfHistoricEquals: 0,
-            directions: [],
-            historicDirections: []
-        };
-
-        this.addHistoryTickData();
-    },
-    addTickToContract() {
-        let lastPrice = this.currentContract.ticks[this.currentContract.ticks.length - 1];
-        if (lastPrice != undefined) {
-            if (lastPrice > this.currentPrice) {
-                this.currentContract.numberOfDowns++;
-                this.currentContract.directions.push('down');
-            } else if (lastPrice < this.currentPrice) {
-                this.currentContract.numberOfUps++;
-                this.currentContract.directions.push('up');
-            } else {
-                this.currentContract.numberOfEquals++;
-                this.currentContract.directions.push('equal');
-            }
-        }
-        this.currentContract.ticks.push(this.currentPrice);
-    },
-    addHistoryTickData(){
-        this.currentContract.lastTicks.forEach(function(price){
-            if (price > this.currentPrice) {
-                this.currentContract.numberOfHistoricDowns++;
-                this.currentContract.historicDirections.push('down');
-            } else if (price < this.currentPrice) {
-                this.currentContract.numberOfHistoricUps++;
-                this.currentContract.historicDirections.push('up');
-            } else {
-                this.currentContract.numberOfHistoricEquals++;
-                this.currentContract.historicDirections.push('equal');
-            }
-        }.bind(this));
-    },
-    contractEnded() {
-        let lowestPrice = 0;
-        let highestPrice = 0;
-
-        this.history.forEach(function(price) {
-            if (price < lowestPrice || !lowestPrice) lowestPrice = price;
-            if (price > highestPrice) highestPrice = price;
-        }.bind(this));
-
-        this.currentTick = 0;
-        this.currentContract.endPrice = this.currentPrice;
-        this.currentContract.endPricePosition = ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2);
-        this.currentContract.type = this.currentContract.startPrice > this.currentPrice ? 'fall' : 'raise';
-
-        this.localWS.send(JSON.stringify({
-            key: 'tickData',
-            data: this.currentContract
-        }));
-        console.log(this.currentContract);
-        this.currentContract = null;
+        this.checkTrend();
+        this.getPriceProposal();
     },
     checkWin(win) {
         if (win) {

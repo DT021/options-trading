@@ -1,0 +1,342 @@
+{
+  "fall": [
+    {
+      "type": "fall",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12297.21",
+      "startPricePosition": "0.25",
+      "endPrice": "12291.27",
+      "lastTicks": [
+        "12291.25",
+        "12292.64",
+        "12294.77",
+        "12296.57",
+        "12297.90"
+      ],
+      "ticks": [
+        "12297.21",
+        "12291.88",
+        "12298.01",
+        "12295.57",
+        "12291.27"
+      ],
+      "numberOfDowns": 3,
+      "numberOfUps": 1,
+      "numberOfHistoricDowns": 1,
+      "numberOfHistoricUps": 4,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "down",
+        "up",
+        "down",
+        "down"
+      ],
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "down"
+      ],
+      "endPricePosition": "0.23"
+    },
+    {
+      "type": "fall",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12311.96",
+      "startPricePosition": "0.29",
+      "endPrice": "12309.36",
+      "lastTicks": [
+        "12305.41",
+        "12305.43",
+        "12305.79",
+        "12305.36",
+        "12309.26"
+      ],
+      "ticks": [
+        "12311.96",
+        "12308.61",
+        "12305.77",
+        "12311.64",
+        "12309.36"
+      ],
+      "numberOfDowns": 3,
+      "numberOfUps": 1,
+      "numberOfHistoricDowns": 0,
+      "numberOfHistoricUps": 5,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "down",
+        "down",
+        "up",
+        "down"
+      ],
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ],
+      "endPricePosition": "0.28"
+    },
+    {
+      "type": "fall",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12310.68",
+      "startPricePosition": "0.29",
+      "endPrice": "12307.00",
+      "lastTicks": [
+        "12311.96",
+        "12308.61",
+        "12305.77",
+        "12311.64",
+        "12309.36"
+      ],
+      "ticks": [
+        "12310.68",
+        "12313.48",
+        "12306.25",
+        "12307.35",
+        "12307.00"
+      ],
+      "numberOfDowns": 2,
+      "numberOfUps": 2,
+      "numberOfHistoricDowns": 2,
+      "numberOfHistoricUps": 3,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "up",
+        "down",
+        "up",
+        "down"
+      ],
+      "historicDirections": [
+        "down",
+        "up",
+        "up",
+        "down",
+        "up"
+      ],
+      "endPricePosition": "0.28"
+    },
+    {
+      "type": "fall",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12286.74",
+      "startPricePosition": "0.22",
+      "endPrice": "12278.34",
+      "lastTicks": [
+        "12292.40",
+        "12295.18",
+        "12293.89",
+        "12295.37",
+        "12296.62"
+      ],
+      "ticks": [
+        "12286.74",
+        "12284.97",
+        "12279.87",
+        "12276.30",
+        "12278.34"
+      ],
+      "numberOfDowns": 3,
+      "numberOfUps": 1,
+      "numberOfHistoricDowns": 5,
+      "numberOfHistoricUps": 0,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "down",
+        "down",
+        "down",
+        "up"
+      ],
+      "historicDirections": [
+        "down",
+        "down",
+        "down",
+        "down",
+        "down"
+      ],
+      "endPricePosition": "0.20"
+    },
+    {
+      "type": "fall",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12278.68",
+      "startPricePosition": "0.20",
+      "endPrice": "12278.11",
+      "lastTicks": [
+        "12286.74",
+        "12284.97",
+        "12279.87",
+        "12276.30",
+        "12278.34"
+      ],
+      "ticks": [
+        "12278.68",
+        "12276.86",
+        "12275.60",
+        "12279.07",
+        "12278.11"
+      ],
+      "numberOfDowns": 3,
+      "numberOfUps": 1,
+      "numberOfHistoricDowns": 3,
+      "numberOfHistoricUps": 2,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "down",
+        "down",
+        "up",
+        "down"
+      ],
+      "historicDirections": [
+        "down",
+        "down",
+        "down",
+        "up",
+        "up"
+      ],
+      "endPricePosition": "0.20"
+    }
+  ],
+  "raise": [
+    {
+      "type": "raise",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12266.37",
+      "startPricePosition": "0.16",
+      "endPrice": "12271.66",
+      "lastTicks": [
+        "12263.02",
+        "12260.74",
+        "12259.90",
+        "12258.68",
+        "12261.36"
+      ],
+      "ticks": [
+        "12266.37",
+        "12266.83",
+        "12268.69",
+        "12269.98",
+        "12271.66"
+      ],
+      "numberOfDowns": 0,
+      "numberOfUps": 4,
+      "numberOfHistoricDowns": 0,
+      "numberOfHistoricUps": 5,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "up",
+        "up",
+        "up",
+        "up"
+      ],
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ],
+      "endPricePosition": "0.18"
+    },
+    {
+      "type": "raise",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12235.43",
+      "startPricePosition": "0.08",
+      "endPrice": "12243.94",
+      "lastTicks": [
+        "12243.02",
+        "12242.41",
+        "12244.68",
+        "12239.50",
+        "12237.96"
+      ],
+      "ticks": [
+        "12235.43",
+        "12237.23",
+        "12237.49",
+        "12238.09",
+        "12243.94"
+      ],
+      "numberOfDowns": 0,
+      "numberOfUps": 4,
+      "numberOfHistoricDowns": 5,
+      "numberOfHistoricUps": 0,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "up",
+        "up",
+        "up",
+        "up"
+      ],
+      "historicDirections": [
+        "down",
+        "down",
+        "down",
+        "down",
+        "down"
+      ],
+      "endPricePosition": "0.10"
+    },
+    {
+      "type": "raise",
+      "startLowestPrice": "12206.77",
+      "startHighestPrice": "12571.19",
+      "startPrice": "12276.34",
+      "startPricePosition": "0.19",
+      "endPrice": "12280.36",
+      "lastTicks": [
+        "12278.68",
+        "12276.86",
+        "12275.60",
+        "12279.07",
+        "12278.11"
+      ],
+      "ticks": [
+        "12276.34",
+        "12281.61",
+        "12278.88",
+        "12276.96",
+        "12280.36"
+      ],
+      "numberOfDowns": 2,
+      "numberOfUps": 2,
+      "numberOfHistoricDowns": 4,
+      "numberOfHistoricUps": 1,
+      "numberOfEquals": 0,
+      "numberOfHistoricEquals": 0,
+      "directions": [
+        "up",
+        "down",
+        "down",
+        "up"
+      ],
+      "historicDirections": [
+        "down",
+        "down",
+        "up",
+        "down",
+        "down"
+      ],
+      "endPricePosition": "0.20"
+    }
+  ]
+}
