@@ -7,6 +7,8 @@ var fs = require('fs');
 
 const Server = {
     data: null,
+    fallData: null,
+    raiseData: null,
     isQueued: false,
     interval: null,
     ws: null,
@@ -33,14 +35,23 @@ const Server = {
 
     },
     getData() {
-        this.data = JSON.parse(fs.readFileSync(__dirname + '/server/data/data.json', 'utf8'));
+       // this.data = JSON.parse(fs.readFileSync(__dirname + '/server/data/data.json', 'utf8'));
+        this.fallData = JSON.parse(fs.readFileSync(__dirname + '/server/data/fall.json', 'utf8'));
+        this.raiseData = JSON.parse(fs.readFileSync(__dirname + '/server/data/raise.json', 'utf8'));
     },
     saveData(){
       this.isQueued = false;
-      fs.writeFileSync(__dirname + '/server/data/data.json', JSON.stringify(this.data,null,2), 'utf8');
+      //fs.writeFileSync(__dirname + '/server/data/data.json', JSON.stringify(this.data,null,2), 'utf8');
+      fs.writeFileSync(__dirname + '/server/data/raise.json', JSON.stringify(this.raiseData,null,2), 'utf8');
+      fs.writeFileSync(__dirname + '/server/data/fall.json', JSON.stringify(this.fallData,null,2), 'utf8');
     },
     updateData(item){
-      this.data[item.type].push(item);
+      if(item.type == 'fall')
+      {
+        this.fallData.push(item);
+      }else{
+        this.raiseData.push(item);
+      }
       this.isQueued = true;
     },
     start(){
@@ -48,7 +59,7 @@ const Server = {
     },
     onInterval(){
       if(this.isQueued)this.saveData();
-      Analyse.start(this.data);
+      //Analyse.start(this.data);
     },  
     onMessage(msg) {
         let obj = JSON.parse(msg);

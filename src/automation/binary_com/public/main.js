@@ -26,6 +26,9 @@ const Main = {
     strategyFlipCount: 0,
     currentPrice: 0,
     localWS: null,
+    prediction: null,
+    testLossCount: 0,
+    testWinCount: 0,
     STRATEGY: {
         ABOVE: {
             TOP: 'down',
@@ -196,7 +199,7 @@ const Main = {
                     this.currentTick++;
                     //this.isWin(data.tick.quote);
                     this.history.push(data.tick.quote);
-                    console.log('ticks update: %o', data.tick.quote);
+                    console.log('ticks update: %o', data.tick);
                     this.currentPrice = data.tick.quote;
                     if (!this.currentContract) {
                         this.createContract();
@@ -227,10 +230,11 @@ const Main = {
             type: '',
             startLowestPrice: lowestPrice,
             startHighestPrice: highestPrice,
+            datetime: new Date().toString(),
             startPrice: this.currentPrice,
             startPricePosition: ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2),
             endPrice: null,
-            lastTicks: this.history.slice(this.history.length - 6, this.history.length - 1),
+            lastTicks: this.history.slice(this.history.length - 11, this.history.length - 1),
             ticks: [
                 this.currentPrice
             ],
@@ -245,6 +249,7 @@ const Main = {
         };
 
         this.addHistoryTickData();
+        this.test();
     },
     addTickToContract() {
         let lastPrice = this.currentContract.ticks[this.currentContract.ticks.length - 1];
@@ -262,8 +267,8 @@ const Main = {
         }
         this.currentContract.ticks.push(this.currentPrice);
     },
-    addHistoryTickData(){
-        this.currentContract.lastTicks.forEach(function(price){
+    addHistoryTickData() {
+        this.currentContract.lastTicks.forEach(function(price) {
             if (price > this.currentPrice) {
                 this.currentContract.numberOfHistoricDowns++;
                 this.currentContract.historicDirections.push('down');
@@ -295,36 +300,28 @@ const Main = {
             data: this.currentContract
         }));
         console.log(this.currentContract);
+        if (this.prediction == this.currentContract.type) {
+            this.testWinCount++;
+            console.log('prediction correct', this.testWinCount, this.testLossCount);
+        } else if (this.prediction) {
+            this.testLossCount++;
+            console.log('prediction incorrect', this.testWinCount, this.testLossCount);
+        }
         this.currentContract = null;
+
+
     },
-    checkWin(win) {
-        if (win) {
-            this.winCount++;
-            this.lossStreak = 0;
-            this.balance += this.currentStake * this.payout;
-            this.currentStake = this.stake;
-
-        } else {
-            this.lossCount++;
-            this.strategyFlipCount++;
-            if (this.startMartingale) {
-                this.lossStreak++;
-                this.currentStake = (this.currentStake * 2) + this.currentStake * 0.058;
+    test() {
+        this.prediction = '';
+        if (this.currentContract) {
+            if (this.currentContract.startPricePosition <= 0.30 && this.currentContract.numberOfHistoricDowns >= 0.54) {
+                this.prediction = 'fall';
+            } else if (this.currentContract.startPricePosition <= 0.33 && this.currentContract.numberOfHistoricDowns <= 0.55) {
+                this.prediction = 'raise';
             }
+        }
 
-            this.balance -= this.currentStake;
-        }
-        if (this.strategyFlipCount > 2) {
-            //this.currentStake = this.stake;
-            this.strategyFlipCount = 0;
-            //this.lossStreak=0;
-            //flip strategy
-            console.log('FLIP STRATEGY');
-            this.STRATEGY.ABOVE.TOP = this.STRATEGY.ABOVE.TOP == 'down' ? 'up' : 'down';
-            this.STRATEGY.ABOVE.BOTTOM = this.STRATEGY.ABOVE.BOTTOM == 'down' ? 'up' : 'down';
-            this.STRATEGY.BELOW.TOP = this.STRATEGY.BELOW.TOP == 'down' ? 'up' : 'down';
-            this.STRATEGY.BELOW.BOTTOM = this.STRATEGY.BELOW.BOTTOM == 'down' ? 'up' : 'down';
-        }
+        console.log(this.prediction);
     },
     /*
     checkWin2(price) {
