@@ -314,10 +314,10 @@ const Main = {
     test() {
         this.prediction = '';
         if (this.currentContract) {
-            if (this.currentContract.startPricePosition <= 0.30 && this.currentContract.numberOfHistoricDowns >= 0.54) {
-                this.prediction = 'fall';
-            } else if (this.currentContract.startPricePosition <= 0.33 && this.currentContract.numberOfHistoricDowns <= 0.55) {
+            if (this.currentContract.startPricePosition <= 0.33 && this.currentContract.numberOfHistoricUps <= 0.43) {
                 this.prediction = 'raise';
+            } else if (this.currentContract.startPricePosition <= 0.30 && this.currentContract.numberOfHistoricDowns >= 0.54) {
+                this.prediction = 'fall';
             }
         }
 
