@@ -1,5 +1,5 @@
-const fallCollection = require('./data/fall.json');
-const raiseCollection = require('./data/raise.json');
+let fallCollection = require('./data/fall.json');
+let raiseCollection = require('./data/raise.json');
 
 const Analyse = {
     hasStarted: false,
@@ -7,15 +7,32 @@ const Analyse = {
     averageFallPosition: 0,
     averageRaisePosition: 0,
     init() {
-      console.log('Fall');
+        console.log('Fall');
         this.averageFallPosition = this.getAveragePosition(fallCollection);
 
-        this.averageFallDownCounts = this.getAverageInCollection(fallCollection,'numberOfHistoricDowns',10);
-        this.averageFallUpCounts = this.getAverageInCollection(fallCollection,'numberOfHistoricUps',10);
-      console.log('\n\nRaise');
+        this.averageFallDownCounts = this.getAverageInCollection(fallCollection, 'numberOfHistoricDowns', 10);
+        this.averageFallUpCounts = this.getAverageInCollection(fallCollection, 'numberOfHistoricUps', 10);
+        console.log('\n\nRaise');
         this.averageRaisePosition = this.getAveragePosition(raiseCollection);
-         this.averageFallDownCounts = this.getAverageInCollection(raiseCollection,'numberOfHistoricDowns',10);
-        this.averageFallUpCounts = this.getAverageInCollection(raiseCollection,'numberOfHistoricUps',10);
+        this.averageFallDownCounts = this.getAverageInCollection(raiseCollection, 'numberOfHistoricDowns', 10);
+        this.averageFallUpCounts = this.getAverageInCollection(raiseCollection, 'numberOfHistoricUps', 10);
+
+        let tickDirections = [
+            "down",
+            "up",
+            "up",
+            "down",
+            "down",
+            "up",
+            "down",
+            "down",
+            "up",
+            "down"
+        ];
+
+        let prediction = this.getPrediction(tickDirections);
+        console.log('prediction', prediction);
+        
     },
     start(_data) {
         if (this.hasStarted) return;
@@ -25,18 +42,55 @@ const Analyse = {
         this.hasStarted = false;
     },
     getAveragePosition(collection) {
-       this.getAverageInCollection(collection,'startPricePosition');
+        this.getAverageInCollection(collection, 'startPricePosition');
     },
-    getAverageInCollection(collection,key,lengthIncrement){
-       let total = 0;
+    getAverageInCollection(collection, key, lengthIncrement) {
+        let total = 0;
         collection.forEach(function(item) {
             total += Number(item[key]);
         });
-        let len = (lengthIncrement ? collection.length * lengthIncrement: collection.length);
-        console.log(len, collection.length,total);
-        let average = total /  len; 
-        console.log(key,average);
+        let len = (lengthIncrement ? collection.length * lengthIncrement : collection.length);
+        console.log(len, collection.length, total);
+        let average = total / len;
+        console.log(key, average);
         return average;
+    },
+    getPrediction(ticks){
+      fallCollection = require('./data/fall.json');
+      raiseCollection = require('./data/raise.json');
+      let collection = this.getSimilarTicks(ticks);
+        let fallCount=0;
+        let raiseCount=0;
+        collection.forEach(function(item){
+          if(item.type === 'fall') 
+          {
+            fallCount++;
+          }else{
+            raiseCount++;
+          }
+        }.bind(this));
+
+        if(raiseCount > fallCount) return 'raise';
+        if(raiseCount < fallCount) return 'fall';
+    },
+    getSimilarTicks(tickDirections) {
+        let foundCollection = this.onEachSimilar(tickDirections,fallCollection);
+        foundCollection = foundCollection.concat(this.onEachSimilar(tickDirections,raiseCollection));
+
+        return foundCollection;
+    },
+    onEachSimilar(tickDirections,collection){
+      let foundCollection = [];
+        collection.forEach(function(item) {
+            let count = 0;
+            if(!item.historicDirections)return;
+            item.historicDirections.forEach(function(tick, index) {
+                if (tickDirections[index] && tickDirections[index] === tick) count++;
+            }.bind(this));
+            if (count / tickDirections.length >= 0.8) foundCollection.push(item);
+        }.bind(this));
+
+        return foundCollection;
     },
     compare(str) {
         this.data.fall.forEach(function(item) {

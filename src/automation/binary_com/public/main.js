@@ -29,6 +29,8 @@ const Main = {
     prediction: null,
     testLossCount: 0,
     testWinCount: 0,
+    prediction: '',
+    ASSET_NAME: 'R_100',
     STRATEGY: {
         ABOVE: {
             TOP: 'down',
@@ -47,6 +49,7 @@ const Main = {
     addListener() {
         this.ws.onopen = this.onOpen.bind(this);
         this.ws.onmessage = this.onMessage.bind(this);
+        this.localWS.onmessage = this.onLocalMessage.bind(this);
     },
     onLoaded() {
         emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
@@ -102,7 +105,7 @@ const Main = {
     },
     getHistory() {
         this.ws.send(JSON.stringify({
-            "ticks_history": "R_100",
+            "ticks_history": this.ASSET_NAME,
             "end": "latest",
             "count": 5000
         }));
@@ -117,7 +120,7 @@ const Main = {
         "currency": "GBP",
         "duration": "5",
         "duration_unit": "t",
-        "symbol": "R_100"
+        "symbol": this.ASSET_NAME
       }
         */
         console.log('proposal');
@@ -129,11 +132,22 @@ const Main = {
             "currency": "USD",
             "duration": "10",
             "duration_unit": "t",
-            "symbol": "R_100"
+            "symbol": this.ASSET_NAME
         }));
     },
     getTicks() {
         this.ws.send(JSON.stringify({ ticks: 'R_100' }));
+    },
+    onLocalMessage(event) {
+        var data = JSON.parse(event.data);
+        switch (data.key) {
+            case 'prediction':
+                if (this.prediction) return;
+                this.prediction = data.data;
+                console.log('prediction', this.prediction);
+                this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
+                break;
+        }
     },
     onMessage(event) {
         var data = JSON.parse(event.data);
@@ -156,7 +170,7 @@ const Main = {
                 }
                 if (profit < -50 || profit > 100) {
                     this.ended = true;
-                    this.end();
+                    
                     console.log('ended with profit', profit);
                 }
                 console.log('current profit', profit);
@@ -167,7 +181,7 @@ const Main = {
                 this.history = data.history.prices;
                 this.started = true;
                 this.getTicks();
-                //this.getTranscations();
+                this.getTranscations();
                 break;
             case 'proposal':
                 console.log('proposal', data);
@@ -177,17 +191,17 @@ const Main = {
                 break;
             case 'buy':
                 console.log('buy', data);
-                this.currentContract = data.buy;
                 break;
             case 'transaction':
-                // console.log('transaction', data.transaction);
-                if (data.transaction.action == 'sell') {
-                    this.numberOfTrades++;
-                    let isWin = Number(data.transaction.amount) > 0;
-                    console.log('isWin', isWin);
-                    this.checkWin(isWin);
-                    if (!this.ended) {
-                        this.currentContract = null;
+                console.log('transaction', data.transaction);
+                if (data.transaction.action && data.transaction.action == 'sell') {
+                    this.prediction = '';
+                    if(data.transaction.amount === '0.00'){
+                        if(this.currentStake <= 20)this.currentStake *= 2;
+                         let profit = this.accountBalance - this.startBalance;
+                        if(profit < -50)this.end();
+                    }else{
+                        this.currentStake = this.stake;
                     }
                 }
                 break;
@@ -197,18 +211,15 @@ const Main = {
             case 'tick':
                 if (data.tick) {
                     this.currentTick++;
-                    //this.isWin(data.tick.quote);
                     this.history.push(data.tick.quote);
-                    console.log('ticks update: %o', data.tick);
+                    console.log('ticks update: %o', data.tick.quote);
                     this.currentPrice = data.tick.quote;
-                    if (!this.currentContract) {
+                    this.setPredictionData();
+                    if (!this.currentContract && this.currentTick < 10) {
                         this.createContract();
-
-                    } else if (this.currentContract) {
-                        this.addTickToContract()
-                        if (this.currentTick >= 4) this.contractEnded();
+                    } else if (this.currentTick >= 10) {
+                        this.contractEnded();
                     }
-
                 }
                 break;
         }
@@ -249,7 +260,29 @@ const Main = {
         };
 
         this.addHistoryTickData();
-        this.test();
+
+        // this.test();
+    },
+    setPredictionData() {
+        let collection = this.history.slice(this.history.length - 11, this.history.length - 1);
+        let directions = [];
+        let previous = 0;
+        collection.forEach(function(price) {
+            if (!previous) {
+                previous = price;
+            } else if (previous < price) {
+                directions.push('up');
+            } else if (price > previous) {
+                directions.push('down');
+            } else {
+                directions.push('equal');
+            }
+
+        });
+        this.localWS.send(JSON.stringify({
+            key: 'getPrediction',
+            data: directions
+        }));
     },
     addTickToContract() {
         let lastPrice = this.currentContract.ticks[this.currentContract.ticks.length - 1];
@@ -299,14 +332,6 @@ const Main = {
             key: 'tickData',
             data: this.currentContract
         }));
-        console.log(this.currentContract);
-        if (this.prediction == this.currentContract.type) {
-            this.testWinCount++;
-            console.log('prediction correct', this.testWinCount, this.testLossCount);
-        } else if (this.prediction) {
-            this.testLossCount++;
-            console.log('prediction incorrect', this.testWinCount, this.testLossCount);
-        }
         this.currentContract = null;
 
 
@@ -322,88 +347,6 @@ const Main = {
         }
 
         console.log(this.prediction);
-    },
-    /*
-    checkWin2(price) {
-        let win = false;
-        if (this.previousDirection == 'up') {
-            if (this.previousPrice < price) {
-                win = true;
-                this.winCount++;
-                this.lossStreak = 0;
-            } else {
-                this.lossCount++;
-                this.lossStreak++
-            }
-        } else if (this.previousDirection == 'down') {
-            if (this.previousPrice > price) {
-                win = true;
-                this.winCount++;
-                this.lossStreak = 0;
-            } else {
-                this.lossCount++;
-                this.lossStreak++
-            }
-        }
-        console.log('wins ', this.winCount, '/ loses ', this.lossCount);
-        if (win) {
-            this.balance += this.currentStake * this.payout;
-            this.currentStake = this.stake;
-        } else if (this.previousDirection) {
-            this.balance -= this.currentStake;
-            this.currentStake *= 2;
-        }
-        console.log('strategy', this.lastStrategy);
-        console.log('balance', this.balance);
-    },
-    */
-    checkTrend() {
-
-        let lowestPrice = 0;
-        let highestPrice = 0;
-        let latestPrice = this.history[this.history.length - 1];
-        let previousPrice = this.history[this.history.length - 999];
-        let lastRangePrice = this.history[this.history.length - 100];
-        let lastPrice = this.history[0];
-        let futureDirection = '';
-
-        let closestToTopPercentage = ((latestPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2);
-
-        this.history.forEach(function(price) {
-            if (price < lowestPrice || !lowestPrice) lowestPrice = price;
-            if (price > highestPrice) highestPrice = price;
-        }.bind(this));
-
-        //console.log('lowestPrice', lowestPrice);
-        //console.log('highestPrice', highestPrice);
-        // console.log('latestPrice', latestPrice);
-        //console.log('previousPrice', previousPrice);
-
-        //console.log('closestToTopPercentage', closestToTopPercentage);
-        if (latestPrice > lastRangePrice) {
-            if (closestToTopPercentage > 0.95) {
-                //console.log('up 0.9');
-                this.lastStrategy = 'ABOVE_BOTTOM';
-                futureDirection = this.STRATEGY.ABOVE.BOTTOM;
-            } else if (closestToTopPercentage > 0.4) {
-                //console.log('up 0.6');
-                this.lastStrategy = 'ABOVE_TOP';
-                futureDirection = this.STRATEGY.ABOVE.TOP;
-            }
-        } else {
-            if (closestToTopPercentage > 0.95) {
-                // console.log('falling 0.9');
-                this.lastStrategy = 'BELOW_BOTTOM';
-                futureDirection = this.STRATEGY.BELOW.BOTTOM;
-            } else if (closestToTopPercentage < 0.4) {
-                // console.log('falling 0.4');
-                futureDirection = this.STRATEGY.BELOW.TOP;
-                this.lastStrategy = 'BELOW_TOP';
-
-            }
-        }
-        this.previousDirection = futureDirection;
-
     }
 
 }.init();

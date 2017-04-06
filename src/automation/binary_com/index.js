@@ -67,7 +67,15 @@ const Server = {
             case 'tickData':
                 this.updateData(obj.data);
                 break;
+            case 'getPrediction':
+                this.getPrediction(obj.data);
+                break;
         }
+    },
+    getPrediction(ticks){
+      let prediction = Analyse.getPrediction(ticks);
+      console.log('prediction is', prediction);
+      if(prediction)this.sendMessage('prediction',prediction);
     },
     sendMessage(key, data) {
         let obj = {
