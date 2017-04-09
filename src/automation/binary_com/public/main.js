@@ -54,7 +54,7 @@ const Main = {
         this.localWS.onmessage = this.onLocalMessage.bind(this);
     },
     onLoaded() {
-        if(emailjs)emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
+        if (emailjs) emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
         this.localWS = new WebSocket('ws://localhost:3000/ws');
         this.addListener();
@@ -125,7 +125,7 @@ const Main = {
         "symbol": this.ASSET_NAME
       }
         */
-      //  console.log('proposal');
+        //  console.log('proposal');
         this.ws.send(JSON.stringify({
             "proposal": 1,
             "amount": this.currentStake,
@@ -165,17 +165,16 @@ const Main = {
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
                 let profit = this.accountBalance - this.startBalance;
-                if (profit > 10) {
-                    this.startMartingale = true;
-                } else if (profit < -20) {
+                this.startMartingale = true;
+                if (profit < -20) {
                     this.startMartingale = false;
                 }
-                if (profit < -50 || profit > 100) {
+                if (profit < -10 || profit >= 50) {
                     this.ended = true;
 
                     console.log('ended with profit', profit);
                 }
-                console.log('current profit', profit);
+                console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getHistory();
                 break;
             case 'history':
@@ -186,7 +185,7 @@ const Main = {
                 this.getTranscations();
                 break;
             case 'proposal':
-               // console.log('proposal', data);
+                // console.log('proposal', data);
                 if (!data.proposal) return;
                 this.proposalID = data.proposal.id;
                 this.waitingForProposal = false;
@@ -196,20 +195,23 @@ const Main = {
                 //console.log('buy', data);
                 break;
             case 'transaction':
-               // console.log('transaction', data.transaction);
+                console.log('transaction', data.transaction);
+                let isLoss = false;
                 if (data.transaction.action && data.transaction.action == 'sell') {
+                let profit = this.accountBalance - this.startBalance;
                     this.prediction = '';
                     if (data.transaction.amount === '0.00') {
+                        isLoss = true;
                         this.lossCount++;
-                        if (this.currentStake <= 20) this.currentStake *= 2;
-                        let profit = this.accountBalance - this.startBalance;
-                        if (profit < -50) this.end();
+                        if (profit < -10) this.end();
                     } else {
                         this.winCount++;
-                        this.currentStake = this.stake;
+                        if (profit >= 50) this.end();
                     }
 
-                    console.log('numberOfWins', this.winCount,'/ numberOfLosses', this.lossCount)
+                    this.setStake(isLoss);
+
+                    console.log('numberOfWins', this.winCount, '/ numberOfLosses', this.lossCount)
                 }
                 break;
             case 'forget_all':
@@ -234,6 +236,13 @@ const Main = {
                 break;
         }
 
+    },
+    setStake(isLoss) {
+        if (isLoss) {
+            this.currentStake = (this.currentStake * 2) + (this.currentStake * (1 - this.payout));
+        } else {
+            this.currentStake = this.stake;
+        }
     },
     createContract() {
         this.currentTick = 0;
@@ -314,7 +323,7 @@ const Main = {
         }));
     },
     addTickToContract() {
-        if(!this.currentContract) return;
+        if (!this.currentContract) return;
         let lastPrice = this.currentContract.ticks[this.currentContract.ticks.length - 2];
         if (lastPrice != undefined) {
             if (lastPrice > this.currentPrice) {
