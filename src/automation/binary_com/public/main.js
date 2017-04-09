@@ -167,12 +167,12 @@ const Main = {
                 let profit = this.accountBalance - this.startBalance;
                 this.startMartingale = true;
                 if (profit < -20) {
-                    this.startMartingale = false;
+                 this.startMartingale = false;
                 }
-                if (profit < -10 || profit >= 50) {
-                    this.ended = true;
+                if (profit < -20 || profit >= 50) {
+                    this.end();
 
-                    console.log('ended with profit', profit);
+                   // console.log('ended with profit', profit);
                 }
                 console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getHistory();
@@ -203,7 +203,7 @@ const Main = {
                     if (data.transaction.amount === '0.00') {
                         isLoss = true;
                         this.lossCount++;
-                        if (profit < -10) this.end();
+                        if (profit < -20) this.end();
                     } else {
                         this.winCount++;
                         if (profit >= 50) this.end();
