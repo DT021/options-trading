@@ -1,5 +1,7 @@
 let fallCollection = require('./data/fall.json');
 let raiseCollection = require('./data/raise.json');
+var fs = require('fs');
+var path = require('path');
 
 const Analyse = {
     hasStarted: false,
@@ -17,22 +19,25 @@ const Analyse = {
         this.averageFallDownCounts = this.getAverageInCollection(raiseCollection, 'numberOfHistoricDowns', 10);
         this.averageFallUpCounts = this.getAverageInCollection(raiseCollection, 'numberOfHistoricUps', 10);
 
-        let tickDirections = [
-            "down",
-            "up",
-            "up",
-            "down",
-            "down",
-            "up",
-            "down",
-            "down",
-            "up",
-            "down"
-        ];
+        let data = {
+            asset: 'R_100',
+            startPricePosition: "0.19",
+            historicDirections: [
+                "equal",
+                "equal",
+                "equal",
+                "equal",
+                "equal",
+                "equal",
+                "equal",
+                "up",
+                "equal"
+            ]
+        };
 
-        let prediction = this.getPrediction(tickDirections);
+        let prediction = this.getPrediction(data);
         console.log('prediction', prediction);
-        
+
     },
     start(_data) {
         if (this.hasStarted) return;
@@ -55,39 +60,78 @@ const Analyse = {
         console.log(key, average);
         return average;
     },
-    getPrediction(ticks){
-      fallCollection = require('./data/fall.json');
-      raiseCollection = require('./data/raise.json');
-      let collection = this.getSimilarTicks(ticks);
-        let fallCount=0;
-        let raiseCount=0;
-        collection.forEach(function(item){
-          if(item.type === 'fall') 
-          {
-            fallCount++;
-          }else{
-            raiseCount++;
-          }
-        }.bind(this));
+    getPrediction(data) {
+        if (!fs.existsSync(path.join(__dirname, './data/' + data.asset))) return;
+        console.log('getPrediction');
+        fallCollection = require('./data/' + data.asset + '/fall.json');
+        raiseCollection = require('./data/' + data.asset + '/raise.json');
 
-        if(raiseCount > fallCount) return 'raise';
-        if(raiseCount < fallCount) return 'fall';
+        let collection = this.getSimilarTicks(data.historicDirections);
+
+
+        console.log(data.startPricePosition);
+        let fallCount = 0;
+        let raiseCount = 0;
+        let closestItem = null;
+        let isCollection = [];
+        collection.forEach(function(item) {
+            if (item.type === 'fall') {
+                fallCount++;
+            } else {
+                raiseCount++;
+            }
+            if (item.closest == 1) isCollection.push(item);
+            if (Number(data.startPricePosition) > (Number(item.startPricePosition) - 0.02) && Number(data.startPricePosition) < (Number(item.startPricePosition) + 0.02)) {
+                // if (!closestItem || closestItem.closest < item.closest) {
+                closestItem = item;
+            }
+        }.bind(this));
+        if (isCollection.length > 1) {
+            console.log('isCollection');
+            fallCount = 0;
+            raiseCount = 0;
+            collection.forEach(function(item) {
+                if (item.type === 'fall') {
+                    fallCount++;
+                } else {
+                    raiseCount++;
+                }
+
+                if (Number(data.startPricePosition) > (Number(item.startPricePosition) - 0.02) && Number(data.startPricePosition) < (Number(item.startPricePosition) + 0.02))
+                    closestItem = item;
+            });
+            console.log('raiseCount', raiseCount);
+            console.log('fallCount', fallCount);
+            console.log('closestItem', closestItem != null);
+            if (raiseCount > fallCount) return 'raise';
+            if (raiseCount < fallCount) return 'fall';
+        }
+        console.log('raiseCount', raiseCount);
+        console.log('fallCount', fallCount);
+        console.log('closestItem', closestItem != null);
+        if (closestItem) return closestItem.type;
+       // if (raiseCount > fallCount) return 'raise';
+        //if (raiseCount < fallCount) return 'fall';
     },
     getSimilarTicks(tickDirections) {
-        let foundCollection = this.onEachSimilar(tickDirections,fallCollection);
-        foundCollection = foundCollection.concat(this.onEachSimilar(tickDirections,raiseCollection));
+        let foundCollection = this.onEachSimilar(tickDirections, fallCollection);
+        foundCollection = foundCollection.concat(this.onEachSimilar(tickDirections, raiseCollection));
 
         return foundCollection;
     },
-    onEachSimilar(tickDirections,collection){
-      let foundCollection = [];
+    onEachSimilar(tickDirections, collection) {
+        let foundCollection = [];
         collection.forEach(function(item) {
             let count = 0;
-            if(!item.historicDirections)return;
+            if (!item.historicDirections) return;
             item.historicDirections.forEach(function(tick, index) {
                 if (tickDirections[index] && tickDirections[index] === tick) count++;
             }.bind(this));
-            if (count / tickDirections.length >= 0.8) foundCollection.push(item);
+            if (count / tickDirections.length >= 0.9) {
+                let obj = item;
+                obj.closest = count / tickDirections.length
+                foundCollection.push(obj);
+            }
         }.bind(this));
 
         return foundCollection;

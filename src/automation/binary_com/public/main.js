@@ -9,13 +9,13 @@ const Main = {
     startBalance: 0,
     accountBalance: 0,
     payout: 0.942,
-    stake: 10,
-    currentStake: 10,
+    stake: 1,
+    currentStake: 1,
     lossStreak: 0,
     lastStrategy: '',
     started: false,
     currentTick: 0,
-    stakeTicks: 5,
+    stakeTicks: 10,
     currentContract: null,
     callProposalID: null,
     putProposalID: null,
@@ -29,6 +29,8 @@ const Main = {
     prediction: null,
     testLossCount: 0,
     testWinCount: 0,
+    highestPrice: 0,
+    lowestPrice: 0,
     prediction: '',
     ASSET_NAME: 'R_100',
     STRATEGY: {
@@ -52,7 +54,7 @@ const Main = {
         this.localWS.onmessage = this.onLocalMessage.bind(this);
     },
     onLoaded() {
-        emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
+        if(emailjs)emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
         this.localWS = new WebSocket('ws://localhost:3000/ws');
         this.addListener();
@@ -107,7 +109,7 @@ const Main = {
         this.ws.send(JSON.stringify({
             "ticks_history": this.ASSET_NAME,
             "end": "latest",
-            "count": 5000
+            "count": 50
         }));
     },
     getPriceProposal(type) {
@@ -123,7 +125,7 @@ const Main = {
         "symbol": this.ASSET_NAME
       }
         */
-        console.log('proposal');
+      //  console.log('proposal');
         this.ws.send(JSON.stringify({
             "proposal": 1,
             "amount": this.currentStake,
@@ -136,7 +138,7 @@ const Main = {
         }));
     },
     getTicks() {
-        this.ws.send(JSON.stringify({ ticks: 'R_100' }));
+        this.ws.send(JSON.stringify({ ticks: this.ASSET_NAME }));
     },
     onLocalMessage(event) {
         var data = JSON.parse(event.data);
@@ -170,7 +172,7 @@ const Main = {
                 }
                 if (profit < -50 || profit > 100) {
                     this.ended = true;
-                    
+
                     console.log('ended with profit', profit);
                 }
                 console.log('current profit', profit);
@@ -184,25 +186,30 @@ const Main = {
                 this.getTranscations();
                 break;
             case 'proposal':
-                console.log('proposal', data);
+               // console.log('proposal', data);
+                if (!data.proposal) return;
                 this.proposalID = data.proposal.id;
                 this.waitingForProposal = false;
                 this.buyContract();
                 break;
             case 'buy':
-                console.log('buy', data);
+                //console.log('buy', data);
                 break;
             case 'transaction':
-                console.log('transaction', data.transaction);
+               // console.log('transaction', data.transaction);
                 if (data.transaction.action && data.transaction.action == 'sell') {
                     this.prediction = '';
-                    if(data.transaction.amount === '0.00'){
-                        if(this.currentStake <= 20)this.currentStake *= 2;
-                         let profit = this.accountBalance - this.startBalance;
-                        if(profit < -50)this.end();
-                    }else{
+                    if (data.transaction.amount === '0.00') {
+                        this.lossCount++;
+                        if (this.currentStake <= 20) this.currentStake *= 2;
+                        let profit = this.accountBalance - this.startBalance;
+                        if (profit < -50) this.end();
+                    } else {
+                        this.winCount++;
                         this.currentStake = this.stake;
                     }
+
+                    console.log('numberOfWins', this.winCount,'/ numberOfLosses', this.lossCount)
                 }
                 break;
             case 'forget_all':
@@ -212,9 +219,12 @@ const Main = {
                 if (data.tick) {
                     this.currentTick++;
                     this.history.push(data.tick.quote);
-                    console.log('ticks update: %o', data.tick.quote);
+                    //console.log('ticks update: %o', data.tick.quote);
                     this.currentPrice = data.tick.quote;
+                    this.setPositions();
+                    this.setDirectionCollection();
                     this.setPredictionData();
+                    this.addTickToContract();
                     if (!this.currentContract && this.currentTick < 10) {
                         this.createContract();
                     } else if (this.currentTick >= 10) {
@@ -226,26 +236,18 @@ const Main = {
 
     },
     createContract() {
-        //this.checkTrend();
-        // this.getPriceProposal();
         this.currentTick = 0;
-        let lowestPrice = 0;
-        let highestPrice = 0;
-
-        this.history.forEach(function(price) {
-            if (price < lowestPrice || !lowestPrice) lowestPrice = price;
-            if (price > highestPrice) highestPrice = price;
-        }.bind(this));
 
         this.currentContract = {
+            asset: this.ASSET_NAME,
             type: '',
-            startLowestPrice: lowestPrice,
-            startHighestPrice: highestPrice,
+            startLowestPrice: this.lowestPrice,
+            startHighestPrice: this.highestPrice,
             datetime: new Date().toString(),
             startPrice: this.currentPrice,
-            startPricePosition: ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2),
+            startPricePosition: this.startPricePosition,
             endPrice: null,
-            lastTicks: this.history.slice(this.history.length - 11, this.history.length - 1),
+            lastTicks: this.lastTicks,
             ticks: [
                 this.currentPrice
             ],
@@ -256,36 +258,64 @@ const Main = {
             numberOfEquals: 0,
             numberOfHistoricEquals: 0,
             directions: [],
-            historicDirections: []
+            historicDirections: this.directionCollection
         };
-
-        this.addHistoryTickData();
-
-        // this.test();
     },
-    setPredictionData() {
-        let collection = this.history.slice(this.history.length - 11, this.history.length - 1);
-        let directions = [];
+    setPositions() {
+        let highestPrice = 0;
+        let lowestPrice = 0;
+
+        this.history.forEach(function(price) {
+            if (price < lowestPrice || !lowestPrice) lowestPrice = price;
+            if (price > highestPrice) highestPrice = price;
+        }.bind(this));
+
+        this.lowestPrice = lowestPrice;
+        this.highestPrice = highestPrice;
+        this.startPricePosition = ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2);
+        this.lastTicks = this.history.slice(this.history.length - 11, this.history.length - 1);
+    },
+    setDirectionCollection() {
+        this.directionCollection = [];
+        this.numberOfHistoricUps = 0;
+        this.numberOfHistoricEquals = 0;
+        this.numberOfHistoricDowns = 0;
+
         let previous = 0;
-        collection.forEach(function(price) {
+
+        this.lastTicks.forEach(function(price) {
             if (!previous) {
                 previous = price;
             } else if (previous < price) {
-                directions.push('up');
+                this.directionCollection.push('up');
+                this.numberOfHistoricUps++;
             } else if (price > previous) {
-                directions.push('down');
+                this.directionCollection.push('down');
+                this.numberOfHistoricDowns++;
             } else {
-                directions.push('equal');
+                this.directionCollection.push('equal');
+                this.numberOfHistoricEquals++;
             }
+        }.bind(this));
+    },
+    setPredictionData() {
 
-        });
         this.localWS.send(JSON.stringify({
             key: 'getPrediction',
-            data: directions
+            data: {
+                asset: this.ASSET_NAME,
+                currentPrice: this.currentTick,
+                lastTicks: this.lastTicks,
+                highestPrice: this.highestPrice,
+                lowestPrice: this.lowestPrice,
+                startPricePosition: this.startPricePosition,
+                historicDirections: this.directionCollection
+            },
         }));
     },
     addTickToContract() {
-        let lastPrice = this.currentContract.ticks[this.currentContract.ticks.length - 1];
+        if(!this.currentContract) return;
+        let lastPrice = this.currentContract.ticks[this.currentContract.ticks.length - 2];
         if (lastPrice != undefined) {
             if (lastPrice > this.currentPrice) {
                 this.currentContract.numberOfDowns++;
@@ -299,20 +329,6 @@ const Main = {
             }
         }
         this.currentContract.ticks.push(this.currentPrice);
-    },
-    addHistoryTickData() {
-        this.currentContract.lastTicks.forEach(function(price) {
-            if (price > this.currentPrice) {
-                this.currentContract.numberOfHistoricDowns++;
-                this.currentContract.historicDirections.push('down');
-            } else if (price < this.currentPrice) {
-                this.currentContract.numberOfHistoricUps++;
-                this.currentContract.historicDirections.push('up');
-            } else {
-                this.currentContract.numberOfHistoricEquals++;
-                this.currentContract.historicDirections.push('equal');
-            }
-        }.bind(this));
     },
     contractEnded() {
         let lowestPrice = 0;
@@ -330,7 +346,8 @@ const Main = {
 
         this.localWS.send(JSON.stringify({
             key: 'tickData',
-            data: this.currentContract
+            data: this.currentContract,
+            asset: this.ASSET_NAME
         }));
         this.currentContract = null;
 
