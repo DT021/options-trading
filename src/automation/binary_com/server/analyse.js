@@ -97,7 +97,7 @@ const Analyse = {
                     raiseCount++;
                 }
 
-                if (Number(data.startPricePosition) > (Number(item.startPricePosition) - 0.02) && Number(data.startPricePosition) < (Number(item.startPricePosition) + 0.02))
+                if (Number(data.startPricePosition) > (Number(item.startPricePosition) - 0.01) && Number(data.startPricePosition) < (Number(item.startPricePosition) + 0.01))
                     closestItem = item;
             });
             console.log('raiseCount', raiseCount);
@@ -127,7 +127,7 @@ const Analyse = {
             item.historicDirections.forEach(function(tick, index) {
                 if (tickDirections[index] && tickDirections[index] === tick) count++;
             }.bind(this));
-            if (count / tickDirections.length >= 0.9) {
+            if (count / tickDirections.length >= 1) {
                 let obj = item;
                 obj.closest = count / tickDirections.length
                 foundCollection.push(obj);

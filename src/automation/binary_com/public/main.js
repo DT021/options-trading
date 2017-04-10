@@ -52,6 +52,9 @@ const Main = {
         this.ws.onopen = this.onOpen.bind(this);
         this.ws.onmessage = this.onMessage.bind(this);
         this.localWS.onmessage = this.onLocalMessage.bind(this);
+
+        ChartComponent.create();
+        View.init();
     },
     onLoaded() {
         if (emailjs) emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
@@ -86,6 +89,7 @@ const Main = {
         return currentdate.getDate() + "/" + (currentdate.getMonth() + 1) + "/" + currentdate.getFullYear() + " @ " + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds();
     },
     end() {
+        View.ended();
         this.ws.send(JSON.stringify({
             "forget_all": "ticks"
         }));
@@ -126,6 +130,7 @@ const Main = {
       }
         */
         //  console.log('proposal');
+        View.updatePrediction(type);
         this.ws.send(JSON.stringify({
             "proposal": 1,
             "amount": this.currentStake,
@@ -146,8 +151,9 @@ const Main = {
             case 'prediction':
                 if (this.prediction) return;
                 this.prediction = data.data;
+                
                 console.log('prediction', this.prediction);
-                this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
+               if(this.prediction)this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
                 break;
         }
     },
@@ -156,7 +162,8 @@ const Main = {
         switch (data.msg_type) {
             case 'authorize':
                 // console.log(data);
-                this.addFunds();
+                //this.addFunds();
+                this.getBalance();
                 break;
             case 'topup_virtual':
                 this.getBalance();
@@ -166,19 +173,19 @@ const Main = {
                 this.accountBalance = data.balance.balance;
                 let profit = this.accountBalance - this.startBalance;
                 this.startMartingale = true;
-                if (profit < -20) {
+                if (profit <= -20) {
                  this.startMartingale = false;
                 }
-                if (profit < -20 || profit >= 50) {
+                if (profit <= -50 || profit >= 50) {
                     this.end();
 
                    // console.log('ended with profit', profit);
                 }
+                View.updateBalance(this.accountBalance,profit);
                 console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getHistory();
                 break;
             case 'history':
-                var result = movingAverage(data.history.prices);
                 this.history = data.history.prices;
                 this.started = true;
                 this.getTicks();
@@ -200,17 +207,18 @@ const Main = {
                 if (data.transaction.action && data.transaction.action == 'sell') {
                 let profit = this.accountBalance - this.startBalance;
                     this.prediction = '';
+                    View.updatePrediction('');
                     if (data.transaction.amount === '0.00') {
                         isLoss = true;
                         this.lossCount++;
-                        if (profit < -20) this.end();
+                        if (profit < -40) this.end();
                     } else {
                         this.winCount++;
                         if (profit >= 50) this.end();
                     }
 
                     this.setStake(isLoss);
-
+                    View.updateCounts( this.winCount, this.lossCount);
                     console.log('numberOfWins', this.winCount, '/ numberOfLosses', this.lossCount)
                 }
                 break;
@@ -227,6 +235,11 @@ const Main = {
                     this.setDirectionCollection();
                     this.setPredictionData();
                     this.addTickToContract();
+                    ChartComponent.update({
+                        price:this.currentPrice,
+                        time: Date.now(),
+                        lowestPrice:this.lowestPrice
+                    });
                     if (!this.currentContract && this.currentTick < 10) {
                         this.createContract();
                     } else if (this.currentTick >= 10) {
@@ -240,6 +253,7 @@ const Main = {
     setStake(isLoss) {
         if (isLoss) {
             this.currentStake = (this.currentStake * 2) + (this.currentStake * (1 - this.payout));
+            if(this.currentStake >= 20)this.currentStake = this.stake;
         } else {
             this.currentStake = this.stake;
         }
@@ -361,18 +375,6 @@ const Main = {
         this.currentContract = null;
 
 
-    },
-    test() {
-        this.prediction = '';
-        if (this.currentContract) {
-            if (this.currentContract.startPricePosition <= 0.33 && this.currentContract.numberOfHistoricUps <= 0.43) {
-                this.prediction = 'raise';
-            } else if (this.currentContract.startPricePosition <= 0.30 && this.currentContract.numberOfHistoricDowns >= 0.54) {
-                this.prediction = 'fall';
-            }
-        }
-
-        console.log(this.prediction);
     }
 
 }.init();

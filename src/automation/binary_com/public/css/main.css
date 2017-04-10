@@ -1,0 +1,14 @@
+.put {
+  background-color: red;
+  color: white;
+}
+.call {
+  background-color: green;
+  color: white;
+}
+.positive {
+  color: green;
+}
+.negative {
+  color: red;
+}
