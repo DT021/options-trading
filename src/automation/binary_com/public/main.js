@@ -33,6 +33,7 @@ const Main = {
     lowestPrice: 0,
     prediction: '',
     ASSET_NAME: 'R_100',
+    predictionItem: null,
     STRATEGY: {
         ABOVE: {
             TOP: 'down',
@@ -151,9 +152,9 @@ const Main = {
             case 'prediction':
                 if (this.prediction) return;
                 this.prediction = data.data;
-                
+
                 console.log('prediction', this.prediction);
-               if(this.prediction)this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
+                if (this.prediction) this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
                 break;
         }
     },
@@ -174,15 +175,15 @@ const Main = {
                 let profit = this.accountBalance - this.startBalance;
                 this.startMartingale = true;
                 if (profit <= -20) {
-                 this.startMartingale = false;
+                    this.startMartingale = false;
                 }
                 if (profit <= -50 || profit >= 50) {
                     this.end();
 
-                   // console.log('ended with profit', profit);
+                    // console.log('ended with profit', profit);
                 }
-                View.updateBalance(this.accountBalance,profit);
-                console.log('current profit', '£' + profit.toFixed(2));
+                View.updateBalance(this.accountBalance, profit);
+                //console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getHistory();
                 break;
             case 'history':
@@ -202,12 +203,11 @@ const Main = {
                 //console.log('buy', data);
                 break;
             case 'transaction':
-                console.log('transaction', data.transaction);
+                //console.log('transaction', data.transaction);
                 let isLoss = false;
                 if (data.transaction.action && data.transaction.action == 'sell') {
-                let profit = this.accountBalance - this.startBalance;
-                    this.prediction = '';
-                    View.updatePrediction('');
+                    let profit = this.accountBalance - this.startBalance;
+
                     if (data.transaction.amount === '0.00') {
                         isLoss = true;
                         this.lossCount++;
@@ -215,11 +215,15 @@ const Main = {
                     } else {
                         this.winCount++;
                         if (profit >= 50) this.end();
+                        this.sendSuccessfulPrediction();
                     }
+                    this.prediction = '';
+                    this.predictionItem = null;
+                    View.updatePrediction('');
 
                     this.setStake(isLoss);
-                    View.updateCounts( this.winCount, this.lossCount);
-                    console.log('numberOfWins', this.winCount, '/ numberOfLosses', this.lossCount)
+                    View.updateCounts(this.winCount, this.lossCount);
+                    // console.log('numberOfWins', this.winCount, '/ numberOfLosses', this.lossCount)
                 }
                 break;
             case 'forget_all':
@@ -236,9 +240,9 @@ const Main = {
                     this.setPredictionData();
                     this.addTickToContract();
                     ChartComponent.update({
-                        price:this.currentPrice,
+                        price: this.currentPrice,
                         time: Date.now(),
-                        lowestPrice:this.lowestPrice
+                        lowestPrice: this.lowestPrice
                     });
                     if (!this.currentContract && this.currentTick < 10) {
                         this.createContract();
@@ -250,10 +254,20 @@ const Main = {
         }
 
     },
+    sendSuccessfulPrediction() {
+        this.localWS.send(JSON.stringify({
+            key: 'sucessfulTrade',
+            data: {
+                prediction: this.prediction,
+                item: this.predictionItem,
+                asset: this.ASSET_NAME
+            }
+        }));
+    },
     setStake(isLoss) {
         if (isLoss) {
-            this.currentStake = (this.currentStake * 2) + (this.currentStake * (1 - this.payout));
-            if(this.currentStake >= 20)this.currentStake = this.stake;
+             this.currentStake = (this.currentStake * 2) + (this.currentStake * (1 - this.payout));
+            if (this.currentStake >= 20) this.currentStake = this.stake;
         } else {
             this.currentStake = this.stake;
         }
@@ -322,7 +336,10 @@ const Main = {
         }.bind(this));
     },
     setPredictionData() {
-
+        this.predictionItem = {
+            startPricePosition: this.startPricePosition,
+            historicDirections: this.directionCollection
+        }
         this.localWS.send(JSON.stringify({
             key: 'getPrediction',
             data: {

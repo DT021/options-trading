@@ -21,17 +21,17 @@ const Analyse = {
 
         let data = {
             asset: 'R_100',
-            startPricePosition: "0.19",
+            startPricePosition: "0.60",
             historicDirections: [
-                "equal",
-                "equal",
-                "equal",
-                "equal",
-                "equal",
-                "equal",
-                "equal",
                 "up",
-                "equal"
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up",
+                "up"
             ]
         };
 
@@ -60,58 +60,54 @@ const Analyse = {
         console.log(key, average);
         return average;
     },
-    getPrediction(data) {
+    getPrediction(data, successCollection) {
         if (!fs.existsSync(path.join(__dirname, './data/' + data.asset))) return;
-        console.log('getPrediction');
         fallCollection = require('./data/' + data.asset + '/fall.json');
         raiseCollection = require('./data/' + data.asset + '/raise.json');
 
         let collection = this.getSimilarTicks(data.historicDirections);
+        let prediction;
+        if(successCollection)prediction = this.getExistingPrediction(data, successCollection);
+        if (!prediction) prediction = this.patternPerdiction(data, collection);
+        return prediction;
+    },
+    getExistingPrediction(data, successCollection) {
+        let prediction;
+        let historyString = data.historicDirections.toString();
+        successCollection.forEach(function(obj) {
+            let itemHistoryString = obj.item.historicDirections.toString();
+            if (Number(data.startPricePosition.substring(0, 2)) == Number(obj.item.startPricePosition.substring(0, 2)) && historyString == itemHistoryString) {
+                prediction = obj.prediction;
+            }
+        });
+        console.log('getExistingPrediction',prediction);
 
-
-        console.log(data.startPricePosition);
+        return prediction;
+    },
+    patternPerdiction(data, collection) {
         let fallCount = 0;
         let raiseCount = 0;
-        let closestItem = null;
-        let isCollection = [];
-        collection.forEach(function(item) {
-            if (item.type === 'fall') {
-                fallCount++;
-            } else {
-                raiseCount++;
-            }
-            if (item.closest == 1) isCollection.push(item);
-            if (Number(data.startPricePosition) > (Number(item.startPricePosition) - 0.02) && Number(data.startPricePosition) < (Number(item.startPricePosition) + 0.02)) {
-                // if (!closestItem || closestItem.closest < item.closest) {
-                closestItem = item;
-            }
-        }.bind(this));
-        if (isCollection.length > 1) {
-            console.log('isCollection');
-            fallCount = 0;
-            raiseCount = 0;
-            collection.forEach(function(item) {
+        collection = collection.filter(function(item) {
+            if (Number(data.startPricePosition.substring(0, 2)) == Number(item.startPricePosition.substring(0, 2))) {
                 if (item.type === 'fall') {
                     fallCount++;
-                } else {
+                } else if (item.type == 'raise') {
                     raiseCount++;
                 }
+                return item;
+            }
+        }.bind(this));
 
-                if (Number(data.startPricePosition) > (Number(item.startPricePosition) - 0.01) && Number(data.startPricePosition) < (Number(item.startPricePosition) + 0.01))
-                    closestItem = item;
-            });
-            console.log('raiseCount', raiseCount);
-            console.log('fallCount', fallCount);
-            console.log('closestItem', closestItem != null);
-            if (raiseCount > fallCount) return 'raise';
-            if (raiseCount < fallCount) return 'fall';
-        }
+
+        console.log('getPrediction');
+        console.log('position', data.startPricePosition);
+        console.log('collection length', collection.length);
         console.log('raiseCount', raiseCount);
         console.log('fallCount', fallCount);
-        console.log('closestItem', closestItem != null);
-        if (closestItem) return closestItem.type;
-       // if (raiseCount > fallCount) return 'raise';
-        //if (raiseCount < fallCount) return 'fall';
+        if (!collection.length) return null;
+        if (collection.length == 1) return collection[0].type;
+        let prediction = raiseCount > fallCount ? 'raise' : 'fall';
+        return prediction;
     },
     getSimilarTicks(tickDirections) {
         let foundCollection = this.onEachSimilar(tickDirections, fallCollection);
