@@ -1342,5 +1342,69 @@
       "equal"
     ],
     "endPricePosition": "0.56"
+  },
+  {
+    "asset": "R_100",
+    "type": "fall",
+    "startLowestPrice": "10924.82",
+    "startHighestPrice": "11003.32",
+    "datetime": "Wed Apr 12 2017 00:08:27 GMT+0100 (GMT Daylight Time)",
+    "startPrice": "10998.59",
+    "startPricePosition": "0.94",
+    "endPrice": "10997.59",
+    "lastTicks": [
+      "10973.52",
+      "10976.21",
+      "10981.87",
+      "10986.79",
+      "10990.50",
+      "10989.37",
+      "10993.12",
+      "10991.57",
+      "10993.04",
+      "10993.80"
+    ],
+    "ticks": [
+      "10998.59",
+      "10998.38",
+      "11005.84",
+      "11011.72",
+      "11008.66",
+      "11007.06",
+      "11002.16",
+      "10999.27",
+      "10993.63",
+      "10999.50",
+      "10997.59"
+    ],
+    "numberOfDowns": 4,
+    "numberOfUps": 5,
+    "numberOfHistoricDowns": 0,
+    "numberOfHistoricUps": 0,
+    "numberOfEquals": 0,
+    "numberOfHistoricEquals": 0,
+    "directions": [
+      "up",
+      "up",
+      "up",
+      "down",
+      "down",
+      "down",
+      "down",
+      "up",
+      "up"
+    ],
+    "historicDirections": [
+      "up",
+      "up",
+      "up",
+      "up",
+      "up",
+      "up",
+      "up",
+      "up",
+      "up"
+    ],
+    "endPricePosition": "0.84"
   }
 ]

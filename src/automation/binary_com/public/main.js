@@ -32,7 +32,7 @@ const Main = {
     highestPrice: 0,
     lowestPrice: 0,
     prediction: '',
-    ASSET_NAME: 'R_100',
+    ASSET_NAME: 'frxEURGBP',
     predictionItem: null,
     STRATEGY: {
         ABOVE: {

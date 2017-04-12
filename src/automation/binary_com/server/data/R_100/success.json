@@ -520,5 +520,41 @@
       ]
     },
     "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.89",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
   }
 ]
