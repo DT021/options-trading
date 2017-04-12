@@ -556,5 +556,4083 @@
       ]
     },
     "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.92",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.99",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.83",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.54",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.13",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.50",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.62",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.68",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "1.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.83",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.72",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.12",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.04",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.19",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.41",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.45",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.57",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.45",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "1.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.86",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.74",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.86",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.77",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "1.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.94",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.78",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.09",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.01",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.15",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.29",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.06",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.07",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.27",
+      "historicDirections": [
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.26",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.83",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.48",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.40",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.01",
+      "historicDirections": [
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.13",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.40",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.22",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.78",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.87",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.14",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.57",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.97",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.91",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.97",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.89",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.60",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.21",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.56",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.17",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.27",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.06",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.07",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.01",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.14",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.22",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.92",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.08",
+      "historicDirections": [
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.46",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.54",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.06",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.31",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.34",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.07",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.03",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.38",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.50",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.68",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.75",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.72",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.45",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.39",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.45",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.46",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.48",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.69",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.78",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.33",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.13",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.11",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.11",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.01",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.15",
+      "historicDirections": [
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.27",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.31",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.02",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.13",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.51",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.26",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.08",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.20",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.20",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.25",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.22",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.40",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.46",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "1.00",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.67",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.63",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.81",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.04",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.18",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.38",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.08",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.17",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.35",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.15",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.07",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.13",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.40",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.37",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.73",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "1.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.84",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.79",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.86",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.79",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.84",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.99",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.82",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.79",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.80",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.57",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.48",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.70",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.69",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.58",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.60",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.70",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.47",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.47",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.68",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.71",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.80",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.93",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.99",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.99",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.69",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.58",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.60",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.61",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.53",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.64",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.73",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.81",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.69",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.61",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.68",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.07",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.18",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.86",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.92",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.75",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.66",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.67",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.55",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.41",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.37",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "",
+    "item": null,
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.61",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.35",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.09",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.04",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.86",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.68",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.57",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.39",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.32",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.34",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.47",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.19",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.12",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.41",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.48",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.17",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.25",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.34",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.78",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.44",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "",
+    "item": null,
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.16",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.62",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.41",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.70",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.72",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.39",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.04",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.06",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.04",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.05",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.51",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.52",
+      "historicDirections": [
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.66",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.37",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.37",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.78",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.88",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.89",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.92",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.96",
+      "historicDirections": [
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.94",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "1.00",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "R_100"
   }
 ]

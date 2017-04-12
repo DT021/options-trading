@@ -12,40 +12,188 @@
     <script type="text/javascript" src="config.js"></script>
     <script type="text/javascript" src="main.js"></script>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <div class="container">
-        <h1>Trade Bot</h1>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Trading Bot</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#" class="btn btn-primary">Start</a></li>
+                    </ul>
+        </nav>
         <div class="row">
-            <div class="col-md-6 row-height"><h3>WINS</h3></div>
-            <div class="col-md-6 row-height"><h3>LOSES</h3></div>
+            <div class="col-md-6 row-height">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">FINANCIAL</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Balance</td>
+                                    <td>£<span id="balance">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Profit</td>
+                                    <td>£<span id="profit">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lowest Profit</td>
+                                    <td>£<span id="lowestProfit">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Highest Profit</td>
+                                    <td>£<span id="highestProfit">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Loss Cap</td>
+                                    <td>£<span id="lossLimit">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Profit Cap</td>
+                                    <td>£<span id="profitLimit">0</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 row-height">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">MARKET</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Change Asset</td>
+                                    <td>
+                                        <select id="assetSelector">
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Current Asset Name</td>
+                                    <td><span id="assetName"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Market Open</td>
+                                    <td><span id="marketOpen">true</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Trading start time</td>
+                                    <td><span id="startTime"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Trading end time</td>
+                                    <td><span id="endTime">00:00</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Trading ended</td>
+                                    <td><span id="ended">false</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Payout</td>
+                                    <td><span id="payout">0</span>%</td>
+                                </tr>
+                                <tr>
+                                    <td>Highest Price</td>
+                                    <td>£<span id="highestPrice">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Lowest Price</td>
+                                    <td>£<span id="lowestPrice">0</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-6 row-height"><h3><span id="wins"></span></h3></div>
-            <div class="col-md-6 row-height"><h3><span id="loses"></span></h3></div>
+            <div class="col-md-6 row-height">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Line Chart</h3>
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="myChart" width="300" height="450"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 row-height">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">PREDICTION</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-striped table-hover ">
+                            <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Wins</td>
+                                    <td><span id="wins" class="label label-success">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Loses</td>
+                                    <td><span id="loses" class="label label-danger">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Contract Purchase at</td>
+                                    <td>£<span id="purchasePrice">0</span></td>
+                                </tr>
+                                <tr>
+                                    <td>Price Postion from Highest</td>
+                                    <td><span id="pricePosition">0</span>%</td>
+                                </tr>
+                                <tr>
+                                    <td>Prediction</td>
+                                    <td><span id="prediction"></span><span id="prediction-arrow" class="glyphicon"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Current Price</td>
+                                    <td>£<span id="currentPrice"></span><span id="currentPriceArrow" class="glyphicon"></span></td>
+                                </tr>
+                                <tr>
+                                    <td>Current Stake</td>
+                                    <td>£<span id="stake">0</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="row">
-            <div class="col-md-6 row-height"><h2>Balance</h2></div>
-            <div class="col-md-6 row-height"><h2>£<span id="balance"></span></h2></div>
+            <div class="col-md-6 row-height">
+            </div>
         </div>
-        <div class="row">
-            <div class="col-md-6 row-height"><h2>Profit</h2></div>
-            <div class="col-md-6 row-height"><h2>£<span id="profit"></span></h2></div>
         </div>
-        <div class="row">
-            <div class="col-md-6 row-height"><h2>Prediction</h2></div>
-            <div class="col-md-6 row-height"><h2><span id="prediction"></span></h2></div>
-        </div>
-         <div class="row">
-            <div class="col-md-6 row-height"><h2>ENDED</h2></div>
-            <div class="col-md-6 row-height"><h2><span id="ended">false</span></h2></div>
-        </div>
-        <canvas id="myChart" width="800" height="450"></canvas>
-    </div>
 </body>
 
 </html>

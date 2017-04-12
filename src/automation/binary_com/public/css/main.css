@@ -1,14 +1,38 @@
 .put {
-  background-color: red;
-  color: white;
+    background-color: red;
+    color: white;
 }
+
 .call {
-  background-color: green;
-  color: white;
+    background-color: green;
+    color: white;
 }
+
 .positive {
-  color: green;
+    color: green;
 }
+
 .negative {
-  color: red;
+    color: red;
+}
+
+@media (min-width: 1000px) {
+    .row {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .row > [class*='col-'] {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.panel {
+    height: 100%;
+}
+select {
+      color: #333;
 }

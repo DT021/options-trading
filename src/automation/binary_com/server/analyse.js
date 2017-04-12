@@ -75,6 +75,7 @@ const Analyse = {
         let prediction;
         let historyString = data.historicDirections.toString();
         successCollection.forEach(function(obj) {
+            if(!obj.item)return;
             let itemHistoryString = obj.item.historicDirections.toString();
             if (Number(data.startPricePosition.substring(0, 2)) == Number(obj.item.startPricePosition.substring(0, 2)) && historyString == itemHistoryString) {
                 prediction = obj.prediction;

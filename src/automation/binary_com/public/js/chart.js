@@ -8,6 +8,7 @@ let ChartComponent = {
                     display: true,
                     ticks: {
                         suggestedMin: 10,
+                        fontColor: "white"
 
                     }
                 }],
@@ -15,7 +16,8 @@ let ChartComponent = {
                     display: true,
                     scaleLabel: {
                         display: true,
-                        labelString: 'Time'
+                        labelString: 'Time',
+                        fontColor: "white",
                     }
                 }],
             }

@@ -31,9 +31,13 @@ const Main = {
     testWinCount: 0,
     highestPrice: 0,
     lowestPrice: 0,
+    lossLimit: -5,
+    profitLimit: 50,
     prediction: '',
-    ASSET_NAME: 'frxEURGBP',
+    ASSET_NAME: 'R_100',
     predictionItem: null,
+    highestProfit: 0,
+    lowestProfit: null,
     STRATEGY: {
         ABOVE: {
             TOP: 'down',
@@ -56,6 +60,7 @@ const Main = {
 
         ChartComponent.create();
         View.init();
+        View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     onLoaded() {
         if (emailjs) emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
@@ -78,6 +83,9 @@ const Main = {
             "buy": this.proposalID,
             "price": 100
         }));
+    },
+    getAvailableAssets() {
+        this.ws.send(JSON.stringify({ asset_index: 1 }));
     },
     getBalance() {
         this.ws.send(JSON.stringify({ balance: 1, subscribe: 1 }));
@@ -131,7 +139,7 @@ const Main = {
       }
         */
         //  console.log('proposal');
-        View.updatePrediction(type);
+        View.updatePrediction(type, this.startPricePosition, this.currentPrice);
         this.ws.send(JSON.stringify({
             "proposal": 1,
             "amount": this.currentStake,
@@ -153,7 +161,7 @@ const Main = {
                 if (this.prediction) return;
                 this.prediction = data.data;
 
-                console.log('prediction', this.prediction);
+                //console.log('prediction', this.prediction);
                 if (this.prediction) this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
                 break;
         }
@@ -173,18 +181,26 @@ const Main = {
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
                 let profit = this.accountBalance - this.startBalance;
+                if(profit > this.highestProfit) this.highestProfit = profit;
+                if(this.lowestProfit == null || profit < this.lowestProfit) this.lowestProfit = profit;
+                View.updateProfit(this.lowestProfit,this.highestProfit);
                 this.startMartingale = true;
-                if (profit <= -20) {
+                if (profit <= this.lossLimit + 5) {
                     this.startMartingale = false;
                 }
-                if (profit <= -50 || profit >= 50) {
+                if (this.accountBalance <= 0 || profit <= this.lossLimit || profit >= this.profitLimit) {
                     this.end();
 
                     // console.log('ended with profit', profit);
                 }
                 View.updateBalance(this.accountBalance, profit);
                 //console.log('current profit', '£' + profit.toFixed(2));
-                if (!this.started) this.getHistory();
+                if (!this.started) this.getAvailableAssets();
+                break;
+            case 'asset_index':
+                this.assetArray = data.asset_index;
+                View.updateAsset(this.ASSET_NAME, this.assetArray, this.payout);
+                this.getHistory();
                 break;
             case 'history':
                 this.history = data.history.prices;
@@ -211,10 +227,10 @@ const Main = {
                     if (data.transaction.amount === '0.00') {
                         isLoss = true;
                         this.lossCount++;
-                        if (profit < -40) this.end();
+                        if (profit < this.lossLimit) this.end();
                     } else {
                         this.winCount++;
-                        if (profit >= 50) this.end();
+                        if (profit >= this.profitLimit) this.end();
                         this.sendSuccessfulPrediction();
                     }
                     this.prediction = '';
@@ -266,11 +282,12 @@ const Main = {
     },
     setStake(isLoss) {
         if (isLoss) {
-             this.currentStake = (this.currentStake * 2) + (this.currentStake * (1 - this.payout));
+            this.currentStake = Number(((this.currentStake * 2) + (this.currentStake * (1 - this.payout))).toFixed(2));
             if (this.currentStake >= 20) this.currentStake = this.stake;
         } else {
             this.currentStake = this.stake;
         }
+        View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     createContract() {
         this.currentTick = 0;
@@ -309,6 +326,7 @@ const Main = {
 
         this.lowestPrice = lowestPrice;
         this.highestPrice = highestPrice;
+        View.updateHighLow(this.lowestPrice, this.highestPrice, this.currentPrice);
         this.startPricePosition = ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2);
         this.lastTicks = this.history.slice(this.history.length - 11, this.history.length - 1);
     },
