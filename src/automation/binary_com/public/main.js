@@ -34,7 +34,7 @@ const Main = {
     lossLimit: -5,
     profitLimit: 50,
     prediction: '',
-    ASSET_NAME: 'R_100',
+    ASSET_NAME: 'frxEURGBP',
     predictionItem: null,
     highestProfit: 0,
     lowestProfit: null,
@@ -184,8 +184,8 @@ const Main = {
                 if(profit > this.highestProfit) this.highestProfit = profit;
                 if(this.lowestProfit == null || profit < this.lowestProfit) this.lowestProfit = profit;
                 View.updateProfit(this.lowestProfit,this.highestProfit);
-                this.startMartingale = true;
-                if (profit <= this.lossLimit + 5) {
+                if(this.lowestProfit > 0)this.startMartingale = true;
+                if (profit <= 0) {
                     this.startMartingale = false;
                 }
                 if (this.accountBalance <= 0 || profit <= this.lossLimit || profit >= this.profitLimit) {
@@ -213,6 +213,8 @@ const Main = {
                 if (!data.proposal) return;
                 this.proposalID = data.proposal.id;
                 this.waitingForProposal = false;
+                this.payout = data.proposal.payout;
+                View.updateAsset(this.ASSET_NAME, this.assetArray, this.payout);
                 this.buyContract();
                 break;
             case 'buy':
@@ -281,7 +283,7 @@ const Main = {
         }));
     },
     setStake(isLoss) {
-        if (isLoss) {
+        if (isLoss && this.startMartingale) {
             this.currentStake = Number(((this.currentStake * 2) + (this.currentStake * (1 - this.payout))).toFixed(2));
             if (this.currentStake >= 20) this.currentStake = this.stake;
         } else {

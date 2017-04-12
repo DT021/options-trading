@@ -26,6 +26,7 @@ let View = {
         this.payout = document.querySelector('#payout');
         this.lowestProfit = document.querySelector('#lowestProfit');
         this.highestProfit = document.querySelector('#highestProfit');
+        this.possiblePayout = document.querySelector('#possiblePayout');
     },
     updateCounts(wins, loses) {
         this.winElement.textContent = wins;
@@ -63,6 +64,7 @@ let View = {
     updateAsset(assetName, collection,payout) {
         this.assetName.textContent = assetName;
         this.payout.textContent = payout;
+        this.possiblePayout.textContent = Number(this.stake.textContent) * Number(payout);
         //console.log(collection);
         collection.forEach(function(item, index) {
             let option = document.createElement('OPTION');

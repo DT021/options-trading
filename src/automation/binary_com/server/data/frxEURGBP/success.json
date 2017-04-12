@@ -1,0 +1,313 @@
+[
+  {
+    "prediction": "",
+    "item": null,
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.90",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.43",
+      "historicDirections": [
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.13",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.39",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.74",
+      "historicDirections": [
+        "equal",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.91",
+      "historicDirections": [
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.74",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.74",
+      "historicDirections": [
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.87",
+      "historicDirections": [
+        "up",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up",
+        "up"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.29",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.00",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "raise",
+    "item": {
+      "startPricePosition": "0.30",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "up",
+        "up",
+        "equal",
+        "equal",
+        "up"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.10",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.23",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.23",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "up",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.23",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.23",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "frxEURGBP"
+  }
+]

@@ -4634,5 +4634,23 @@
       ]
     },
     "asset": "R_100"
+  },
+  {
+    "prediction": "fall",
+    "item": {
+      "startPricePosition": "0.51",
+      "historicDirections": [
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal",
+        "equal"
+      ]
+    },
+    "asset": "R_100"
   }
 ]
