@@ -58,7 +58,7 @@ const Server = {
 
     },
     saveTradeData() {
-       this.isSuccessQueued = false;
+        this.isSuccessQueued = false;
         let dir = __dirname + '/server/data/' + this.asset;
         if (!fs.existsSync(dir)) {
             fs.mkdirSync(dir);
@@ -75,10 +75,10 @@ const Server = {
         fs.writeFileSync(dir + 'fall.json', JSON.stringify(this.fallData, null, 2), 'utf8');
     },
     storeTradeResult(data) {
-      this.asset = data.asset + '/';
-      if (!this.successData) this.getTradeResultData();
-      this.successData.push(data);
-       this.isSuccessQueued = true;
+        this.asset = data.asset + '/';
+        if (!this.successData) this.getTradeResultData();
+        this.successData.push(data);
+        this.isSuccessQueued = true;
     },
     updateData(item, asset) {
         this.asset = asset + '/';
@@ -94,10 +94,10 @@ const Server = {
         this.interval = setInterval(this.onInterval.bind(this), 50);
     },
     onInterval() {
-        if (this.isQueued) 
-          this.saveData();
-        if(this.isSuccessQueued)  this.saveTradeData();
-        
+        if (this.isQueued)
+            this.saveData();
+        if (this.isSuccessQueued) this.saveTradeData();
+
         //Analyse.start(this.data);
     },
     onMessage(msg) {
@@ -110,13 +110,20 @@ const Server = {
             case 'getPrediction':
                 this.getPrediction(obj.data);
                 break;
+            case 'getHighestLowest':
+                this.getHighestLowest(obj.data);
+                break;
             case 'sucessfulTrade':
                 this.storeTradeResult(obj.data);
                 break;
         }
     },
+    getHighestLowest(data) {
+      let obj = Analyse.getHighestLoweset(data);
+      this.sendMessage('highestLowest',obj);
+    },  
     getPrediction(data) {
-        let prediction = Analyse.getPrediction(data,this.successData);
+        let prediction = Analyse.getPrediction(data, this.successData);
         console.log('prediction is', prediction);
         if (prediction) this.sendMessage('prediction', prediction);
     },

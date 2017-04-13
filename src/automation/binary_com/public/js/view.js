@@ -27,6 +27,7 @@ let View = {
         this.lowestProfit = document.querySelector('#lowestProfit');
         this.highestProfit = document.querySelector('#highestProfit');
         this.possiblePayout = document.querySelector('#possiblePayout');
+        this.predictionType = document.querySelector('#predictionType');
     },
     updateCounts(wins, loses) {
         this.winElement.textContent = wins;
@@ -52,16 +53,16 @@ let View = {
         this.currentPrice.textContent = current;
         if (this._predictionPrice) this.updateArrow(this.currentPriceArrow, this._predictionPrice > current ? 'down' : 'up');
     },
-    updateStake(stake,lossLimit,profitLimit) {
+    updateStake(stake, lossLimit, profitLimit) {
         this.stake.textContent = stake;
         this.lossLimit.textContent = lossLimit;
         this.profitLimit.textContent = profitLimit;
     },
-    updateProfit(lowestProfit,highestProfit){
-      this.highestProfit.textContent = highestProfit.toFixed(2);
-      this.lowestProfit.textContent = lowestProfit.toFixed(2);
+    updateProfit(lowestProfit, highestProfit) {
+        this.highestProfit.textContent = highestProfit.toFixed(2);
+        this.lowestProfit.textContent = lowestProfit.toFixed(2);
     },
-    updateAsset(assetName, collection,payout) {
+    updateAsset(assetName, collection, payout) {
         this.assetName.textContent = assetName;
         this.payout.textContent = payout;
         this.possiblePayout.textContent = Number(this.stake.textContent) * Number(payout);
@@ -73,6 +74,9 @@ let View = {
             this.assetSelector.appendChild(option);
             if (item[0] == assetName) this.assetSelector.selectedIndex = index;
         }.bind(this));
+    },
+    updatePredictionType(type) {
+        this.predictionType.textContent = type;
     },
     updatePrediction(prediction, startPosition, price) {
         if (prediction) {
@@ -89,12 +93,16 @@ let View = {
             this._predictionPrice = null;
             this.purchasePrice.textContent = '';
             this.pricePosition.textContent = '';
+            this.predictionType.textContent = '';
             this.predictionElement.parentNode.classList.remove('success');
             this.predictionElement.parentNode.classList.remove('danger');
             this.predictionElement.textContent = '';
             this.updateArrow(this.currentPriceArrow, '');
             this.updateArrow(this.predictionArrow, '');
         }
+    },
+    updateStartPosition(val) {
+        this.pricePosition.textContent = val;
     },
     updateArrow(element, direction) {
         if (direction == 'down') {

@@ -10,7 +10,7 @@ const Analyse = {
     averageRaisePosition: 0,
     init() {
         console.log('Fall');
-        this.averageFallPosition = this.getAveragePosition(fallCollection);
+        this.averageFallPosition = this.getAverageInCollection(fallCollection, 'startPrice');
 
         this.averageFallDownCounts = this.getAverageInCollection(fallCollection, 'numberOfHistoricDowns', 10);
         this.averageFallUpCounts = this.getAverageInCollection(fallCollection, 'numberOfHistoricUps', 10);
@@ -60,14 +60,46 @@ const Analyse = {
         console.log(key, average);
         return average;
     },
-    getPrediction(data, successCollection) {
-        if (!fs.existsSync(path.join(__dirname, './data/' + data.asset))) return;
+    getUpdatedData(data){
+         if (!fs.existsSync(path.join(__dirname, './data/' + data.asset))) return;
         fallCollection = require('./data/' + data.asset + '/fall.json');
         raiseCollection = require('./data/' + data.asset + '/raise.json');
+    },
+    getHighestLoweset(data) {
+        this.getUpdatedData(data);
+        let lowest ;
+        let highest ;
+        fallCollection.forEach(function(item) {
+            item.ticks.forEach(function(tick) {
+                if (lowest == undefined || lowest > tick) lowest = tick;
+                if (highest == undefined || highest > tick) highest = tick;
+            });
+            item.lastTicks.forEach(function(tick) {
+                if (lowest == undefined || lowest > tick) lowest = tick;
+                if (highest == undefined || highest > tick) highest = tick;
+            });
+        });
+        raiseCollection.forEach(function(item) {
+            item.ticks.forEach(function(tick) {
+                if (lowest == undefined || lowest > tick) lowest = tick;
+                if (highest == undefined || highest > tick) highest = tick;
+            });
+            item.lastTicks.forEach(function(tick) {
+                if (lowest == undefined || lowest > tick) lowest = tick;
+                if (highest == undefined || highest > tick) highest = tick;
+            });
+        });
+        return {
+            highest: highest,
+            lowest: lowest
+        };
+    },
+    getPrediction(data, successCollection) {
+        this.getUpdatedData(data);
 
         let collection = this.getSimilarTicks(data.historicDirections);
         let prediction;
-        if(successCollection)prediction = this.getExistingPrediction(data, successCollection);
+        if (successCollection) prediction = this.getExistingPrediction(data, successCollection);
         if (!prediction) prediction = this.patternPerdiction(data, collection);
         return prediction;
     },
@@ -75,13 +107,13 @@ const Analyse = {
         let prediction;
         let historyString = data.historicDirections.toString();
         successCollection.forEach(function(obj) {
-            if(!obj.item)return;
+            if (!obj.item) return;
             let itemHistoryString = obj.item.historicDirections.toString();
             if (Number(data.startPricePosition.substring(0, 2)) == Number(obj.item.startPricePosition.substring(0, 2)) && historyString == itemHistoryString) {
                 prediction = obj.prediction;
             }
         });
-        console.log('getExistingPrediction',prediction);
+        console.log('getExistingPrediction', prediction);
 
         return prediction;
     },
@@ -132,50 +164,6 @@ const Analyse = {
         }.bind(this));
 
         return foundCollection;
-    },
-    compare(str) {
-        this.data.fall.forEach(function(item) {
-            console.log(str);
-            let historicDirections = item.historicDirections.toString();
-            console.log(this.levenshtein(str, historicDirections));
-        }.bind(this));
-    },
-    levenshtein(a, b) {
-        if (a.length == 0) return b.length;
-        if (b.length == 0) return a.length;
-
-        // swap to save some memory O(min(a,b)) instead of O(a)
-        if (a.length > b.length) {
-            var tmp = a;
-            a = b;
-            b = tmp;
-        }
-
-        var row = [];
-        // init the row
-        for (var i = 0; i <= a.length; i++) {
-            row[i] = i;
-        }
-
-        // fill in the rest
-        for (var i = 1; i <= b.length; i++) {
-            var prev = i;
-            for (var j = 1; j <= a.length; j++) {
-                var val;
-                if (b.charAt(i - 1) == a.charAt(j - 1)) {
-                    val = row[j - 1]; // match
-                } else {
-                    val = Math.min(row[j - 1] + 1, // substitution
-                        prev + 1, // insertion
-                        row[j] + 1); // deletion
-                }
-                row[j - 1] = prev;
-                prev = val;
-            }
-            row[a.length] = prev;
-        }
-
-        return row[a.length];
     }
 }
 Analyse.init();

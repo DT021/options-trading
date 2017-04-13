@@ -29,8 +29,8 @@ const Main = {
     prediction: null,
     testLossCount: 0,
     testWinCount: 0,
-    highestPrice: 0,
-    lowestPrice: 0,
+    highestPrice: null,
+    lowestPrice: null,
     lossLimit: -5,
     profitLimit: 50,
     prediction: '',
@@ -38,6 +38,7 @@ const Main = {
     predictionItem: null,
     highestProfit: 0,
     lowestProfit: null,
+    isProposal: false,
     STRATEGY: {
         ABOVE: {
             TOP: 'down',
@@ -63,7 +64,7 @@ const Main = {
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     onLoaded() {
-        if (emailjs) emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
+        if (window.emailjs) emailjs.init("user_e0Qe9rVHi8akjBRcxOX5b");
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
         this.localWS = new WebSocket('ws://localhost:3000/ws');
         this.addListener();
@@ -126,6 +127,8 @@ const Main = {
         }));
     },
     getPriceProposal(type) {
+        if (this.isProposal) return;
+        this.isProposal = true;
         /*
         {
         "proposal": 1,
@@ -157,12 +160,20 @@ const Main = {
     onLocalMessage(event) {
         var data = JSON.parse(event.data);
         switch (data.key) {
+            case 'highestLowest':
+            console.log('highestLowest',data);
+            this.highestPrice = data.data.highest;
+            this.lowestPrice = data.data.lowest;
+            break;
             case 'prediction':
                 if (this.prediction) return;
                 this.prediction = data.data;
 
                 //console.log('prediction', this.prediction);
-                if (this.prediction) this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
+                if (this.prediction) {
+                    this.getPriceProposal(this.prediction === 'fall' ? 'PUT' : 'CALL');
+                    View.updatePredictionType('PATTERN');
+                }
                 break;
         }
     },
@@ -181,10 +192,10 @@ const Main = {
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
                 let profit = this.accountBalance - this.startBalance;
-                if(profit > this.highestProfit) this.highestProfit = profit;
-                if(this.lowestProfit == null || profit < this.lowestProfit) this.lowestProfit = profit;
-                View.updateProfit(this.lowestProfit,this.highestProfit);
-                if(this.lowestProfit > 0)this.startMartingale = true;
+                if (profit > this.highestProfit) this.highestProfit = profit;
+                if (this.lowestProfit == null || profit < this.lowestProfit) this.lowestProfit = profit;
+                View.updateProfit(this.lowestProfit, this.highestProfit);
+                if (this.lowestProfit > 0) this.startMartingale = true;
                 if (profit <= 0) {
                     this.startMartingale = false;
                 }
@@ -203,10 +214,12 @@ const Main = {
                 this.getHistory();
                 break;
             case 'history':
+                console.log(data.history);
                 this.history = data.history.prices;
                 this.started = true;
                 this.getTicks();
                 this.getTranscations();
+                this.getHighestLowestPrice();
                 break;
             case 'proposal':
                 // console.log('proposal', data);
@@ -224,6 +237,7 @@ const Main = {
                 //console.log('transaction', data.transaction);
                 let isLoss = false;
                 if (data.transaction.action && data.transaction.action == 'sell') {
+                    this.isProposal = false;
                     let profit = this.accountBalance - this.startBalance;
 
                     if (data.transaction.amount === '0.00') {
@@ -271,6 +285,15 @@ const Main = {
                 break;
         }
 
+    },
+    getHighestLowestPrice(){
+        this.localWS.send(JSON.stringify({
+                    key: 'getHighestLowest',
+                    data:{
+                        asset:this.ASSET_NAME
+                    }
+
+                }));
     },
     sendSuccessfulPrediction() {
         this.localWS.send(JSON.stringify({
@@ -326,11 +349,13 @@ const Main = {
             if (price > highestPrice) highestPrice = price;
         }.bind(this));
 
-        this.lowestPrice = lowestPrice;
-        this.highestPrice = highestPrice;
+        this.lowestPrice = lowestPrice <  this.lowestPrice? lowestPrice : this.lowestPrice;
+        this.highestPrice =  highestPrice >  this.highestPrice? highestPrice : this.highestPrice;
+
         View.updateHighLow(this.lowestPrice, this.highestPrice, this.currentPrice);
         this.startPricePosition = ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2);
         this.lastTicks = this.history.slice(this.history.length - 11, this.history.length - 1);
+        View.updateStartPosition(this.startPricePosition);
     },
     setDirectionCollection() {
         this.directionCollection = [];
@@ -356,6 +381,8 @@ const Main = {
         }.bind(this));
     },
     setPredictionData() {
+        this.HighLowPrediction();
+        return;
         this.predictionItem = {
             startPricePosition: this.startPricePosition,
             historicDirections: this.directionCollection
@@ -372,6 +399,18 @@ const Main = {
                 historicDirections: this.directionCollection
             },
         }));
+    },
+    HighLowPrediction() {
+        if (this.isProposal || !this.highestPrice) return;
+
+        if (this.startPricePosition >= 0.9) {
+            this.getPriceProposal('PUT');
+            View.updatePredictionType('BARRIER');
+        } else if (this.startPricePosition <= 0.1) {
+            this.getPriceProposal('CALL');
+            View.updatePredictionType('BARRIER');
+
+        }
     },
     addTickToContract() {
         if (!this.currentContract) return;
@@ -411,7 +450,7 @@ const Main = {
         }));
         this.currentContract = null;
 
-
+         this.getHighestLowestPrice();
     }
 
 }.init();
