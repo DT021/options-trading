@@ -46,7 +46,7 @@ const Server = {
             this.fallData = [];
             this.raiseData = [];
         }
-
+        this.sendMessage('start',{});
     },
     getTradeResultData() {
         let successPath = __dirname + '/server/data/' + this.asset + 'success.json';
@@ -81,14 +81,17 @@ const Server = {
         this.isSuccessQueued = true;
     },
     updateData(item, asset) {
-        this.asset = asset + '/';
-        if (!this.raiseData) this.getData();
+        if (!this.raiseData) this.updateAsset();
         if (item.type == 'fall') {
             this.fallData.push(item);
         } else {
             this.raiseData.push(item);
         }
         this.isQueued = true;
+    },
+    updateAsset(asset) {
+        this.asset = asset + '/';
+        this.getData();
     },
     start() {
         this.interval = setInterval(this.onInterval.bind(this), 50);
@@ -107,6 +110,9 @@ const Server = {
                 //return;
                 this.updateData(obj.data, obj.asset);
                 break;
+            case 'asset':
+                this.updateAsset(obj.data);
+                break
             case 'getPrediction':
                 this.getPrediction(obj.data);
                 break;
@@ -119,9 +125,11 @@ const Server = {
         }
     },
     getHighestLowest(data) {
-      let obj = Analyse.getHighestLoweset(data);
-      this.sendMessage('highestLowest',obj);
-    },  
+        let obj = Analyse.getHighestLoweset(data);
+        obj.numberOfRaisesItems = this.raiseData.length;
+        obj.numberOfFallItems = this.fallData.length;
+        this.sendMessage('highestLowest', obj);
+    },
     getPrediction(data) {
         let prediction = Analyse.getPrediction(data, this.successData);
         console.log('prediction is', prediction);

@@ -60,6 +60,10 @@ let ChartComponent = {
     update(item) {
         this.config.data.labels.push(item.time);
         this.config.data.datasets[0].data.push(Number(item.price));
+        if(this.config.data.datasets[0].data.length >= 40) {
+            this.config.data.datasets[0].data.shift();
+            this.config.data.labels.shift();
+        }
         this.config.options.scales.yAxes[0].ticks.suggestedMin = item.lowestPrice?item.lowestPrice:0;
         this.chart.update();
     },

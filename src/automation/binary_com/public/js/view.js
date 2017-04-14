@@ -28,6 +28,7 @@ let View = {
         this.highestProfit = document.querySelector('#highestProfit');
         this.possiblePayout = document.querySelector('#possiblePayout');
         this.predictionType = document.querySelector('#predictionType');
+        this.isMartingale = document.querySelector('#isMartingale');
     },
     updateCounts(wins, loses) {
         this.winElement.textContent = wins;
@@ -77,6 +78,9 @@ let View = {
     },
     updatePredictionType(type) {
         this.predictionType.textContent = type;
+    },
+    updateMartingale(val) {
+        this.isMartingale.textContent = val;
     },
     updatePrediction(prediction, startPosition, price) {
         if (prediction) {

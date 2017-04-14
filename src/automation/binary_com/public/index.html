@@ -24,11 +24,11 @@
                     <a class="navbar-brand" href="#">Trading Bot</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#" class="btn btn-primary">Start</a></li>
-                    </ul>
+                    <li><a href="#" class="btn btn-primary">Start</a></li>
+                </ul>
         </nav>
         <div class="row">
-            <div class="col-md-6 row-height">
+            <div class="col-md-3 row-height">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">FINANCIAL</h3>
@@ -71,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 row-height">
+            <div class="col-md-3 row-height">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">MARKET</h3>
@@ -125,19 +125,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 row-height">
-                <div class="panel panel-info">
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Line Chart</h3>
-                    </div>
-                    <div class="panel-body">
-                        <canvas id="myChart" width="300" height="450"></canvas>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 row-height">
+            <div class="col-md-3 row-height">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">PREDICTION</h3>
@@ -184,6 +172,10 @@
                                     <td>£<span id="stake">0</span></td>
                                 </tr>
                                 <tr>
+                                    <td>Is Martingale</td>
+                                    <td><span id="isMartingale">false</span></td>
+                                </tr>
+                                <tr>
                                     <td>Payout Percentage</td>
                                     <td><span id="payout">0</span>%</td>
                                 </tr>
@@ -193,6 +185,18 @@
                                 </tr>
                             </tbody>
                         </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 row-height">
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Line Chart</h3>
+                    </div>
+                    <div class="panel-body">
+                        <canvas id="myChart" width="300" height="450"></canvas>
                     </div>
                 </div>
             </div>
