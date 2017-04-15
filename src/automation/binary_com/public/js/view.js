@@ -56,8 +56,8 @@ let View = {
     },
     updateStake(stake, lossLimit, profitLimit) {
         this.stake.textContent = stake;
-        this.lossLimit.textContent = lossLimit;
-        this.profitLimit.textContent = profitLimit;
+        this.lossLimit.textContent = lossLimit.toFixed(2);
+        this.profitLimit.textContent = profitLimit.toFixed(2);
     },
     updateProfit(lowestProfit, highestProfit) {
         this.highestProfit.textContent = highestProfit.toFixed(2);
@@ -66,7 +66,7 @@ let View = {
     updateAsset(assetName, collection, payout) {
         this.assetName.textContent = assetName;
         this.payout.textContent = payout;
-        this.possiblePayout.textContent = Number(this.stake.textContent) * Number(payout);
+        //this.possiblePayout.textContent = Number(this.stake.textContent) * Number(payout);
         //console.log(collection);
         collection.forEach(function(item, index) {
             let option = document.createElement('OPTION');
