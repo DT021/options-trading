@@ -3,6 +3,7 @@
 
 <head>
     <title></title>
+    <script type="text/javascript" src="lib/event-bus.js"></script>
     <script type="text/javascript" src="lib/emailjs.js"></script>
     <script src="lib/jquery-3.2.0.min.js"></script>
     <script src="lib/Chart.bundle.js"></script>
@@ -21,13 +22,14 @@
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">Trading Bot</a>
+                    <a class="navbar-brand" href="#">Travis Trading Bot</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#" class="btn btn-primary">Start</a></li>
+                    <li><button id="startButton" disabled class="btn btn-success">Start</button></li>
+                    <li><button id="stopButton" disabled class="btn btn-danger">Stop</button></li>
                 </ul>
         </nav>
-        <div class="row">
+        <div class="row full">
             <div class="col-md-4 row-height">
                 <div class="panel panel-info">
                     <div class="panel-heading">

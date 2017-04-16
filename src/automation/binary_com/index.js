@@ -119,10 +119,15 @@ const Server = {
             case 'getHighestLowest':
                 this.getHighestLowest(obj.data);
                 break;
+                case 'setHighestLowest':
+                this.setHighestLowest(obj.data);
+                break;
             case 'sucessfulTrade':
                 this.storeTradeResult(obj.data);
                 break;
         }
+    },
+    setHighestLowest(data) {
     },
     getHighestLowest(data) {
         let obj = Analyse.getHighestLoweset(data);

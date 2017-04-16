@@ -29,15 +29,42 @@ let View = {
         this.possiblePayout = document.querySelector('#possiblePayout');
         this.predictionType = document.querySelector('#predictionType');
         this.isMartingale = document.querySelector('#isMartingale');
+        this.startButton = document.querySelector('#startButton');
+        this.stopButton = document.querySelector('#stopButton');
+        this.addListeners();
+    },
+    addListeners() {
+        this.startButton.addEventListener('click', this.onStartClicked.bind(this));
+        this.stopButton.addEventListener('click', this.onStopClicked.bind(this));
+    },
+    activeButton() {
+        //this.stopButton.removeAttribute('disabled');
+        this.startButton.removeAttribute('disabled');
+    },
+    onStopClicked() {
+        App.EventBus.dispatch(App.EVENT.STOP_TRADING);
+        this.stopButton.setAttribute('disabled', '');
+        this.startButton.removeAttribute('disabled');
+    },
+    onStartClicked() {
+        App.EventBus.dispatch(App.EVENT.START_TRADING);
+        this.stopButton.removeAttribute('disabled');
+        this.startButton.setAttribute('disabled', '');
+        this.startTime.textContent = this.formatDate(new Date());
     },
     updateCounts(wins, loses) {
         this.winElement.textContent = wins;
         this.loseElement.textContent = loses;
     },
-    ended() {
-        this.endedElement.textContent = 'true';
-        this.endedElement.parentNode.classList.add('danger');
-        this.endTime.textContent = this.formatDate(new Date());
+    ended(bool) {
+        this.endedElement.textContent = bool;
+        if (bool) {
+            this.endedElement.parentNode.classList.add('danger');
+            this.endTime.textContent = this.formatDate(new Date());
+        } else {
+            this.endedElement.parentNode.classList.remove('danger');
+            this.endTime.textContent = '';
+        }
     },
     updateBalance(balance, profit) {
         this.balanceElement.textContent = balance;
@@ -46,7 +73,6 @@ let View = {
         this.profitElement.parentNode.classList.add(profit >= 0 ? 'success' : 'danger');
         this.profitElement.parentNode.classList.remove(profit >= 0 ? 'danger' : 'success');
         //this.balanceElement.parentNode.classList.add(balance >= 0 ? 'success' : 'danger');
-        if (!this.startTime.textContent) this.startTime.textContent = this.formatDate(new Date());
     },
     updateHighLow(lowest, highest, current) {
         this.highestPrice.textContent = highest;
