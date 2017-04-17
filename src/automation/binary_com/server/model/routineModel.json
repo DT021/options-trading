@@ -1,0 +1,17 @@
+{
+    "totalProfit": 0,
+    "balance":0,
+    "startBalance":0,
+    "lossLimitReached":false,
+    "results": {
+        "monday": {
+            "profit": 0,
+            "highestProfit": 0,
+            "lowestProfit": 0,
+            "balance": 0,
+            "wins": 0,
+            "loses": 0,
+            "duration": 0
+        }
+    }
+}

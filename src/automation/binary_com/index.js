@@ -1,6 +1,9 @@
 var express = require('express');
 var path = require('path');
 var Analyse = require('./server/analyse.js');
+var EventBus = require('./server/event/eventbus.js');
+var BinaryService = require('./server/service/binaryService.js');
+var RoutineService = require('./server/service/routineService.js');
 var app = express();
 var expressWs = require('express-ws')(app);
 var fs = require('fs');
@@ -16,6 +19,7 @@ const Server = {
     ws: null,
     asset: '',
     init() {
+        RoutineService.init();
         this.route();
         this.start();
         console.log('server running on http://localhost:3000');
@@ -46,7 +50,7 @@ const Server = {
             this.fallData = [];
             this.raiseData = [];
         }
-        this.sendMessage('start',{});
+        this.sendMessage('start', {});
     },
     getTradeResultData() {
         let successPath = __dirname + '/server/data/' + this.asset + 'success.json';
@@ -119,7 +123,7 @@ const Server = {
             case 'getHighestLowest':
                 this.getHighestLowest(obj.data);
                 break;
-                case 'setHighestLowest':
+            case 'setHighestLowest':
                 this.setHighestLowest(obj.data);
                 break;
             case 'sucessfulTrade':
@@ -127,8 +131,7 @@ const Server = {
                 break;
         }
     },
-    setHighestLowest(data) {
-    },
+    setHighestLowest(data) {},
     getHighestLowest(data) {
         let obj = Analyse.getHighestLoweset(data);
         obj.numberOfRaisesItems = this.raiseData.length;
