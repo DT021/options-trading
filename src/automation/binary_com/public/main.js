@@ -1,4 +1,5 @@
 const Main = {
+    isVirtual: true,
     ws: null,
     history: [],
     winCount: 0,
@@ -20,7 +21,7 @@ const Main = {
     localWS: null,
     highestPrice: null,
     lowestPrice: null,
-    lossLimit: -20,
+    lossLimit: -25,
     lossLimitDefault: 0,
     profitLimit: 50,
     prediction: '',
@@ -143,7 +144,7 @@ const Main = {
             message_html: "Profit today was £" + this.profit.toFixed(2) + "<br> and the end time was " + this.getDateTimeString(),
             asset: this.ASSET_NAME,
             profit: this.profit.toFixed(2),
-            balance: this.balance,
+            balance: this.accountBalance,
             predictionModel: this.predictionType,
             lowest_profit: this.lowestProfit.toFixed(2),
             highest_profit: this.highestProfit.toFixed(2),
@@ -200,7 +201,7 @@ const Main = {
             "amount": this.currentStake,
             "basis": "stake",
             "contract_type": type ? type : "CALL",
-            "currency": "USD",
+            "currency": this.isVirtual ? "USD" : 'GBP',
             "duration": "10",
             "duration_unit": "t",
             "symbol": this.ASSET_NAME
@@ -249,9 +250,10 @@ const Main = {
         },
         onMessage(event) {
             var data = JSON.parse(event.data);
+           // console.log(data);
             switch (data.msg_type) {
                 case 'authorize':
-                // console.log(data);
+                console.log(data);
                 //this.addFunds();
                 this.getBalance();
                 break;
@@ -278,7 +280,7 @@ const Main = {
                 View.activeButton();
                 break;
                 case 'proposal':
-                //console.log('proposal', data);
+                console.log('proposal', data);
                 if (!data.proposal) return;
                 this.proposalID = data.proposal.id;
                 this.payout = data.proposal.payout;
@@ -286,10 +288,10 @@ const Main = {
                 this.buyContract();
                 break;
                 case 'buy':
-                //console.log('buy', data);
+                console.log('buy', data);
                 break;
                 case 'transaction':
-                // console.log('transaction', data.transaction);
+                 console.log('transaction', data.transaction);
                 let isLoss = false;
                 if (data.transaction && data.transaction.action && data.transaction.action == 'sell') {
 
@@ -363,8 +365,8 @@ const Main = {
                 this.lossLimit = 19;
             } else if (profit > 0 && this.highestProfit >= 10) {
             // this.lossLimit = 1;
-        } else if (profit < -10 && this.highestProfit < 5) {
-            // this.profitLimit = 0;
+        } else if (profit < -10 && this.highestProfit < 5 && (this.lossCount + this.winCount) > 30) {
+            this.profitLimit = 1;
         }
         View.updateProfit(this.lowestProfit, this.highestProfit);
         View.updateBalance(this.accountBalance, profit);
