@@ -1,5 +1,6 @@
 const EventBus = {
-    addEventListner(eventName, callback) {
+    events:{},
+    addEventListener(eventName, callback) {
         if (!this.events[eventName]) this.events[eventName] = [];
         this.events[eventName].push(callback);
     },
