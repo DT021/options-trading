@@ -2,6 +2,7 @@ let View = {
     previousPrediction: 'put',
     profitClass: 'call',
     _predictionPrice: 0,
+    tableTemplate: '<div class="well"><h4>{{title}}</h4><table id="{{id}}" class="table table-striped table-hover "><thead><tr><th>Key</th> <th>Value</th> </tr> </thead><tbody> </tbody></table></div>',
     init() {
         this.winElement = document.querySelector('#wins');
         this.loseElement = document.querySelector('#loses');
@@ -31,6 +32,7 @@ let View = {
         this.isMartingale = document.querySelector('#isMartingale');
         this.startButton = document.querySelector('#startButton');
         this.stopButton = document.querySelector('#stopButton');
+        this.logBody = document.querySelector('#log-panel');
         this.addListeners();
     },
     addListeners() {
@@ -92,8 +94,6 @@ let View = {
     updateAsset(assetName, collection, payout) {
         this.assetName.textContent = assetName;
         this.payout.textContent = payout;
-        //this.possiblePayout.textContent = Number(this.stake.textContent) * Number(payout);
-        //console.log(collection);
         collection.forEach(function(item, index) {
             let option = document.createElement('OPTION');
             option.value = item[0];
@@ -145,6 +145,37 @@ let View = {
             element.classList.remove('glyphicon-arrow-up');
             element.classList.remove('glyphicon-arrow-down');
         }
+    },
+    updateLog(log) {
+        this.logBody.innerHTML = '';
+        let template = '';
+
+        for (key in log) {
+            let type= key.replace(':','_');
+            template = this.tableTemplate.replace('{{title}}', key);
+            template = template.replace('{{id}}', 'log-' + type);
+            this.logBody.innerHTML += template;
+            this.setLogTableData(log[key], 'log-' + type);
+        }
+
+    },
+    setLogTableData(item, id) {
+        setTimeout(function() {
+            let tbody = document.querySelector('#'+id +' tbody');
+            if(!tbody)return
+            for (key in item) {
+                let tr = document.createElement('tr');
+                let td =  document.createElement('td');
+                let tdValue =  document.createElement('td');
+                td.innerHTML = key;
+                tdValue.innerHTML = item[key];
+
+                tr.appendChild(td);
+                tr.appendChild(tdValue);
+                tbody.appendChild(tr);
+            }
+        }.bind(this), 50);
+
     },
     formatDate(date) {
         var hours = date.getHours();

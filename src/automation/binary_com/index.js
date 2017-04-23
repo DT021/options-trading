@@ -2,7 +2,6 @@ var express = require('express');
 var path = require('path');
 var Analyse = require('./server/analyse.js');
 var EventBus = require('./server/event/eventbus.js');
-var BinaryService = require('./server/service/binaryService.js');
 var RoutineService = require('./server/service/routineService.js');
 var app = express();
 var expressWs = require('express-ws')(app);

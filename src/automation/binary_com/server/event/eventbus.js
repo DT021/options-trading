@@ -1,5 +1,6 @@
 const EventBus = {
     events:{},
+    hooks:{},
     addEventListener(eventName, callback) {
         if (!this.events[eventName]) this.events[eventName] = [];
         this.events[eventName].push(callback);
@@ -15,6 +16,16 @@ const EventBus = {
         this.events[eventName].forEach(function(item) {
             item(data);
         }.bind(this));
+    },
+    addHook(methodName,scope){
+        this.hooks[methodName] = {
+            methodName:methodName,
+            scope:scope
+        };
+    },
+    getHook(methodName){
+        if(!this.hooks[methodName]) return null;
+        return this.hooks[methodName].scope[methodName]();
     }
 };
 
