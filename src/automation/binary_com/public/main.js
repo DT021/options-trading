@@ -45,7 +45,7 @@ const Main = {
   isTrading: false,
   trendSuccess: [],
   trendFail: [],
-  trendSucessPercentage: 0.88,
+  trendSucessPercentage: 0.89,
   pauseTrading: false,
   currentTrendItem: {},
   ticksAverageCollection: [],
@@ -396,7 +396,7 @@ const Main = {
     let timeDifference = startD.getMinutes() - currentD.getMinutes();
     let countDiff = Math.abs(fallCount - raiseCount);
     console.log('checkVolatility');
-    if (changeCount > 10) {
+    if (changeCount > 11) {
       console.log('currently volatile');
       this.pauseTrading = true;
       View.updateVolatile(true);
@@ -763,7 +763,7 @@ const Main = {
     let priceDifference = Math.abs(this.history[this.history.length - 3] - this.history[this.history.length - 1]);
     let priceDifLimit = 0;
     //let ratio = 0.89;
-    if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage) {
+    if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage && this.checkIsDirection('RAISE', 2)) {
       proposal = 'CALL';
       predictionType = 'TREND';
       found = true;
@@ -776,7 +776,7 @@ const Main = {
         priceDiff: priceDifference
       };
       ChartComponent.updatePredictionChart(trend.collection);
-    } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage) {
+    } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 2)) {
       proposal = 'PUT';
       predictionType = 'TREND';
       found = true;
