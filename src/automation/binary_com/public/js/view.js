@@ -33,6 +33,7 @@ let View = {
         this.startButton = document.querySelector('#startButton');
         this.stopButton = document.querySelector('#stopButton');
         this.logBody = document.querySelector('#log-panel');
+        this.isVolatile = document.querySelector('#isVolatile');
         this.addListeners();
     },
     addListeners() {
@@ -158,6 +159,17 @@ let View = {
             this.setLogTableData(log[key], 'log-' + type);
         }
 
+    },
+    updateVolatile(value){
+        this.isVolatile.innerHTML = value;
+        if(value)
+        {
+            this.isVolatile.parentNode.classList.remove('success');
+            this.isVolatile.parentNode.classList.add('danger');
+        }else{
+            this.isVolatile.parentNode.classList.add('success');
+            this.isVolatile.parentNode.classList.remove('danger');
+        }
     },
     setLogTableData(item, id) {
         setTimeout(function() {
