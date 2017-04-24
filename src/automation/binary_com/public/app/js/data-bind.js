@@ -13,13 +13,17 @@ const DataBind = {
     },
     set(key, value) {
         let eKey = key.replace('.', '_');
+        if (!this.model[key]) this.model[key] = {
+            value: '',
+            items: []
+        };
         this.model[key].value = value;
         this.onChange(eKey, value);
     },
     onChange(key, value) {
         if (!this.model[key]) return;
         this.model[key].items.forEach(function(element) {
-          element.innerHTML = value;
+            element.innerHTML = value;
         }.bind(this));
     },
     getElements() {
@@ -28,8 +32,8 @@ const DataBind = {
             key = element.getAttribute('data-bind');
             eKey = key.replace('.', '_');
             if (!this.model[eKey]) this.model[eKey] = {
-              value:'',
-              items:[]
+                value: '',
+                items: []
             };
             this.model[eKey].items.push(element);
         }.bind(this));

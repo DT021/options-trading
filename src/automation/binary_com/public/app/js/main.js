@@ -41,6 +41,7 @@ const Main = {
         console.log(data);
         this.state.highestPrice = data.highestPrice;
         this.state.lowestPrice = data.lowestPrice;
+        
         DataBind.set('balance', data.balance);
         DataBind.set('lossCap', data.lossCap);
         DataBind.set('profitCap', data.profitCap);

@@ -11,7 +11,8 @@ class SessionModel {
             loginId: null,
             assetName: 'R_100',
             highestPrice: 0,
-            lowestPrice: 0
+            lowestPrice: 0,
+            startTime:this.formatDate(new Date())
         }
         this.financeModel = null;
         this.init(data);
@@ -33,17 +34,24 @@ class SessionModel {
     getData() {
         let financeData = this.financeModel.getData();
         let obj = {
-            currency: this.state.currency,
-            isVirtual: this.state.isVirtual,
-            loginId: this.state.loginId,
-            highestPrice: this.state.highestPrice,
-            lowestPrice: this.state.lowestPrice,
-            assetName: this.state.assetName
+        };
+        for(let key in this.state){
+          obj[key] = this.state[key];
         }
         for(let key in financeData){
           obj[key] = financeData[key];
         }
         return obj;
+    }
+    formatDate(date) {
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        var strTime = hours + ':' + minutes + ' ' + ampm;
+        return date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
     }
 };
 
