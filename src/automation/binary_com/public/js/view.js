@@ -2,6 +2,7 @@ let View = {
     previousPrediction: 'put',
     profitClass: 'call',
     _predictionPrice: 0,
+    _zeros:1,
     tableTemplate: '<div class="well"><h4>{{title}}</h4><table id="{{id}}" class="table table-striped table-hover "><thead><tr><th>Key</th> <th>Value</th> </tr> </thead><tbody> </tbody></table></div>',
     init() {
         this.winElement = document.querySelector('#wins');
@@ -71,7 +72,7 @@ let View = {
     },
     updateBalance(balance, profit) {
         this.balanceElement.textContent = balance;
-        this.profitElement.textContent = profit.toFixed(2);
+        this.profitElement.textContent = (profit * this._zeros).toFixed(2);
         this.profitElement.parentNode.parentNode.classList.remove(this.profitClass);
         this.profitElement.parentNode.classList.add(profit >= 0 ? 'success' : 'danger');
         this.profitElement.parentNode.classList.remove(profit >= 0 ? 'danger' : 'success');
@@ -84,13 +85,13 @@ let View = {
         if (this._predictionPrice) this.updateArrow(this.currentPriceArrow, this._predictionPrice > current ? 'down' : 'up');
     },
     updateStake(stake, lossLimit, profitLimit) {
-        this.stake.textContent = stake;
-        this.lossLimit.textContent = lossLimit.toFixed(2);
-        this.profitLimit.textContent = profitLimit.toFixed(2);
+        this.stake.textContent = stake * this._zeros;
+        this.lossLimit.textContent = (lossLimit * this._zeros).toFixed(2);
+        this.profitLimit.textContent = (profitLimit * this._zeros).toFixed(2);
     },
     updateProfit(lowestProfit, highestProfit) {
-        this.highestProfit.textContent = highestProfit.toFixed(2);
-        this.lowestProfit.textContent = lowestProfit.toFixed(2);
+        this.highestProfit.textContent = (highestProfit * this._zeros).toFixed(2);
+        this.lowestProfit.textContent = (lowestProfit * this._zeros).toFixed(2);
     },
     updateAsset(assetName, collection, payout) {
         this.assetName.textContent = assetName;

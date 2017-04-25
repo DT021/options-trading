@@ -395,9 +395,9 @@ const Main = {
         }.bind(this));
         let timeDifference = startD.getMinutes() - currentD.getMinutes();
         let countDiff = Math.abs(fallCount - raiseCount);
-       //console.log('checkVolatility', changeCount);
-        if (changeCount > 10) {
-            //  console.log('currently volatile');
+       console.log('checkVolatility', changeCount);
+        if (changeCount > 9) {
+              console.log('currently volatile');
             this.pauseTrading = true;
             View.updateVolatile(true);
         } else {
@@ -447,6 +447,7 @@ const Main = {
         if (isLoss && this.startMartingale) {
             let doubleStake = (this.currentStake * 2);
             this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.942));
+            //this.currentStake = this.stake + (this.stake - (this.stake * 0.942));
             if (this.profit - this.currentStake <= this.lossLimit) {
                 this.currentStake = this.stake;
             }
@@ -613,8 +614,8 @@ const Main = {
         let isDirection = true;
         collection.forEach(function(price, index) {
             if (index > 0) {
-                if (direction == 'FALL' && price >= previousPrice) isDirection = false;
-                if (direction == 'RAISE' && price <= previousPrice) isDirection = false;
+                if (direction == 'FALL' && price + 1 >= previousPrice) isDirection = false;
+                if (direction == 'RAISE' && price - 1 <= previousPrice) isDirection = false;
             }
             previousPrice = price;
         });
@@ -651,12 +652,12 @@ const Main = {
         let highPercentage = raiseCount / total;
 
         let direction = collection[0] > collection[collection.length - 1] ? 'FALL' : 'RAISE';
-        if (direction == 'FALL' && collection[collection.length - 1] <= lowest && lowPercentage > percentageLimit && this.checkIsDirection('FALL', 1)) {
+        if (direction == 'FALL' && collection[collection.length - 1] <= lowest && lowPercentage > percentageLimit && this.checkIsDirection('FALL', 2)) {
             type = 'PUT';
             this.setPrediction(type, predictionType);
             found = true
         }
-        if (direction == 'RAISE' && collection[collection.length - 1] >= highest && highPercentage > percentageLimit && this.checkIsDirection('RAISE', 1)) {
+        if (direction == 'RAISE' && collection[collection.length - 1] >= highest && highPercentage > percentageLimit && this.checkIsDirection('RAISE', 2)) {
             this.setPrediction(type, predictionType);
             found = true
         }
