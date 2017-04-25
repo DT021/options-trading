@@ -14,6 +14,7 @@ const SocketService = {
         EventBus.addEventListener('ON_TICK', this.onTick.bind(this));
         EventBus.addEventListener(Event.DISCONNECT, this.disconnect.bind(this));
         EventBus.addEventListener(Event.UPDATE_DATA, this.updateData.bind(this));
+        EventBus.addEventListener(Event.UPDATE_ALL, this.updateAll.bind(this));
 
         this.app = app;
         this.connect();
@@ -29,7 +30,7 @@ const SocketService = {
             ws.on('close', (event) => { this.onClose(event, ws) });
         }.bind(this));
     },
-    onClose(event,ws) {
+    onClose(event, ws) {
         let index;
         this.clientsCollection.forEach(function(cws, i) {
             if (cws == ws) index = i;
@@ -53,13 +54,18 @@ const SocketService = {
         }
     },
     updateData() {
-      this.clientsCollection.forEach(function(ws) {
-            this.update(ws)
+        let sessionModel = EventBus.getHook('getSessionModel');
+        this.clientsCollection.forEach(function(ws) {
+            this.update(ws,'UPDATE', sessionModel.getData());
         }.bind(this));
     },
-    update(ws) {
-        let sessionModel = EventBus.getHook('getSessionModel');
-        this.send(ws, 'UPDATE', sessionModel.getData());
+    updateAll(data) {
+        this.clientsCollection.forEach(function(ws) {
+            this.update(ws, data.key, data.data);
+        }.bind(this));
+    },
+    update(ws, key, data) {
+        this.send(ws, key, data);
     },
     send(ws, key, value) {
         console.log('send', key);

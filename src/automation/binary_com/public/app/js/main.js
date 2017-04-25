@@ -24,6 +24,7 @@ const Main = {
     },
     onMessage(event) {
         let data = JSON.parse(event.data);
+
         switch (data.key) {
             case 'UPDATE':
                 this.update(data.data);
@@ -34,11 +35,14 @@ const Main = {
               price:data.data.quote,
               lowestPrice:this.state.lowestPrice
             });
-                break;
+                break;  
+            case 'UPDATE_PREDICTION_CHART':
+console.log('direction',data.data.direction);
+            ChartComponent.updatePredictionChart(data.data.collection, data.data.lowest, data.data.highest);              
+ break;
         }
     },
     update(data) {
-        console.log(data);
         this.state.highestPrice = data.highestPrice;
         this.state.lowestPrice = data.lowestPrice;
         

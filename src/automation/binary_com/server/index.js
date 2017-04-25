@@ -1,6 +1,7 @@
 const EventBus = require('./event/Eventbus.js');
 const BinaryService = require('./service/binaryService.js');
 const SocketService = require('./service/socketService.js');
+const PredictionService = require('./service/predictionService.js');
 const SessionModel = require('./model/sessionModel.js');
 const express = require('express');
 const path = require('path');
@@ -16,9 +17,10 @@ const Controller = {
         EventBus.addEventListener('READY', this.onReady.bind(this));
         EventBus.addHook('getSessionModel', this);
         BinaryService.init(EventBus);
+        PredictionService.init(EventBus);
 
         this.route();
-       
+
     },
     route() {
         app.use('/', express.static(path.join(__dirname, '../public')));
@@ -32,6 +34,6 @@ const Controller = {
     },
     getSessionModel() {
       //console.log('sessionModel',this.sessionModel);
-        return this.sessionModel;
-    }
+      return this.sessionModel;
+  }
 }.init();
