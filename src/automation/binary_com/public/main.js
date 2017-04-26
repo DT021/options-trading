@@ -23,7 +23,7 @@ const Main = {
     lowestPrice: null,
     lossLimit: -20,
     lossLimitDefault: 0,
-    profitLimit: 50,
+    profitLimit: 5,
     prediction: '',
     ASSET_NAME: 'R_100',
     predictionItem: null,
@@ -50,6 +50,7 @@ const Main = {
     currentTrendItem: {},
     ticksAverageCollection: [],
     volatileTimer: null,
+    volatilatyCap:8,
     log: {
 
     },
@@ -396,7 +397,7 @@ const Main = {
         let timeDifference = startD.getMinutes() - currentD.getMinutes();
         let countDiff = Math.abs(fallCount - raiseCount);
        console.log('checkVolatility', changeCount);
-        if (changeCount > 9) {
+        if (changeCount > this.volatilatyCap ) {
               console.log('currently volatile');
             this.pauseTrading = true;
             View.updateVolatile(true);
@@ -446,7 +447,7 @@ const Main = {
     setStake(isLoss) {
         if (isLoss && this.startMartingale) {
             let doubleStake = (this.currentStake * 2);
-            this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.942));
+           this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.942));
             //this.currentStake = this.stake + (this.stake - (this.stake * 0.942));
             if (this.profit - this.currentStake <= this.lossLimit) {
                 this.currentStake = this.stake;
@@ -608,28 +609,29 @@ const Main = {
             lowest: lowest
         }
     },
-    checkIsDirection(direction, index, fullIndex) {
+    checkIsDirection(direction, index, fullIndex,barrier) {
+        if(barrier == undefined) barrier = 1;
         let collection = this.history.slice((this.history.length - 1) - (index + 1), this.history.length - 1);
         let previousPrice = collection[0];
         let isDirection = true;
         collection.forEach(function(price, index) {
             if (index > 0) {
-                if (direction == 'FALL' && price + 1 >= previousPrice) isDirection = false;
-                if (direction == 'RAISE' && price - 1 <= previousPrice) isDirection = false;
+                if (direction == 'FALL' && price + barrier >= previousPrice) isDirection = false;
+                if (direction == 'RAISE' && price - barrier <= previousPrice) isDirection = false;
             }
             previousPrice = price;
         });
 
         let highLow = this.getHighLow(this.history.slice(this.history.length - fullIndex, this.history.length - 1));
-        /*
+        
         if (direction == 'FALL' && highLow.lowest < this.currentPrice - 2 || direction == 'RAISE' && highLow.highest > this.currentPrice + 2) {
           isDirection = false;
         }
-        */
+        
         return isDirection;
     },
     predictionOnTrendSharp() {
-        let collection = this.history.slice(this.history.length - 5, this.history.length - 1);
+        let collection = this.history.slice(this.history.length - 10, this.history.length - 1);
         let highest = collection[0];
         let lowest = collection[0];
         let fallCount = 0;
@@ -652,12 +654,12 @@ const Main = {
         let highPercentage = raiseCount / total;
 
         let direction = collection[0] > collection[collection.length - 1] ? 'FALL' : 'RAISE';
-        if (direction == 'FALL' && collection[collection.length - 1] <= lowest && lowPercentage > percentageLimit && this.checkIsDirection('FALL', 2)) {
+        if (direction == 'FALL' && collection[collection.length - 1] <= lowest && lowPercentage > percentageLimit && this.checkIsDirection('FALL', 2,5,2)) {
             type = 'PUT';
             this.setPrediction(type, predictionType);
             found = true
         }
-        if (direction == 'RAISE' && collection[collection.length - 1] >= highest && highPercentage > percentageLimit && this.checkIsDirection('RAISE', 2)) {
+        if (direction == 'RAISE' && collection[collection.length - 1] >= highest && highPercentage > percentageLimit && this.checkIsDirection('RAISE', 2,5,2)) {
             this.setPrediction(type, predictionType);
             found = true
         }
@@ -766,7 +768,7 @@ const Main = {
         let priceDifference = Math.abs(this.history[this.history.length - 3] - this.history[this.history.length - 1]);
         let priceDifLimit = 0;
         //let ratio = 0.89;
-        if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage && this.checkIsDirection('RAISE', 1)) {
+        if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage && this.checkIsDirection('RAISE', 1,5)) {
             proposal = 'CALL';
             predictionType = 'TREND';
             found = true;
@@ -779,7 +781,7 @@ const Main = {
                 priceDiff: priceDifference
             };
             ChartComponent.updatePredictionChart(trend.collection);
-        } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 1)) {
+        } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 1,5)) {
             proposal = 'PUT';
             predictionType = 'TREND';
             found = true;
