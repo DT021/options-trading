@@ -23,7 +23,7 @@ const Main = {
     lowestPrice: null,
     lossLimit: -20,
     lossLimitDefault: 0,
-    profitLimit: 5,
+    profitLimit: 10,
     prediction: '',
     ASSET_NAME: 'R_100',
     predictionItem: null,
@@ -530,7 +530,7 @@ const Main = {
         if (this.isProposal || this.pauseTrading) return;
         if (this.predictionModel != 'pattern') {
             let found = false;
-            found = this.predictionOnTrendSharp();
+            //found = this.predictionOnTrendSharp();
             if (!found) found = this.predictOnTrend();
         } else {
             this.predictionItem = {
@@ -621,7 +621,7 @@ const Main = {
             }
             previousPrice = price;
         });
-
+    
         let highLow = this.getHighLow(this.history.slice(this.history.length - fullIndex, this.history.length - 1));
         
         if (direction == 'FALL' && highLow.lowest < this.currentPrice - 2 || direction == 'RAISE' && highLow.highest > this.currentPrice + 2) {
@@ -631,7 +631,7 @@ const Main = {
         return isDirection;
     },
     predictionOnTrendSharp() {
-        let collection = this.history.slice(this.history.length - 10, this.history.length - 1);
+        let collection = this.history.slice(this.history.length - 5, this.history.length - 1);
         let highest = collection[0];
         let lowest = collection[0];
         let fallCount = 0;

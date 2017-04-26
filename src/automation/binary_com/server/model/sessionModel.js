@@ -9,9 +9,10 @@ class SessionModel {
             currency: '',
             isVirtual: false,
             loginId: null,
-            assetName: 'R_100',
+            assetName: 'R_100',//frxEURGBP
             highestPrice: 0,
             lowestPrice: 0,
+            tickDuration: 10,
             startTime:this.formatDate(new Date())
         }
         this.financeModel = null;
@@ -22,7 +23,7 @@ class SessionModel {
         this.state.currency = data.currency;
         this.state.isVirtual = data.is_virtual;
         this.state.loginId = data.loginid;
-        this.financeModel = new FinanceModel();
+        this.financeModel = new FinanceModel(EventBus);
         this.financeModel.setBalance(data.balance);
         //console.log(this.state);
     }
