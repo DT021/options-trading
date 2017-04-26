@@ -82,7 +82,7 @@ const BinaryService = {
                 "count": count ? count : 5000
             }));
             this.getHistory(200);
-        }.bind(this), 1000);
+        }.bind(this), 10000);
     },
     getTranscations() {
         this.ws.send(JSON.stringify({

@@ -4,6 +4,7 @@ const Event = {
     REQUEST:'REQUEST',
     READY:'READY',
     HIGH_LOW:'HIGH_LOW',
-    UPDATE_DATA:'UPDATE_DATA'
+    UPDATE_DATA:'UPDATE_DATA',
+    UPDATE_ALL:'UPDATE_ALL'
 }
 module.exports = Event;
