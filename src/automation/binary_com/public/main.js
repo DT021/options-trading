@@ -13,7 +13,7 @@ const Main = {
     lossStreak: 0,
     started: false,
     currentTick: 0,
-    stakeTicks: 10,
+    stakeTicks: 6,
     currentContract: null,
     ended: false,
     startMartingale: false,
@@ -21,9 +21,9 @@ const Main = {
     localWS: null,
     highestPrice: null,
     lowestPrice: null,
-    lossLimit: -20,
+    lossLimit: -200,
     lossLimitDefault: 0,
-    profitLimit: 50,
+    profitLimit: 5,
     prediction: '',
     ASSET_NAME: 'R_100',
     predictionItem: null,
@@ -159,6 +159,7 @@ const Main = {
             startTime: this.startTime,
             endTime: this.getDateTimeString()
         });
+        location.reload();
     },
     getTranscations() {
         this.ws.send(JSON.stringify({
@@ -207,7 +208,7 @@ const Main = {
             "basis": "stake",
             "contract_type": type ? type : "CALL",
             "currency": this.isVirtual ? "USD" : 'GBP',
-            "duration": duration ? duration : "10",
+            "duration": duration ? duration : String(this.stakeTicks),
             "duration_unit": "t",
             "symbol": this.ASSET_NAME
         }));
@@ -285,6 +286,7 @@ const Main = {
                     this.historyTimes = data.history.times;
                     this.started = true;
                     View.activeButton();
+                    this.onStartTrading();
                 }
                 break;
             case 'proposal':
@@ -319,7 +321,7 @@ const Main = {
                         this.sendSuccessfulPrediction();
                         this.setSuccess();
                     }
-                    if (profit <= this.lossLimit || this.accountBalance <= 0 || profit / this.profitLimit > 0.8) {
+                    if (profit <= this.lossLimit || this.accountBalance <= 0 || profit >=  this.profitLimit) {
                         this.end();
                     }
                     View.updateMartingale(this.startMartingale);
@@ -396,7 +398,7 @@ const Main = {
         let timeDifference = startD.getMinutes() - currentD.getMinutes();
         let countDiff = Math.abs(fallCount - raiseCount);
        console.log('checkVolatility', changeCount);
-        if (changeCount > 9) {
+        if (changeCount > 10) {
               console.log('currently volatile');
             this.pauseTrading = true;
             View.updateVolatile(true);
@@ -449,7 +451,7 @@ const Main = {
             this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.942));
             //this.currentStake = this.stake + (this.stake - (this.stake * 0.942));
             if (this.profit - this.currentStake <= this.lossLimit) {
-                this.currentStake = this.stake;
+               // this.currentStake = this.stake;
             }
         } else {
             this.currentStake = this.stake;
