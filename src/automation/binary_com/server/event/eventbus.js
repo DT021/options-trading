@@ -23,9 +23,9 @@ const EventBus = {
             scope:scope
         };
     },
-    getHook(methodName){
+    getHook(methodName,data){
         if(!this.hooks[methodName]) return null;
-        return this.hooks[methodName].scope[methodName]();
+        return this.hooks[methodName].scope[methodName](data);
     }
 };
 

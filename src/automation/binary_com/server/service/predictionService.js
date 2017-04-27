@@ -91,7 +91,7 @@ const PredictionService = {
       }
     });
 
-    console.log('history.length', this.history);
+    //console.log('history.length', this.history);
     console.log('winCount', winCount, '/', 'lossCount', lossCount);
 
 

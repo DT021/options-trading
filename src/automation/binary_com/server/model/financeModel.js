@@ -11,33 +11,34 @@ class FinanceModel {
       profitCap: 50,
       lossCap: -20,
       profitCapMultiple: 5,
+      lossCapMultiple: 5,
       stake: 1,
       currentStake: 1,
       martingale: false,
-      payoutPercentage:0.942,
-      martingaleCount:0,
-      useMartingale:false,
+      payoutPercentage: 0.942,
+      martingaleCount: 0,
+      useMartingale: false,
     };
+    this.onBalanceScoped =  this.onBalance.bind(this);
+    this.onTransactionScoped =  this.onTransaction.bind(this);
+
     this.init();
   }
   init() {
-    EventBus.addEventListener('ON_BALANCE', this.onBalance.bind(this));
-    EventBus.addEventListener('ON_TRANSACTION', this.onTransaction.bind(this));
-
+    EventBus.addEventListener('ON_BALANCE', this.onBalanceScoped);
+    EventBus.addEventListener('ON_TRANSACTION', this.onTransactionScoped);
   }
   onTransaction(data) {
-    this.setBalance(data.balance);
-    this.state.profit = this.state.balance - this.state.startBalance;
+    this.updateBalance(data);
     if (data.action != 'sell') return;
     let isWin = false;
     if (data.amount == '0.00') {
-      console.log('loss');
-      this.state.martingale = true;
-      this.setStake(true);
+      this.setLoss();
     } else {
       isWin = true;
-      console.log('win', '£' + data.amount);
+      this.setWin(data);
     }
+    this.checkSessionDone();
     EventBus.dispatch(Event.TRANSCATION_COMPLETE, {
       isWin: isWin,
       profit: this.state.profit,
@@ -45,22 +46,39 @@ class FinanceModel {
     });
     console.log('profit', '£' + this.state.profit);
   }
-  checkSessionDone(){
-
+  setLoss() {
+    console.log('loss');
+    this.state.martingale = true;
+    this.setStake(true);
+  }
+  setWin(data) {
+    console.log('win', '£' + data.amount);
+  }
+  checkSessionDone() {
+    if (this.state.profit >= (this.state.stake * this.state.profitCapMultiple) || this.state.profit <= -(this.state.stake * this.state.lossCapMultiple)) {
+      EventBus.dispatch(Event.SESSION_COMPLETE, {
+        profit: this.state.profit,
+        balance: this.state.balance
+      });
+    }
+  }
+  updateBalance(data) {
+    this.setBalance(data.balance);
+    this.state.profit = this.state.balance - this.state.startBalance;
   }
   setStake(isLoss) {
     if (this.state.useMartingale && isLoss) {
       let doubleStake = (this.state.currentStake * 2);
       this.state.currentStake = doubleStake + (doubleStake - (doubleStake * this.state.payoutPercentage));
-      if(this.martingaleCount > 3 || this.state.profit - this.state.currentStake < this.state.lossCap)this.resetStake();
+      if (this.martingaleCount > 3 || this.state.profit - this.state.currentStake < this.state.lossCap) this.resetStake();
       this.martingaleCount++;
-    }else{
-    this.martingaleCount=0;
+    } else {
+      this.martingaleCount = 0;
       this.resetStake();
     }
   }
-  resetStake(){
-    this.state.currentStake=this.stake;
+  resetStake() {
+    this.state.currentStake = this.stake;
   }
   onBalance(data) {
     this.state.balance = data.balance;
@@ -83,6 +101,10 @@ class FinanceModel {
       profitCap: this.state.profitCap,
       stake: this.state.stake
     };
+  }
+  purge(){
+    EventBus.removeEventListener('ON_BALANCE', this.onBalanceScoped);
+    EventBus.removeEventListener('ON_TRANSACTION', this.onTransactionScoped);
   }
 };
 

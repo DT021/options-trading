@@ -31,7 +31,11 @@ const BinaryService = {
   connect() {
     this.ws = new Websocket('wss://ws.binaryws.com/websockets/v3?app_id=' + this.APP_ID);
     this.ws.onopen = this.onOpen.bind(this);
+    this.ws.onclose = this.onClose.bind(this);
     this.ws.onmessage = this.onMessage.bind(this);
+  },
+  onClose(event) {
+        console.log('binary.com websocket closed');
   },
   onOpen(event) {
     //console.log('open');
