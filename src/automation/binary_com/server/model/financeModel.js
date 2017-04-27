@@ -8,8 +8,8 @@ class FinanceModel {
       balance: 0,
       profit: 0,
       lossCap: -20,
-      profitCap: 50,
-      lossCap: -20,
+      profitCap: 5,
+      lossCap: -5,
       profitCapMultiple: 5,
       lossCapMultiple: 5,
       stake: 1,
@@ -18,6 +18,8 @@ class FinanceModel {
       payoutPercentage: 0.942,
       martingaleCount: 0,
       useMartingale: false,
+      winCount:0,
+      lossCount:0
     };
     this.onBalanceScoped =  this.onBalance.bind(this);
     this.onTransactionScoped =  this.onTransaction.bind(this);
@@ -38,20 +40,23 @@ class FinanceModel {
       isWin = true;
       this.setWin(data);
     }
-    this.checkSessionDone();
+    let isDone = this.checkSessionDone();
     EventBus.dispatch(Event.TRANSCATION_COMPLETE, {
       isWin: isWin,
       profit: this.state.profit,
-      balance: this.state.balance
+      balance: this.state.balance,
+      ended:isDone
     });
     console.log('profit', '£' + this.state.profit);
   }
   setLoss() {
     console.log('loss');
+    this.state.lossCap++;
     this.state.martingale = true;
     this.setStake(true);
   }
   setWin(data) {
+    this.state.winCount++;
     console.log('win', '£' + data.amount);
   }
   checkSessionDone() {
@@ -60,6 +65,8 @@ class FinanceModel {
         profit: this.state.profit,
         balance: this.state.balance
       });
+
+      return true;
     }
   }
   updateBalance(data) {
@@ -97,9 +104,11 @@ class FinanceModel {
       startBalance: this.state.startBalance,
       balance: this.state.balance,
       profit: this.state.profit,
-      lossCap: this.state.lossCap,
-      profitCap: this.state.profitCap,
-      stake: this.state.stake
+      lossCap: -(this.state.stake * this.state.lossCapMultiple),
+      profitCap: this.state.stake * this.state.profitCapMultiple,
+      stake: this.state.stake,
+      winCount: this.state.winCount,
+      lossCount: this.state.lossCount
     };
   }
   purge(){

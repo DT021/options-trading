@@ -8,7 +8,7 @@ const PredictionService = {
     RAISE: 'RAISE',
     FALL: 'FALL'
   },
-  TICK_COLLECTION_LIMIT:200,
+  TICK_COLLECTION_LIMIT: 200,
   history: null,
   trendDuration: 10,
   tickDuration: 10,
@@ -25,29 +25,33 @@ const PredictionService = {
   },
   onTransactionComplete(data) {
     console.log('onTransactionComplete');
+    this.hasProposal = false;
     if (data.isWin) {
       this.totalWins++;
     } else {
       this.totalLoses++;
     }
-    this.hasProposal = false;
+    if (data.ended) {
+      this.totalWins = 0;
+      this.totalLoses = 0;
+    }
     console.log('totalWins', this.totalWins, '/', 'totalLoses', this.totalLoses);
   },
   onTick(data) {
     if (!this.hasHistory) return;
     console.log(data.quote);
     this.tickCollection.push(data.quote);
-    
+
     //keep the tick collection from killing the memory
-    if(this.tickCollection.length > this.TICK_COLLECTION_LIMIT)this.tickCollection.shift();
+    if (this.tickCollection.length > this.TICK_COLLECTION_LIMIT) this.tickCollection.shift();
 
     this.history.prices.push(data.quote);
     this.history.times.push(data.epoch);
 
     //wait until there is no proposals to start predicting
     if (!this.hasProposal && this.tickCollection.length > this.trendDuration) {
-        this.doChannelPrediction();
-        HeadAndShoulders.check(this.history);
+      this.doChannelPrediction();
+      HeadAndShoulders.check(this.history);
     }
   },
   onHistory(data) {
@@ -81,7 +85,7 @@ const PredictionService = {
         }
       }
       if (!proposal && index > this.trendDuration) {
-        let direction = this.doPredictionModels(index,this.history.prices);
+        let direction = this.doPredictionModels(index, this.history.prices);
         if (direction) {
           proposal = {
             direction: direction,
@@ -135,8 +139,8 @@ const PredictionService = {
   getCollection(index) {
     return this.tickCollection.splice(index - this.trendDuration, index);
   },
-  doPredictionModels(index,ticks) {
-    let collection = (ticks? ticks :this.tickCollection).splice(index - this.trendDuration, index);
+  doPredictionModels(index, ticks) {
+    let collection = (ticks ? ticks : this.tickCollection).splice(index - this.trendDuration, index);
     let direction = this.checkChannelDirection(collection);
     //let direction = this.checkAscendingDirection(collection);
 
@@ -160,7 +164,7 @@ const PredictionService = {
   },
   checkAscendingDirection(collection) {
     let obj = this.getTopAndBottomCollections(collection);
-    if(obj.bottomDirection && obj.topDirection && obj.topDirection != obj.bottomDirection)return true;
+    if (obj.bottomDirection && obj.topDirection && obj.topDirection != obj.bottomDirection) return true;
     return false;
   },
   getTopAndBottomCollections(collection) {
