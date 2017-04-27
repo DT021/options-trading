@@ -17,11 +17,14 @@ const PredictionService = {
   hasHistory: false,
   hasProposal: false,
   tickCollection: [],
+  onTransactionCompleteScoped:null,
+  isPaused:false,
   init(_EventBus) {
     EventBus = _EventBus;
+    this.onTransactionCompleteScoped = this.onTransactionComplete.bind(this);
     EventBus.addEventListener('ON_HISTORY', this.onHistory.bind(this));
     EventBus.addEventListener('ON_TICK', this.onTick.bind(this));
-    EventBus.addEventListener(Event.TRANSCATION_COMPLETE, this.onTransactionComplete.bind(this));
+    EventBus.addEventListener(Event.TRANSCATION_COMPLETE, this.onTransactionCompleteScoped);
   },
   onTransactionComplete(data) {
     console.log('onTransactionComplete');
@@ -34,6 +37,7 @@ const PredictionService = {
     if (data.ended) {
       this.totalWins = 0;
       this.totalLoses = 0;
+      this.isPaused = true;
     }
     console.log('totalWins', this.totalWins, '/', 'totalLoses', this.totalLoses);
   },

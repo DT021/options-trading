@@ -37,4 +37,4 @@ jspm_packages
 .node_repl_history
 
 src/automation/binary_com/public/config.js
-src/automation/binary_com/server/config.js
+src/automation/binary_com/server/config.json

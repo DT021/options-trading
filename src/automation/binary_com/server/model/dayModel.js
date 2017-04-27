@@ -3,13 +3,13 @@ const SessionModel = require('../model/sessionModel.js');
 let EventBus;
 
 class DayModel {
-  
+
   constructor(data, _EventBus) {
     EventBus = _EventBus;
 
     this.currentSessionModel = null;
-    this.sessionCollection =[];
-    this.dayKey =  '';
+    this.sessionCollection = [];
+    this.dayKey = '';
     this.state = {
       currency: '',
       balance: 0,
@@ -30,7 +30,13 @@ class DayModel {
     this.state.loginId = data.loginid;
   }
   onSessionComplete(data) {
+    EventBus.dispatch(Event.TOGGLE_DATA, {
+      isPaused: true
+    });
     this.createSessionModel();
+    EventBus.dispatch(Event.TOGGLE_DATA, {
+      isPaused: false
+    });
   }
   storeSession() {
     this.currentSessionModel.purge();
@@ -46,7 +52,7 @@ class DayModel {
       filename: this.dayKey + '.json'
     });
     if (!json['sessions']) json.sessions = [];
-    if(data)json.sessions.push(data);
+    if (data) json.sessions.push(data);
 
     EventBus.dispatch(Event.SAVE_DATA_TO_FILE, {
       data: json,
