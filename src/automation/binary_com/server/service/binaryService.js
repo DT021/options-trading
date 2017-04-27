@@ -1,6 +1,7 @@
 const Websocket = require('ws');
 let EventBus;
 const Event = require('../event/event.js');
+const Config = require('../config.js');
 const SessionModel = require('../model/sessionModel.js');
 
 const BinaryService = {
@@ -15,8 +16,6 @@ const BinaryService = {
     FORGET_ALL: 'forget_all',
     TICK: 'tick'
   },
-  API_KEY: '4F61diD8mzgGDD1',
-  APP_ID: '3374',
   historyTimer: null,
   proposal: null,
   ws: null,
@@ -29,7 +28,7 @@ const BinaryService = {
     this.connect();
   },
   connect() {
-    this.ws = new Websocket('wss://ws.binaryws.com/websockets/v3?app_id=' + this.APP_ID);
+    this.ws = new Websocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.APP_ID);
     this.ws.onopen = this.onOpen.bind(this);
     this.ws.onclose = this.onClose.bind(this);
     this.ws.onmessage = this.onMessage.bind(this);
@@ -67,7 +66,7 @@ const BinaryService = {
 
   },
   authorize() {
-    this.send('authorize', this.API_KEY);
+    this.send('authorize', Config.API_KEY);
   },
   useHistory(data) {
     let lowestPrice = data.prices[0];
