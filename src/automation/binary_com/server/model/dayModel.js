@@ -34,9 +34,11 @@ class DayModel {
       isPaused: true
     });
     this.createSessionModel();
-    EventBus.dispatch(Event.TOGGLE_DATA, {
+    setTimeout(()=>{
+      EventBus.dispatch(Event.TOGGLE_DATA, {
       isPaused: false
     });
+    },2000);
   }
   storeSession() {
     this.currentSessionModel.purge();
@@ -62,6 +64,7 @@ class DayModel {
   }
   createSessionModel() {
     if (this.currentSessionModel) this.storeSession();
+    console.log('new session created');
     this.currentSessionModel = new SessionModel(this.state, EventBus);
   }
   createToday() {

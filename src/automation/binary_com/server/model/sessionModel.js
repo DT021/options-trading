@@ -21,12 +21,12 @@ class SessionModel {
     this.init(data);
   }
   init(data) {
-    console.log('New SessionModel');
     EventBus.addEventListener(Event.HIGH_LOW, this.onHighLowScoped);
     this.state.currency = data.currency;
     this.state.isVirtual = data.isVirtual;
     this.state.loginId = data.loginId;
     this.financeModel = new FinanceModel(EventBus);
+    console.log('New SessionModel',this.financeModel.state.profit);
     this.financeModel.setBalance(data.balance);
   }
   onHighLow(data) {
