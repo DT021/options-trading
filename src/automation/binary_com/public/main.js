@@ -1,5 +1,5 @@
 const Main = {
-    isVirtual: true,
+    isVirtual: false,
     chanelPrediction: false,
     ws: null,
     history: [],
