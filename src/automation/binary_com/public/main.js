@@ -198,11 +198,19 @@ const Main = {
         this.isTrading = true;
 
     },
-    onProposeRaise(){
-        this.getPriceProposal('CALL');
+    onProposeRaise() {
+        this.setPrediction('CALL', 'MANUAL_CALL');
+        this.currentTrendItem = {
+            predictionType: 'MANUAL_CALL',
+            type: 'CALL'
+        };
     },
-    onProposeFall(){
-        this.getPriceProposal('PUT');
+    onProposeFall() {
+        this.setPrediction('PUT', 'MANUAL_FALL');
+        this.currentTrendItem = {
+            predictionType: predictionType,
+            type: 'PUT'
+        };
     },
     getPriceProposal(type, duration) {
         if (!type || this.isProposal) return;
@@ -317,7 +325,7 @@ const Main = {
             case 'transaction':
                 //console.log('transaction', data.transaction);
                 if (data.transaction && data.transaction.action && data.transaction.action == 'sell') {
-                let isLoss = false;
+                    let isLoss = false;
                     if (data.transaction.amount === '0.00') {
                         isLoss = true;
                     }
@@ -365,9 +373,8 @@ const Main = {
         }
     },
     doTransaction(isLoss) {
-        if(isLoss==undefined)
-        {
-            isLoss = this.lastBalance >  this.accountBalance;
+        if (isLoss == undefined) {
+            isLoss = this.lastBalance < this.accountBalance;
             console.log(isLoss);
         }
         let profit = this.accountBalance - this.startBalance;
