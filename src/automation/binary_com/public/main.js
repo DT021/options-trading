@@ -11,6 +11,7 @@ const Main = {
     stake: 1,
     currentStake: 1,
     lossStreak: 0,
+    maxLossStreak: 0,
     started: false,
     currentTick: 0,
     stakeTicks: 6,
@@ -53,6 +54,8 @@ const Main = {
     volatilatyCap: 10,
     proposalTickCount: 0,
     lastBalance: 0,
+    breakDuration: 180000,
+    idleStartTime: 0,
     log: {
 
     },
@@ -195,6 +198,7 @@ const Main = {
             this.startTime = this.getDateTimeString();
             this.reset();
         }
+        this.idleStartTime = new Date().getTime();
         this.isTrading = true;
 
     },
@@ -208,7 +212,7 @@ const Main = {
     onProposeFall() {
         this.setPrediction('PUT', 'MANUAL_FALL');
         this.currentTrendItem = {
-            predictionType:  'MANUAL_FALL',
+            predictionType: 'MANUAL_FALL',
             type: 'PUT'
         };
     },
@@ -290,6 +294,9 @@ const Main = {
             case 'balance':
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
+                if (this.accountBalance >= 200) {
+                    //this.lossLimit = -(this.accountBalance-100);
+                } else {}
                 this.lossLimit = -(this.accountBalance - 10);
                 this.setLossLimit();
                 //console.log('current profit', '£' + profit.toFixed(2));
@@ -301,16 +308,16 @@ const Main = {
                 this.sendAsset();
                 this.getTicks();
                 this.getTranscations();
-                 View.activeButton();
+                View.activeButton();
                 break;
             case 'history':
                 if (!this.history.length) {
                     this.history = data.history.prices;
                     this.historyTimes = data.history.times;
                     this.started = true;
-                   
+
                 }
-                 this.onStartTrading();
+                this.onStartTrading();
                 break;
             case 'proposal':
                 // console.log('proposal', data);
@@ -348,7 +355,9 @@ const Main = {
                     this.setPositions();
                     this.setDirectionCollection();
                     this.addTickToContract();
-                    if (this.isTrading) this.setPredictionData();
+                    if (this.isTrading) {
+                        this.setPredictionData();
+                    }
                     let collection = this.history.slice(this.history.length - 200, this.history.length - 1);
                     let highLow = this.getHighLow(collection);
                     ChartComponent.update({
@@ -358,11 +367,16 @@ const Main = {
                     });
                     this.proposalCompleteCheck();
 
-
+                    if (this.idleStartTime) this.checkIdleTime();
                 }
                 break;
         }
 
+    },
+    checkIdleTime() {
+        let time = new Date().getTime();
+        let dif = time - this.idleStartTime;
+        if (dif >= 300000) location.reload();
     },
     proposalCompleteCheck() {
         if (this.isProposal) {
@@ -374,6 +388,7 @@ const Main = {
         }
     },
     doTransaction(isLoss) {
+        this.idleStartTime = null;
         if (isLoss == undefined) {
             isLoss = this.lastBalance < this.accountBalance;
             console.log(isLoss);
@@ -395,15 +410,26 @@ const Main = {
         if (profit <= this.lossLimit || this.accountBalance <= 0 || profit >= this.profitLimit) {
             this.end();
         }
+        if (this.lossStreak >= 4) {
+            this.takeABreak();
+        }
         View.updateMartingale(this.startMartingale);
         this.prediction = '';
         this.predictionItem = null;
         View.updatePrediction('');
         ChartComponent.updatePredictionChart([]);
         this.setStake(isLoss);
-        View.updateCounts(this.winCount, this.lossCount);
+        View.updateCounts(this.winCount, this.lossCount, this.maxLossStreak);
         this.isProposal = false;
         this.proposalTickCount = 0;
+    },
+    takeABreak() {
+        this.isTrading = false;
+        View.setBreak(true);
+        setTimeout(function() {
+            this.isTrading = true;
+            View.setBreak(false);
+        }.bind(this), this.breakDuration);
     },
     checkVolatility() {
         let collection = this.history.slice(this.history.length - 30, this.history.length);
@@ -492,7 +518,7 @@ const Main = {
             this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.942));
             //this.currentStake = this.stake + (this.stake - (this.stake * 0.942));
             if (this.profit - this.currentStake <= this.lossLimit) {
-                //this.currentStake = this.stake;
+                this.currentStake = this.stake;
             }
         } else {
             this.currentStake = this.stake;
@@ -760,6 +786,7 @@ const Main = {
 
         let logItem = this.getLogItem(this.currentTrendItem.predictionType);
         logItem.loses++;
+        if (this.lossStreak > this.maxLossStreak) this.maxLossStreak = this.lossStreak;
         View.updateLog(this.log);
     },
     setSuccess() {

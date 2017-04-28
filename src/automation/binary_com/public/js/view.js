@@ -2,7 +2,7 @@ let View = {
     previousPrediction: 'put',
     profitClass: 'call',
     _predictionPrice: 0,
-    _zeros:1,
+    _zeros: 1,
     tableTemplate: '<div class="well"><h4>{{title}}</h4><table id="{{id}}" class="table table-striped table-hover "><thead><tr><th>Key</th> <th>Value</th> </tr> </thead><tbody> </tbody></table></div>',
     init() {
         this.winElement = document.querySelector('#wins');
@@ -36,6 +36,8 @@ let View = {
         this.raiseButton = document.querySelector('#raiseButton');
         this.fallButton = document.querySelector('#fallButton');
         this.logBody = document.querySelector('#log-panel');
+        this.maxLossStreak = document.querySelector('#maxLossStreak');
+        this.takingABreak = document.querySelector('#takingABreak');
         this.isVolatile = document.querySelector('#isVolatile');
         this.addListeners();
     },
@@ -46,10 +48,10 @@ let View = {
         this.fallButton.addEventListener('click', this.onFallClicked.bind(this));
     },
     onFallClicked() {
-         App.EventBus.dispatch(App.EVENT.PROPOSE_FALL);
+        App.EventBus.dispatch(App.EVENT.PROPOSE_FALL);
     },
     onRaiseClicked() {
-         App.EventBus.dispatch(App.EVENT.PROPOSE_RAISE);
+        App.EventBus.dispatch(App.EVENT.PROPOSE_RAISE);
     },
     activeButton() {
         this.stopButton.removeAttribute('disabled');
@@ -67,9 +69,18 @@ let View = {
         this.startButton.setAttribute('disabled', '');
         this.startTime.textContent = this.formatDate(new Date());
     },
-    updateCounts(wins, loses) {
+    updateCounts(wins, loses, loseStreak) {
         this.winElement.textContent = wins;
         this.loseElement.textContent = loses;
+        this.maxLossStreak.textContent = loseStreak;
+    },
+    setBreak(value) {
+        this.takingABreak.textContent = value;
+        if (value) {
+            this.takingABreak.parentNode.parentNode.classList.add('danger');
+        } else {
+            this.takingABreak.parentNode.parentNode.classList.remove('danger');
+        }
     },
     ended(bool) {
         this.endedElement.textContent = bool;
@@ -164,7 +175,7 @@ let View = {
         let template = '';
 
         for (key in log) {
-            let type= key.replace(':','_');
+            let type = key.replace(':', '_');
             template = this.tableTemplate.replace('{{title}}', key);
             template = template.replace('{{id}}', 'log-' + type);
             this.logBody.innerHTML += template;
@@ -172,25 +183,24 @@ let View = {
         }
 
     },
-    updateVolatile(value){
+    updateVolatile(value) {
         this.isVolatile.innerHTML = value;
-        if(value)
-        {
+        if (value) {
             this.isVolatile.parentNode.classList.remove('success');
             this.isVolatile.parentNode.classList.add('danger');
-        }else{
+        } else {
             this.isVolatile.parentNode.classList.add('success');
             this.isVolatile.parentNode.classList.remove('danger');
         }
     },
     setLogTableData(item, id) {
         setTimeout(function() {
-            let tbody = document.querySelector('#'+id +' tbody');
-            if(!tbody)return
+            let tbody = document.querySelector('#' + id + ' tbody');
+            if (!tbody) return
             for (key in item) {
                 let tr = document.createElement('tr');
-                let td =  document.createElement('td');
-                let tdValue =  document.createElement('td');
+                let td = document.createElement('td');
+                let tdValue = document.createElement('td');
                 td.innerHTML = key;
                 tdValue.innerHTML = item[key];
 
