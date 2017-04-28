@@ -58,8 +58,6 @@ let ChartComponent = {
                 yAxes: [{
                     display: true,
                     ticks: {
-                         suggestedMin: 10,
-                         suggestedMax: 100,
                         fontColor: "white"
 
                     }
@@ -128,7 +126,7 @@ let ChartComponent = {
          this.predictionConfig.data.labels = collection;
         this.predictionConfig.data.datasets[0].data = collection;
          if(lowestPrice)this.predictionConfig.options.scales.yAxes[0].ticks.min = lowestPrice - 5;
-         if(highestPrice)this.predictionConfig.options.scales.yAxes[0].ticks.max = highestPrice + 5;
+         //if(highestPrice)this.predictionConfig.options.scales.yAxes[0].ticks.max = highestPrice + 5;
          //this.predictionConfig.options.scales.yAxes[0].ticks.max = highestPrice + 1;
         this.pchart.update();
     }
