@@ -33,6 +33,8 @@ let View = {
         this.isMartingale = document.querySelector('#isMartingale');
         this.startButton = document.querySelector('#startButton');
         this.stopButton = document.querySelector('#stopButton');
+        this.raiseButton = document.querySelector('#raiseButton');
+        this.fallButton = document.querySelector('#fallButton');
         this.logBody = document.querySelector('#log-panel');
         this.isVolatile = document.querySelector('#isVolatile');
         this.addListeners();
@@ -40,6 +42,14 @@ let View = {
     addListeners() {
         this.startButton.addEventListener('click', this.onStartClicked.bind(this));
         this.stopButton.addEventListener('click', this.onStopClicked.bind(this));
+        this.raiseButton.addEventListener('click', this.onRaiseClicked.bind(this));
+        this.fallButton.addEventListener('click', this.onFallClicked.bind(this));
+    },
+    onFallClicked() {
+         App.EventBus.dispatch(App.EVENT.PROPOSE_FALL);
+    },
+    onRaiseClicked() {
+         App.EventBus.dispatch(App.EVENT.PROPOSE_RAISE);
     },
     activeButton() {
         //this.stopButton.removeAttribute('disabled');

@@ -1,5 +1,5 @@
 const Main = {
-    isVirtual: true,
+    isVirtual: false,
     ws: null,
     history: [],
     winCount: 0,
@@ -66,6 +66,8 @@ const Main = {
     addListener() {
         App.EventBus.addEventListener(App.EVENT.START_TRADING, this.onStartTrading.bind(this));
         App.EventBus.addEventListener(App.EVENT.STOP_TRADING, this.onStopTrading.bind(this));
+        App.EventBus.addEventListener(App.EVENT.PROPOSE_FALL, this.onProposeFall.bind(this));
+        App.EventBus.addEventListener(App.EVENT.PROPOSE_RAISE, this.onProposeRaise.bind(this));
 
         this.ws.onopen = this.onOpen.bind(this);
         this.ws.onclose = this.onClose.bind(this);
@@ -195,6 +197,12 @@ const Main = {
         }
         this.isTrading = true;
 
+    },
+    onProposeRaise(){
+        this.getPriceProposal('CALL');
+    },
+    onProposeFall(){
+        this.getPriceProposal('PUT');
     },
     getPriceProposal(type, duration) {
         if (!type || this.isProposal) return;

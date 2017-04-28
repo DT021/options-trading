@@ -1,7 +1,9 @@
 var App = App || {
     EVENT: {
         START_TRADING: 'START_TRADING',
-        STOP_TRADING: 'STOP_TRADING'
+        STOP_TRADING: 'STOP_TRADING',
+        PROPOSE_FALL: 'PROPOSE_FALL',
+        PROPOSE_RAISE: 'PROPOSE_RAISE'
     }
 };
 App.EventBus = {
