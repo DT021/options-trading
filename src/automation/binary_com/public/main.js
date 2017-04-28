@@ -357,7 +357,7 @@ const Main = {
           this.currentTick++;
           this.history.push(data.tick.quote);
           this.historyTimes.push(data.tick.epoch);
-          //console.log('ticks update: %o', data.tick.quote);
+          console.log('ticks update');
           this.currentPrice = data.tick.quote;
           this.checkVolatility();
           this.setPositions();
@@ -411,9 +411,9 @@ const Main = {
     }.bind(this));
     let timeDifference = startD.getMinutes() - currentD.getMinutes();
     let countDiff = Math.abs(fallCount - raiseCount);
-    console.log('checkVolatility', changeCount);
+    //console.log('checkVolatility', changeCount);
     if (changeCount > this.volatilatyCap) {
-      console.log('currently volatile');
+      //console.log('currently volatile');
       this.pauseTrading = true;
       View.updateVolatile(true);
     } else {
