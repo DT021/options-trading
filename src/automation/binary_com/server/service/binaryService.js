@@ -58,10 +58,18 @@ const BinaryService = {
           this.getTicks();
           this.getHistory();
         } else {
-          if (key == 'HISTORY') {
+          switch(key){
+            case 'HISTORY':
             this.useHistory(data[response]);
+            break;
+             case 'PROPOSAL':
+              this.hasProposal(data);
+            break;
+            case 'TRANSACTION':
+              console.log('BinaryService transaction');
+            break;
+
           }
-          if (key == 'PROPOSAL') this.hasProposal(data);
           EventBus.dispatch(this.EVENT_PREFIX + key, data[response]);
         }
       }

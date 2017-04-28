@@ -208,7 +208,7 @@ const Main = {
     onProposeFall() {
         this.setPrediction('PUT', 'MANUAL_FALL');
         this.currentTrendItem = {
-            predictionType: predictionType,
+            predictionType:  'MANUAL_FALL',
             type: 'PUT'
         };
     },
@@ -301,15 +301,16 @@ const Main = {
                 this.sendAsset();
                 this.getTicks();
                 this.getTranscations();
+                 View.activeButton();
                 break;
             case 'history':
                 if (!this.history.length) {
                     this.history = data.history.prices;
                     this.historyTimes = data.history.times;
                     this.started = true;
-                    //View.activeButton();
-                    this.onStartTrading();
+                   
                 }
+                 this.onStartTrading();
                 break;
             case 'proposal':
                 // console.log('proposal', data);

@@ -76,9 +76,7 @@ class FinanceModel {
     updateBalance(data) {
       if(!data.balance)return;
         this.state.balance = Number(data.balance);
-        console.log('updateBalance profit',this.state.profit ,!this.state.startBalance)
         if(this.state.startBalance) {
-          console.log('startBalance',this.state.startBalance);
           this.state.profit = this.state.balance - this.state.startBalance;
         }
         console.log('updateBalance', this.state.balance, this.state.startBalance,this.state.profit );

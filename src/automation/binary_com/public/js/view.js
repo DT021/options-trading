@@ -52,8 +52,9 @@ let View = {
          App.EventBus.dispatch(App.EVENT.PROPOSE_RAISE);
     },
     activeButton() {
-        //this.stopButton.removeAttribute('disabled');
-        this.startButton.removeAttribute('disabled');
+        this.stopButton.removeAttribute('disabled');
+        this.raiseButton.removeAttribute('disabled');
+        this.fallButton.removeAttribute('disabled');
     },
     onStopClicked() {
         App.EventBus.dispatch(App.EVENT.STOP_TRADING);
