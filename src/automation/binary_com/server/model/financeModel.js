@@ -42,6 +42,7 @@ class FinanceModel {
             this.setWin(data);
         }
         console.log('profit', '£' + this.state.profit);
+
         let isDone = this.checkSessionDone();
         EventBus.dispatch(Event.TRANSCATION_COMPLETE, {
             isWin: isWin,
@@ -109,11 +110,13 @@ class FinanceModel {
     setBalance(value) {
       console.log('setBalance',this.state.startBalance);
         if (!this.state.startBalance) {
+          console.log('setBalance doesnt have startBalance');
             this.state.startBalance = value;
             EventBus.addEventListener('ON_BALANCE', this.onBalanceScoped);
             EventBus.addEventListener('ON_TRANSACTION', this.onTransactionScoped);
         }
         this.state.balance = value;
+        console.log('setBalance balance',this.state.balance,this.state.startBalance);
     }
     getData() {
         return {
