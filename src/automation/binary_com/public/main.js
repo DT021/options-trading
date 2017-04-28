@@ -1,5 +1,6 @@
 const Main = {
-    isVirtual: false,
+    isVirtual: true,
+    chanelPrediction: false,
     ws: null,
     history: [],
     winCount: 0,
@@ -51,11 +52,12 @@ const Main = {
     currentTrendItem: {},
     ticksAverageCollection: [],
     volatileTimer: null,
-    volatilatyCap: 10,
+    volatilatyCap: 30,
     proposalTickCount: 0,
     lastBalance: 0,
     breakDuration: 180000,
     idleStartTime: 0,
+    volatileChecker: true,
     log: {
 
     },
@@ -297,7 +299,7 @@ const Main = {
                 if (this.accountBalance >= 200) {
                     //this.lossLimit = -(this.accountBalance-100);
                 } else {}
-                this.lossLimit = -(this.accountBalance - 10);
+               // this.lossLimit = -(this.accountBalance - 10);
                 this.setLossLimit();
                 //console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getAvailableAssets();
@@ -351,14 +353,15 @@ const Main = {
                     this.historyTimes.push(data.tick.epoch);
                     console.log('ticks update');
                     this.currentPrice = data.tick.quote;
-                    this.checkVolatility();
+                    if(this.volatileChecker)this.checkVolatility();
                     this.setPositions();
                     this.setDirectionCollection();
                     this.addTickToContract();
+
                     if (this.isTrading) {
                         this.setPredictionData();
                     }
-                    let collection = this.history.slice(this.history.length - 200, this.history.length - 1);
+                    let collection = this.history.slice(this.history.length - 30, this.history.length - 1);
                     let highLow = this.getHighLow(collection);
                     ChartComponent.update({
                         price: this.currentPrice,
@@ -595,9 +598,10 @@ const Main = {
         }.bind(this));
     },
     setPredictionData() {
+            let found = false;
         if (this.isProposal || this.pauseTrading) return;
         if (this.predictionModel != 'pattern') {
-            let found = false;
+            found =  ChannelPrediction.predict(this.history);
             //found = this.predictionOnTrendSharp();
             if (!found) found = this.predictOnTrend();
         } else {
@@ -839,7 +843,7 @@ const Main = {
         let priceDifference = Math.abs(this.history[this.history.length - 3] - this.history[this.history.length - 1]);
         let priceDifLimit = 0;
         //let ratio = 0.89;
-        if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage && this.checkIsDirection('RAISE', 1, 5)) {
+        if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage && this.checkIsDirection('RAISE', 1, 10)) {
             proposal = 'CALL';
             predictionType = 'TREND';
             found = true;
@@ -852,7 +856,7 @@ const Main = {
                 priceDiff: priceDifference
             };
             ChartComponent.updatePredictionChart(trend.collection);
-        } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 1, 5)) {
+        } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 1, 10)) {
             proposal = 'PUT';
             predictionType = 'TREND';
             found = true;
