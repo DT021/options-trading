@@ -1,7 +1,9 @@
 const Main = {
     isVirtual: true,
-    chanelPrediction: true,
-    trendPrediction: true,
+    chanelPrediction: false,
+    trendPrediction: false,
+    trendUpDuration: 20,
+    trendingUpBarrier:10,
     ws: null,
     history: [],
     winCount: 0,
@@ -20,13 +22,14 @@ const Main = {
     currentContract: null,
     ended: false,
     startMartingale: false,
+    disableMartingale: false,
     currentPrice: 0,
     localWS: null,
     highestPrice: null,
     lowestPrice: null,
-    lossLimit: -40,
+    lossLimit: -150,
     lossLimitDefault: 0,
-    profitLimit: 0.8,
+    profitLimit: 0.8, //DEBUG
     prediction: '',
     ASSET_NAME: 'R_100',
     predictionItem: null,
@@ -365,12 +368,13 @@ const Main = {
                     if (this.isTrading) {
                         this.setPredictionData();
                     }
-                    let collection = this.history.slice(this.history.length - 30, this.history.length - 1);
+                    let collection = this.history.slice(this.history.length - 20, this.history.length);
                     let highLow = this.getHighLow(collection);
                     ChartComponent.update({
                         price: this.currentPrice,
                         time: Date.now(),
-                        lowestPrice: highLow.lowest
+                        lowestPrice: highLow.lowest,
+                        highestPrice: highLow.highest
                     });
                     this.proposalCompleteCheck();
 
@@ -386,8 +390,8 @@ const Main = {
         for (let a = 0; a < 9; a++) {
             amount = (amount - (amount * 0.06)) / 2;
         }
-        this.stake = amount < 0.35 ? 0.35 : amount;
-        this.profitLimit = this.stake * 0.8;
+        this.stake = amount < 0.35 ? 0.35 : amount;//debug
+        this.profitLimit = this.stake * 0.8;//debug
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     checkIdleTime() {
@@ -530,7 +534,7 @@ const Main = {
         }));
     },
     setStake(isLoss) {
-        if (isLoss && this.startMartingale) {
+        if (isLoss && this.startMartingale && !this.disableMartingale) {
             let doubleStake = (this.currentStake * 2);
             this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.94));
             //this.currentStake = this.stake + (this.stake - (this.stake * 0.942));
@@ -544,32 +548,6 @@ const Main = {
             this.currentStake = this.stake;
         }
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
-    },
-    createContract() {
-        this.currentTick = 0;
-
-        this.currentContract = {
-            asset: this.ASSET_NAME,
-            type: '',
-            startLowestPrice: this.lowestPrice,
-            startHighestPrice: this.highestPrice,
-            datetime: new Date().toString(),
-            startPrice: this.currentPrice,
-            startPricePosition: this.startPricePosition,
-            endPrice: null,
-            lastTicks: this.lastTicks,
-            ticks: [
-                this.currentPrice
-            ],
-            numberOfDowns: 0,
-            numberOfUps: 0,
-            numberOfHistoricDowns: 0,
-            numberOfHistoricUps: 0,
-            numberOfEquals: 0,
-            numberOfHistoricEquals: 0,
-            directions: [],
-            historicDirections: this.directionCollection
-        };
     },
     setPositions() {
         let highestPrice = 0;
@@ -588,7 +566,7 @@ const Main = {
 
         View.updateHighLow(this.lowestPrice, this.highestPrice, this.currentPrice);
         this.startPricePosition = (this.currentPrice / this.highestPrice).toFixed(4);
-        this.lastTicks = this.history.slice(this.history.length - 11, this.history.length - 1);
+        this.lastTicks = this.history.slice(this.history.length - 11, this.history.length);
         View.updateStartPosition(this.startPricePosition);
     },
     setDirectionCollection() {
@@ -617,29 +595,11 @@ const Main = {
     setPredictionData() {
         let found = false;
         if (this.isProposal || this.pauseTrading) return;
-        if (this.predictionModel != 'pattern') {
+        found = this.checkIsTrendingUp(this.trendUpDuration);
             found = ChannelPrediction.predict(this.history);
             //found = this.predictionOnTrendSharp();
             if (!found && this.trendPrediction) found = this.predictOnTrend();
-        } else {
-            this.predictionItem = {
-                startPricePosition: this.startPricePosition,
-                historicDirections: this.directionCollection
-            };
 
-            this.localWS.send(JSON.stringify({
-                key: 'getPrediction',
-                data: {
-                    asset: this.ASSET_NAME,
-                    currentPrice: this.currentTick,
-                    lastTicks: this.lastTicks,
-                    highestPrice: this.highestPrice,
-                    lowestPrice: this.lowestPrice,
-                    startPricePosition: this.startPricePosition,
-                    historicDirections: this.directionCollection
-                },
-            }));
-        }
 
     },
     checkTrend() {
@@ -649,7 +609,7 @@ const Main = {
         let isShorter = false;
         if (this.isShort || this.lossStreak > 2) {
             if (!this.isShort) {
-                this.isShort = true;
+                //   this.isShort = true;
                 this.shortLossStreak = 0;
             }
             let per = 0.3;
@@ -657,7 +617,7 @@ const Main = {
                 per = 0.2;
                 this.isShort = false;
             }
-            shortIndex = this.shortTrendLength + 5;
+            //shortIndex = this.shortTrendLength + 5;
             isShorter = true;
         } else {
             this.isShort = false;
@@ -672,7 +632,7 @@ const Main = {
             diff = (this.currentPrice - currentTrend);
         }
         change = (diff / currentTrend) * (this.ASSET_NAME == 'R_100' ? 1000 : 10000);
-        let collection = this.history.slice(this.history.length - shortIndex, this.history.length - 1);
+        let collection = this.history.slice(this.history.length - shortIndex, this.history.length);
         let highLow = this.getHighLow(collection);
         return {
             collection: collection,
@@ -683,7 +643,7 @@ const Main = {
             longTermTrend: trendFirst <= this.currentPrice ? 'raise' : (trendFirst > this.currentPrice ? 'fall' : ''),
             isShorter: isShorter,
             shortIndex: shortIndex,
-            counts: this.trendCount(this.history.slice(this.history.length - this.shortTrendLength, this.history.length - 1))
+            counts: this.trendCount(this.history.slice(this.history.length - this.shortTrendLength, this.history.length))
         };
     },
     getHighLow(collection) {
@@ -700,7 +660,7 @@ const Main = {
     },
     checkIsDirection(direction, index, fullIndex, barrier) {
         if (barrier == undefined) barrier = 1;
-        let collection = this.history.slice((this.history.length - 1) - (index + 1), this.history.length - 1);
+        let collection = this.history.slice((this.history.length - 1) - (index + 1), this.history.length);
         let previousPrice = collection[0];
         let isDirection = true;
         collection.forEach(function(price, index) {
@@ -711,7 +671,7 @@ const Main = {
             previousPrice = price;
         });
 
-        let highLow = this.getHighLow(this.history.slice(this.history.length - fullIndex, this.history.length - 1));
+        let highLow = this.getHighLow(this.history.slice(this.history.length - fullIndex, this.history.length));
         if (fullIndex) {
             if (direction == 'FALL' && highLow.lowest < this.currentPrice - 2 || direction == 'RAISE' && highLow.highest > this.currentPrice + 2) {
                 isDirection = false;
@@ -722,7 +682,7 @@ const Main = {
         return isDirection;
     },
     predictionOnTrendSharp() {
-        let collection = this.history.slice(this.history.length - 5, this.history.length - 1);
+        let collection = this.history.slice(this.history.length - 5, this.history.length);
         let highest = collection[0];
         let lowest = collection[0];
         let fallCount = 0;
@@ -764,22 +724,6 @@ const Main = {
             };
         }
         return found;
-    },
-    checkTrendIsReversing(collection) {
-
-        let currentPrice = collection[collection.length - 1];
-
-
-        collection.forEach(function(price) {
-
-            if (price < lowest) lowest = price;
-            if (price > highest) highest = price;
-
-        });
-
-        if (collection[0] > collection[collection.length] && collection[collection.length] <= lowest) return true;
-        if (collection[0] < collection[collection.length] && collection[collection.length] >= highest) return true;
-        return false;
     },
     trendCount(collection) {
         let falls = 0;
@@ -848,6 +792,40 @@ const Main = {
         View.updatePredictionType(predictionType);
         this.predictionType = predictionType;
     },
+    checkIsTrendingUp(startIndex) {
+        let collection = this.history.slice(this.history.length - startIndex, this.history.length - 1);
+        let highestPosition = collection[0];
+        let lowestPosition = collection[0];
+        let found = false;
+        let proposal = '';
+        let predictionType = '';
+        collection.forEach(function(price, index) {
+            if (price > highestPosition) highestPosition = price;
+            if (price < lowestPosition) lowestPosition = price;
+        }.bind(this));
+
+        if (this.history[this.history.length - 1] - collection[0] >=  this.trendingUpBarrier  && this.history[this.history.length - 1] >= highestPosition) {
+            proposal = 'CALL';
+            predictionType = 'TRENDING_UP';
+            found = true;
+        } else if (collection[0] - this.history[this.history.length - 1] >=this.trendingUpBarrier &&  this.history[this.history.length - 1] <= lowestPosition) {
+            proposal = 'PUT';
+            predictionType = 'TRENDING_DOWN';
+            found = true;
+        }
+
+        if (found) {
+            console.log('checkIsTrendingUp',collection[0],collection[collection.length-1]);
+            this.currentTrendItem = {
+                predictionType: predictionType,
+                type: proposal
+            };
+            ChartComponent.updatePredictionChart(collection, lowestPosition, highestPosition);
+            this.setPrediction(proposal,  predictionType);
+        }
+
+        return found;
+    },
     predictOnTrend() {
 
         let trend = this.checkTrend();
@@ -872,7 +850,7 @@ const Main = {
                 total: trend.counts.total,
                 priceDiff: priceDifference
             };
-            ChartComponent.updatePredictionChart(trend.collection);
+            ChartComponent.updatePredictionChart(trend.collection, trend.lowest, trend.highest);
         } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 1, 5)) {
             proposal = 'PUT';
             predictionType = 'TREND';
@@ -888,20 +866,6 @@ const Main = {
             };
             ChartComponent.updatePredictionChart(trend.collection, trend.lowest, trend.highest);
         }
-        /*
-        let ratio = 0.8;
-        if (this.isShort) ratio = 0;
-        console.log('shortTermDifference',trend.shortTermDifference);
-        if (trend.counts.raises - 5 >  trend.counts.falls) {
-            proposal = 'CALL';
-            predictionType = 'TREND';
-            found = true;
-        } else if (trend.counts.falls - 5 >  trend.counts.raises) {
-            proposal = 'PUT';
-            predictionType = 'TREND';
-            found = true;
-        }
-        */
         this.setPrediction(proposal, trend.isShorter ? predictionType + '_SHORT' : predictionType);
         return found;
     },
@@ -940,29 +904,6 @@ const Main = {
             }
         }
         this.currentContract.ticks.push(this.currentPrice);
-    },
-    contractEnded() {
-        let lowestPrice = 0;
-        let highestPrice = 0;
-
-        this.history.forEach(function(price) {
-            if (price < lowestPrice || !lowestPrice) lowestPrice = price;
-            if (price > highestPrice) highestPrice = price;
-        }.bind(this));
-
-        this.currentTick = 0;
-        this.currentContract.endPrice = this.currentPrice;
-        this.currentContract.endPricePosition = ((this.currentPrice - lowestPrice) / (highestPrice - lowestPrice)).toFixed(2);
-        this.currentContract.type = this.currentContract.startPrice > this.currentPrice ? 'fall' : 'raise';
-
-        this.localWS.send(JSON.stringify({
-            key: 'tickData',
-            data: this.currentContract,
-            asset: this.ASSET_NAME
-        }));
-        this.currentContract = null;
-
-        this.getHighestLowestPrice();
     }
 
 }

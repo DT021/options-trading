@@ -119,7 +119,7 @@ let ChartComponent = {
             this.config.data.datasets[0].data.shift();
             this.config.data.labels.shift();
         }
-        this.config.options.scales.yAxes[0].ticks.suggestedMin = item.lowestPrice ? item.lowestPrice : 0;
+        this.config.options.scales.yAxes[0].ticks.min = item.lowestPrice ? item.lowestPrice - 5 : 0;
         this.chart.update();
     },
     updatePredictionChart(collection,lowestPrice,highestPrice) {
