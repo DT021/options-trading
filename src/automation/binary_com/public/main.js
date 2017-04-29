@@ -297,7 +297,7 @@ const Main = {
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
                 if (this.accountBalance >= 200) {
-                    //this.lossLimit = -(this.accountBalance-100);
+                    this.lossLimit = -(this.accountBalance-100);
                 } else {}
                // this.lossLimit = -(this.accountBalance - 10);
                 this.setLossLimit();
@@ -640,7 +640,7 @@ const Main = {
                 per = 0.2;
                 this.isShort = false;
             }
-            shortIndex = this.shortTrendLength + 5;
+            shortIndex = this.shortTrendLength - 5;
             isShorter = true;
         } else {
             this.isShort = false;
@@ -843,7 +843,7 @@ const Main = {
         let priceDifference = Math.abs(this.history[this.history.length - 3] - this.history[this.history.length - 1]);
         let priceDifLimit = 0;
         //let ratio = 0.89;
-        if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage && this.checkIsDirection('RAISE', 1, 10)) {
+        if (trend.shortTermTrend == 'raise' && raiseDif >= this.trendSucessPercentage && this.checkIsDirection('RAISE', 1, 5)) {
             proposal = 'CALL';
             predictionType = 'TREND';
             found = true;
@@ -856,7 +856,7 @@ const Main = {
                 priceDiff: priceDifference
             };
             ChartComponent.updatePredictionChart(trend.collection);
-        } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 1, 10)) {
+        } else if (trend.shortTermTrend == 'fall' && fallDif >= this.trendSucessPercentage && this.checkIsDirection('FALL', 1, 5)) {
             proposal = 'PUT';
             predictionType = 'TREND';
             found = true;

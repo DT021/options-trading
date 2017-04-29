@@ -44,6 +44,7 @@ class FinanceModel {
         console.log('profit', '£' + this.state.profit);
 
         let isDone = this.checkSessionDone();
+        isDone=false;
         EventBus.dispatch(Event.TRANSCATION_COMPLETE, {
             isWin: isWin,
             profit: this.state.profit,
