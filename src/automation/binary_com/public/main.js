@@ -1,6 +1,7 @@
 const Main = {
     isVirtual: false,
-    chanelPrediction: false,
+    chanelPrediction: true,
+    trendPrediction: false,
     ws: null,
     history: [],
     winCount: 0,
@@ -25,7 +26,7 @@ const Main = {
     lowestPrice: null,
     lossLimit: -40,
     lossLimitDefault: 0,
-    profitLimit: 2,
+    profitLimit: 0.8,
     prediction: '',
     ASSET_NAME: 'R_100',
     predictionItem: null,
@@ -58,6 +59,7 @@ const Main = {
     breakDuration: 180000,
     idleStartTime: 0,
     volatileChecker: true,
+    martingaleStakeLevel: 8,
     log: {
 
     },
@@ -296,10 +298,11 @@ const Main = {
             case 'balance':
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
+                this.setDefaultStake();
                 if (this.accountBalance >= 200) {
-                    this.lossLimit = -(this.accountBalance-100);
+                    //this.lossLimit = -(this.accountBalance-100);
                 } else {}
-               // this.lossLimit = -(this.accountBalance - 10);
+                //this.lossLimit = -(this.accountBalance - 10);
                 this.setLossLimit();
                 //console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getAvailableAssets();
@@ -311,15 +314,16 @@ const Main = {
                 this.getTicks();
                 this.getTranscations();
                 View.activeButton();
+                this.getHistory();
                 break;
             case 'history':
-                if (!this.history.length) {
+                console.log('history', data);
+                if (!this.started) {
                     this.history = data.history.prices;
                     this.historyTimes = data.history.times;
                     this.started = true;
-
+                    this.onStartTrading();
                 }
-                this.onStartTrading();
                 break;
             case 'proposal':
                 // console.log('proposal', data);
@@ -353,7 +357,7 @@ const Main = {
                     this.historyTimes.push(data.tick.epoch);
                     console.log('ticks update');
                     this.currentPrice = data.tick.quote;
-                    if(this.volatileChecker)this.checkVolatility();
+                    if (this.volatileChecker) this.checkVolatility();
                     this.setPositions();
                     this.setDirectionCollection();
                     this.addTickToContract();
@@ -375,6 +379,15 @@ const Main = {
                 break;
         }
 
+    },
+    setDefaultStake() {
+        let balance = this.accountBalance;
+        let amount = balance;
+        for (let a = 0; a < 9; a++) {
+            amount = (amount - (amount * 0.06)) / 2;
+        }
+        this.stake = amount < 0.35 ? 0.35 : amount;
+        View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     checkIdleTime() {
         let time = new Date().getTime();
@@ -518,10 +531,13 @@ const Main = {
     setStake(isLoss) {
         if (isLoss && this.startMartingale) {
             let doubleStake = (this.currentStake * 2);
-            this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.942));
+            this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.94));
             //this.currentStake = this.stake + (this.stake - (this.stake * 0.942));
+            if (this.lossStreak >= 4 && this.currentStake > Math.abs(this.profit)) {
+                this.currentStake = Math.abs(this.profit);
+            }
             if (this.profit - this.currentStake <= this.lossLimit) {
-                this.currentStake = this.stake;
+                this.currentStake = Math.abs(this.profit);
             }
         } else {
             this.currentStake = this.stake;
@@ -598,12 +614,12 @@ const Main = {
         }.bind(this));
     },
     setPredictionData() {
-            let found = false;
+        let found = false;
         if (this.isProposal || this.pauseTrading) return;
         if (this.predictionModel != 'pattern') {
-            found =  ChannelPrediction.predict(this.history);
+            found = ChannelPrediction.predict(this.history);
             //found = this.predictionOnTrendSharp();
-            if (!found) found = this.predictOnTrend();
+            if (!found && this.trendPrediction) found = this.predictOnTrend();
         } else {
             this.predictionItem = {
                 startPricePosition: this.startPricePosition,

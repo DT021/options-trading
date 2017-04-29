@@ -2,21 +2,51 @@ const ChannelPrediction = {
     highest: 0,
     lowest: 0,
     predict(history) {
-      if (!Main.chanelPrediction||this.isProposal || this.pauseTrading) return;
-        let index = history.length - 1;
+        if (!Main.chanelPrediction || Main.isProposal || Main.pauseTrading) return;
+        let index = history.length;
         let collection = history.splice(index - 10, index);
         this.findLowestHighest(collection);
         let direction = this.checkChannelDirection(collection);
         if (direction) {
             let type = direction == 'RAISE' ? 'CALL' : 'PUT';
-            Main.setPrediction(type, 'CHANNEL');
+            Main.setPrediction(type, 'CHANNEL_'+direction);
             ChartComponent.updatePredictionChart(collection, this.lowest, this.highest);
             Main.currentTrendItem = {
-                predictionType: 'CHANNEL',
+                predictionType: 'CHANNEL_' + direction,
                 type: type
             };
             return true;
         }
+    },
+    standardDeviation(values) {
+        var avg = this.average(values);
+
+        var squareDiffs = values.map(function(value) {
+            var diff = value - avg;
+            var sqrDiff = diff * diff;
+            return sqrDiff;
+        }.bind(this));
+
+        var avgSquareDiff = this.average(squareDiffs);
+
+        var stdDev = Math.sqrt(avgSquareDiff);
+        return stdDev;
+    },
+
+    average(data) {
+        let sum = 0;
+        data.forEach(function(value) {
+          //console.log(value)
+            sum += Number(value);
+        });
+
+        var avg = sum / data.length;
+        //console.log(avg);
+        return avg;
+    },
+    volatilityCheck(collection) {
+      if(!collection.length)return;
+        console.log('volatilityCheck', this.standardDeviation(collection));
     },
     findLowestHighest(collection) {
         this.lowest = collection[0];
@@ -28,7 +58,11 @@ const ChannelPrediction = {
     },
     checkChannelDirection(collection) {
         let obj = this.getTopAndBottomCollections(collection);
-        return obj.bottomDirection == obj.topDirection  && obj.bottomDirection.length > 3 ? obj.bottomDirection : '';
+        let direction = '';
+        // if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'FALL';
+        // if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'RAISE';
+        direction = obj.bottomDirection == obj.topDirection && obj.bottomDirection.length > 3 ? obj.bottomDirection : '';
+        return direction;
     },
     getTopAndBottomCollections(collection) {
         let bottomCollection = [];
@@ -49,25 +83,35 @@ const ChannelPrediction = {
         previousPrice = bottomCollection[0];
         bottomCollection.forEach(function(price, index) {
             if (index > 1) {
-                if (price < previousPrice && bottomDirection == 'RAISE') bottomDirection = '';
-                if (price > previousPrice && bottomDirection == 'FALL') bottomDirection = '';
+                if (price + 1 < previousPrice && bottomDirection == 'RAISE') bottomDirection = '';
+                if (price - 1 > previousPrice && bottomDirection == 'FALL') bottomDirection = '';
             } else if (index) {
-                if (price > previousPrice) bottomDirection = 'RAISE';
-                if (price < previousPrice) bottomDirection = 'FALL';
+                if (price - 1 > previousPrice) bottomDirection = 'RAISE';
+                if (price + 1 < previousPrice) bottomDirection = 'FALL';
             }
+            previousPrice = price;
         }.bind(this));
 
+        if (bottomDirection == 'RAISE' && bottomCollection[bottomCollection.length - 1] > collection[collection.length - 1]) bottomDirection = '';
+        if (bottomDirection == 'FALL' && bottomCollection[bottomCollection.length - 1] < collection[collection.length - 1]) bottomDirection = '';
+
         previousPrice = topCollection[0];
+        let topGettingSmaller = false;
+        let lastDif = 0;
         topCollection.forEach(function(price, index) {
             if (index > 1) {
+                let dif = Math.abs(price - previousPrice);
+                if (!lastDif) {
+                    lastDif = dif;
+                }
                 if (price < previousPrice && topDirection == 'RAISE') topDirection = '';
                 if (price > previousPrice && topDirection == 'FALL') topDirection = '';
             } else if (index) {
                 if (price > previousPrice) topDirection = 'RAISE';
                 if (price < previousPrice) topDirection = 'FALL';
             }
+            previousPrice = price;
         }.bind(this));
-
         return {
             bottomCollection: bottomCollection,
             bottomDirection: bottomDirection,
