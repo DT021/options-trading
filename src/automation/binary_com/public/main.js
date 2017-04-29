@@ -1,7 +1,7 @@
 const Main = {
-    isVirtual: false,
+    isVirtual: true,
     chanelPrediction: true,
-    trendPrediction: false,
+    trendPrediction: true,
     ws: null,
     history: [],
     winCount: 0,
@@ -302,7 +302,7 @@ const Main = {
                 if (this.accountBalance >= 200) {
                     //this.lossLimit = -(this.accountBalance-100);
                 } else {}
-                //this.lossLimit = -(this.accountBalance - 10);
+                this.lossLimit = -(this.accountBalance - 10);
                 this.setLossLimit();
                 //console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getAvailableAssets();
@@ -387,6 +387,7 @@ const Main = {
             amount = (amount - (amount * 0.06)) / 2;
         }
         this.stake = amount < 0.35 ? 0.35 : amount;
+        this.profitLimit = this.stake * 0.8;
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     checkIdleTime() {
@@ -656,7 +657,7 @@ const Main = {
                 per = 0.2;
                 this.isShort = false;
             }
-            shortIndex = this.shortTrendLength - 5;
+            shortIndex = this.shortTrendLength + 5;
             isShorter = true;
         } else {
             this.isShort = false;
