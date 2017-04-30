@@ -2,7 +2,7 @@ const Volatility = {
     tickCollection: [],
     duration: 1000,
     priceChangeDuration: 30,
-    priceChangeBarrier: 30,
+    priceChangeBarrier: 10,
     timer: null,
     check(price,override) {
         if (!this.timer && !override) {

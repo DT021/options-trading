@@ -1,5 +1,5 @@
 const Main = {
-    isVirtual: true,
+    isVirtual: false,
     chanelPrediction: false,
     trendPrediction: true,
     trendingUpPrediction: false,
@@ -316,7 +316,7 @@ const Main = {
                     this.currentTick++;
                     this.history.push(data.tick.quote);
                     this.historyTimes.push(data.tick.epoch);
-                    console.log('ticks update',this.history.length);
+                    //console.log('ticks update',this.history.length);
                     this.currentPrice = data.tick.quote;
                     this.setPositions();
 
