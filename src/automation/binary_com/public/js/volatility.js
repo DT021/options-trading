@@ -49,7 +49,7 @@ const Volatility = {
         return true;
     },
     priceChangeSmall() {
-        let collection = Main.history.splice(Main.history.length - (this.priceChangeDuration + 1), Main.history.length);
+        let collection = Main.history.slice(Main.history.length - (this.priceChangeDuration + 1), Main.history.length);
         let lastPrice = collection[0];
         let currentPrice = collection[collection.length - 1];
         //console.log('Volatile Dif', Math.abs(lastPrice - currentPrice),this.priceChangeBarrier)

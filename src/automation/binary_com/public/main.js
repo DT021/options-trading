@@ -316,7 +316,7 @@ const Main = {
                     this.currentTick++;
                     this.history.push(data.tick.quote);
                     this.historyTimes.push(data.tick.epoch);
-                    //console.log('ticks update');
+                    console.log('ticks update',this.history.length);
                     this.currentPrice = data.tick.quote;
                     this.setPositions();
 
@@ -328,6 +328,7 @@ const Main = {
 
                     let highLow = Util.getHighLow(collection);
                     let highLowClose = Util.getHighLow(collectionClose);
+
                     ChartComponent.update({
                         collection: collection,
                         price: this.currentPrice,

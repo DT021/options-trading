@@ -178,13 +178,13 @@ let ChartComponent = {
 
     },
     setCloseData(collection) {
-        this.closeConfig.data.labels = collection;
-        this.closeConfig.data.datasets[0].data = collection;
+        this.closeConfig.data.labels = collection.concat([]);
+        this.closeConfig.data.datasets[0].data = collection.concat([]);;
         this.closechart.update();
     },
     setData(collection) {
-        this.config.data.labels = collection;
-        this.config.data.datasets[0].data = collection;
+        this.config.data.labels = collection.concat([]);;
+        this.config.data.datasets[0].data = collection.concat([]);;
         this.chart.update();
     },
     update(item) {
@@ -208,8 +208,8 @@ let ChartComponent = {
         this.closechart.update();
     },
     updatePredictionChart(collection, lowestPrice, highestPrice) {
-        this.predictionConfig.data.labels = collection;
-        this.predictionConfig.data.datasets[0].data = collection;
+        this.predictionConfig.data.labels = collection.concat([]);
+        this.predictionConfig.data.datasets[0].data = collection.concat([]);
         if (lowestPrice) this.predictionConfig.options.scales.yAxes[0].ticks.min = lowestPrice - 5;
         //if(highestPrice)this.predictionConfig.options.scales.yAxes[0].ticks.max = highestPrice + 5;
         //this.predictionConfig.options.scales.yAxes[0].ticks.max = highestPrice + 1;
