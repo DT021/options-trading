@@ -32,7 +32,7 @@ const TrendPrediction = {
         let shortIndex = this.shortTrendLength;
         let isShorter = false;
         if (this.isShort || Main.lossStreak > 2) {
-            shortIndex = this.shortTrendLength + 5;
+            shortIndex = this.shortTrendLength - 5;
             isShorter = true;
         } else {
             this.isShort = false;
