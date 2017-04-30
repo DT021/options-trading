@@ -183,8 +183,8 @@ let View = {
         }
 
     },
-    updateVolatile(value) {
-        this.isVolatile.innerHTML = value;
+    updateVolatile(value,change) {
+        this.isVolatile.innerHTML = value +' ('+(change?change.toFixed(2):'')+')';
         if (value) {
             this.isVolatile.parentNode.classList.remove('success');
             this.isVolatile.parentNode.classList.add('danger');

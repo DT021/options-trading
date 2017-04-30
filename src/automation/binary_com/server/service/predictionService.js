@@ -205,6 +205,7 @@ const PredictionService = {
                 if (price > previousPrice) bottomDirection = 'RAISE';
                 if (price < previousPrice) bottomDirection = 'FALL';
             }
+            previousPrice = price;
         }.bind(this));
 
         previousPrice = topCollection[0];
@@ -216,6 +217,7 @@ const PredictionService = {
                 if (price > previousPrice) topDirection = 'RAISE';
                 if (price < previousPrice) topDirection = 'FALL';
             }
+            previousPrice = price;
         }.bind(this));
 
         return {

@@ -1,16 +1,16 @@
 const ChannelPrediction = {
     highest: 0,
     lowest: 0,
-    collectionCount:6,
+    collectionCount: 10,
     predict(history) {
         if (!Main.chanelPrediction || Main.isProposal || Main.pauseTrading) return;
         let index = history.length;
-        let collection = history.splice(index - this.collectionCount, index);
+        let collection = history.slice(index - this.collectionCount, index);
         this.findLowestHighest(collection);
         let direction = this.checkChannelDirection(collection);
         if (direction) {
             let type = direction == 'RAISE' ? 'CALL' : 'PUT';
-            Main.setPrediction(type, 'CHANNEL_'+direction);
+            Main.setPrediction(type, 'CHANNEL_' + direction);
             ChartComponent.updatePredictionChart(collection, this.lowest, this.highest);
             Main.currentTrendItem = {
                 predictionType: 'CHANNEL_' + direction,
@@ -37,7 +37,7 @@ const ChannelPrediction = {
     average(data) {
         let sum = 0;
         data.forEach(function(value) {
-          //console.log(value)
+            //console.log(value)
             sum += Number(value);
         });
 
@@ -46,13 +46,14 @@ const ChannelPrediction = {
         return avg;
     },
     volatilityCheck(collection) {
-      if(!collection.length)return;
+        if (!collection.length) return;
         console.log('volatilityCheck', this.standardDeviation(collection));
     },
     findLowestHighest(collection) {
         this.lowest = collection[0];
         this.highest = collection[0];
         collection.forEach((price) => {
+            price = Number(price);
             if (price < this.lowest) this.lowest = price;
             if (price > this.highest) this.highest = price;
         });
@@ -60,9 +61,9 @@ const ChannelPrediction = {
     checkChannelDirection(collection) {
         let obj = this.getTopAndBottomCollections(collection);
         let direction = '';
-         //if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'FALL';
+        //if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'FALL';
         // if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'RAISE';
-        direction = obj.bottomDirection == obj.topDirection && obj.bottomDirection.length >= 3 ? obj.bottomDirection : '';
+        direction = obj.bottomDirection == obj.topDirection && obj.bottomDirection.length >= (this.collectionCount * 0.5) ? obj.bottomDirection : '';
         return direction;
     },
     getTopAndBottomCollections(collection) {
@@ -73,16 +74,18 @@ const ChannelPrediction = {
         let topDirection = '';
         // find top and bottom prices
         collection.forEach(function(price, index) {
+            collection[index] =  Number(price);
+            price = Number(price);
             if (index > 1) {
                 if (price > previousPrice && previousPrice < collection[index - 2]) bottomCollection.push(previousPrice);
                 if (price < previousPrice && previousPrice > collection[index - 2]) topCollection.push(previousPrice);
             }
             previousPrice = price;
         }.bind(this));
-
         //check bottom direction
         previousPrice = bottomCollection[0];
         bottomCollection.forEach(function(price, index) {
+            price = Number(price);
             if (index > 1) {
                 if (price + 1 < previousPrice && bottomDirection == 'RAISE') bottomDirection = '';
                 if (price - 1 > previousPrice && bottomDirection == 'FALL') bottomDirection = '';
