@@ -95,6 +95,10 @@ const Main = {
         this.addListener();
     },
     onClose(event) {
+        this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
+        this.ws.onopen = this.onOpen.bind(this);
+        this.ws.onclose = this.onClose.bind(this);
+        this.ws.onmessage = this.onMessage.bind(this);
         this.authorize();
     },
     onOpen(event) {
@@ -257,12 +261,8 @@ const Main = {
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
                 this.setDefaultStake();
-                if (this.accountBalance >= 200) {
-                    //this.lossLimit = -(this.accountBalance-100);
-                } else {}
-                this.lossLimit = -(this.accountBalance - 10);
+                //this.lossLimit = -(this.accountBalance - 10);//dynamic lose limit
                 this.setLossLimit();
-                //console.log('current profit', '£' + profit.toFixed(2));
                 if (!this.started) this.getAvailableAssets();
                 break;
             case 'asset_index':
@@ -448,7 +448,7 @@ const Main = {
                     this.currentStake = Math.abs(this.profit);
                 }
             } else {
-                this.currentStake =  ((this.stake* this.lossStreak) * 0.94);
+                this.currentStake = ((this.stake * this.lossStreak) * 0.94);
             }
 
         } else {
@@ -493,7 +493,7 @@ const Main = {
         View.updateLog(this.log);
     },
     getLogItem(type) {
-        if(!type)type = '';
+        if (!type) type = '';
         type = type.replace(':', '_');
         if (!this.log[type]) {
             this.log[type] = {
