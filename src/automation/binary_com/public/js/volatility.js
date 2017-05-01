@@ -3,7 +3,9 @@ const Volatility = {
     duration: 1000,
     priceChangeDuration: 30,
     priceChangeBarrier: 10,
+    changeLimit:12,
     timer: null,
+    changeCounts: [],
     check(price, override) {
         if (!this.timer && !override) {
             this.start();
@@ -18,15 +20,14 @@ const Volatility = {
         }, this.duration);
     },
     end(collection) {
-        let count = this.tickCollection.length;
         let change = this.priceChangeSmall(collection);
-        if (change) {
-            //if ( this.isVolatile() || count > 5) {
+        let changeCount = this.numberOfChanges(collection) ;
+        if (changeCount > this.changeLimit||change) {
             Main.pauseTrading = true;
-            View.updateVolatile(true, change);
+            View.updateVolatile(true, changeCount>this.changeLimit? 'direction changes:' + changeCount: 'price change: ' + change.toFixed(2));
         } else {
             Main.pauseTrading = false;
-            View.updateVolatile(false, change);
+            View.updateVolatile(false, '');
         }
         this.timer = null;
         this.tickCollection = [];
@@ -47,6 +48,36 @@ const Volatility = {
         //console.log('change', bottomCollection.length, topCollection.length);
         if (bottomCollection.length < 2 && topCollection.length < 2) return false;
         return true;
+    },
+    numberOfChanges(_collection) {
+        let ticks = _collection ? _collection : Main.history;
+        let collection = ticks.slice(ticks.length - 30, ticks.length);
+        let changeCount = 0;
+        let previousPrice = collection[0];
+        let direction = collection[0] > collection[1] ? 'RAISE' : 'FALL';
+        collection.forEach(function(price, index) {
+            if (index > 1) {
+                if (price > previousPrice && direction != 'RAISE') changeCount++;
+                if (price < previousPrice && direction != 'FALL') changeCount++;
+            }
+            previousPrice = price;
+        }.bind(this));
+        this.changeCounts.push(changeCount);
+       // console.log('changeCount',changeCount);
+        return changeCount;
+    },
+    averageChangeCounts() {
+        let sum = 0;
+        let lowest = this.changeCounts[0];
+        let highest = this.changeCounts[0];
+        this.changeCounts.forEach(function(count) {
+            sum += count;
+            if(count < lowest)lowest = count;
+            if(count > highest)highest = count;
+        }.bind(this));
+
+        console.log(sum / this.changeCounts.length);
+        console.log(lowest,highest);
     },
     priceChangeSmall(_ticks) {
         let ticks = _ticks ? _ticks : Main.history;

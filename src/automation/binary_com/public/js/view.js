@@ -185,7 +185,7 @@ let View = {
 
     },
     updateVolatile(value,change) {
-        this.isVolatile.innerHTML = value +' ('+(change?change.toFixed(2):'')+')';
+        this.isVolatile.innerHTML = value + (change ? ' ('+change+')':'');
         if (value) {
             this.isVolatile.parentNode.classList.remove('success');
             this.isVolatile.parentNode.classList.add('danger');

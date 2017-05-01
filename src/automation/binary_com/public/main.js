@@ -29,7 +29,7 @@ const Main = {
     localWS: null,
     highestPrice: null,
     lowestPrice: null,
-    lossLimit: -40,
+    lossLimit: -50,
     lossLimitDefault: 0,
     profitLimit: 0.8, //DEBUG
     prediction: '',
@@ -62,7 +62,7 @@ const Main = {
     proposalTickCount: 0,
     lastBalance: 0,
     //breakDuration: 1000,
-    breakDuration: 10000, //LIVE
+    breakDuration: 30000, //LIVE
     idleStartTime: 0,
     volatileChecker: true,
     martingaleStakeLevel: 8,
@@ -261,7 +261,7 @@ const Main = {
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
                 this.setDefaultStake();
-                //this.lossLimit = -(this.accountBalance - 10);//dynamic lose limit
+                this.lossLimit = -(this.accountBalance * 0.5);//dynamic lose limit
                 this.setLossLimit();
                 if (!this.started) this.getAvailableAssets();
                 break;
