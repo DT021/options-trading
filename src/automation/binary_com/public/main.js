@@ -1,5 +1,5 @@
 const Main = {
-    isVirtual: true,
+    isVirtual: false,
     chanelPrediction: false,
     trendPrediction: true,
     trendingUpPrediction: false,
@@ -99,7 +99,6 @@ const Main = {
         this.ws.onopen = this.onOpen.bind(this);
         this.ws.onclose = this.onClose.bind(this);
         this.ws.onmessage = this.onMessage.bind(this);
-        this.authorize();
     },
     onOpen(event) {
         //USGOOG
