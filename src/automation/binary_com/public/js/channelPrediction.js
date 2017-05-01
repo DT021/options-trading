@@ -1,7 +1,7 @@
 const ChannelPrediction = {
     highest: 0,
     lowest: 0,
-    collectionCount: 10,
+    collectionCount: 5,
     predict(history) {
         if (!Main.chanelPrediction || Main.isProposal || Main.pauseTrading) return;
         let index = history.length;
@@ -63,7 +63,7 @@ const ChannelPrediction = {
         let direction = '';
         //if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'FALL';
         // if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'RAISE';
-        direction = obj.bottomDirection == obj.topDirection && obj.bottomDirection.length >= (this.collectionCount * 0.5) ? obj.bottomDirection : '';
+        direction = obj.bottomDirection == obj.topDirection && obj.bottomDirection.length >= 1 ? obj.bottomDirection : '';
         return direction;
     },
     getTopAndBottomCollections(collection) {

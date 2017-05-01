@@ -1,5 +1,5 @@
 const Main = {
-    isVirtual: false,
+    isVirtual: true,
     chanelPrediction: false,
     trendPrediction: true,
     trendingUpPrediction: false,
@@ -13,9 +13,9 @@ const Main = {
     balance: 100,
     startBalance: 0,
     accountBalance: 0,
-    payout: 0.942,
-    stake: 1,
-    currentStake: 1,
+    payout: 0.94,
+    stake: 0.5,
+    currentStake: 0.5,
     lossStreak: 0,
     maxLossStreak: 0,
     started: false,
@@ -31,7 +31,7 @@ const Main = {
     lowestPrice: null,
     lossLimit: -50,
     lossLimitDefault: 0,
-    profitLimit: 0.8, //DEBUG
+    profitLimit: 0.01, //DEBUG
     prediction: '',
     ASSET_NAME: 'R_100',
     predictionItem: null,
@@ -261,7 +261,7 @@ const Main = {
                 if (!this.startBalance) this.startBalance = data.balance.balance;
                 this.accountBalance = data.balance.balance;
                 this.setDefaultStake();
-                this.lossLimit = -(this.accountBalance * 0.5);//dynamic lose limit
+                this.lossLimit = -(this.accountBalance - 10);//dynamic lose limit
                 this.setLossLimit();
                 if (!this.started) this.getAvailableAssets();
                 break;
@@ -357,8 +357,8 @@ const Main = {
         for (let a = 0; a < 9; a++) {
             amount = (amount - (amount * 0.06)) / 2;
         }
-        this.stake = amount < 0.35 ? 1 : amount; //debug
-        this.profitLimit = this.stake * 0.8; //debug
+        //this.stake = amount < 0.35 ? 1 : amount; //debug
+        //this.profitLimit = this.stake * 0.8; //debug
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     checkIdleTime() {
@@ -379,7 +379,7 @@ const Main = {
         this.idleStartTime = null;
         if (isLoss == undefined) {
             isLoss = this.lastBalance < this.accountBalance;
-            console.log(isLoss);
+            //console.log(isLoss);
         }
         let profit = this.accountBalance - this.startBalance;
         if (isLoss == true) {
@@ -439,16 +439,14 @@ const Main = {
         if (isLoss && this.startMartingale) {
             if (!this.disableMartingale) {
                 let doubleStake = (this.currentStake * 2);
-                this.currentStake = doubleStake + (doubleStake - (doubleStake * 0.94));
-                //this.currentStake = this.stake + (this.stake - (this.stake * 0.942));
-                if (this.lossStreak >= 4 && this.currentStake > Math.abs(this.profit)) {
-                    this.currentStake = Math.abs(this.profit);
-                }
-                if (this.profit - this.currentStake <= this.lossLimit) {
-                    this.currentStake = Math.abs(this.profit);
-                }
+               // console.log('double');
+                this.currentStake = doubleStake ;
             } else {
-                this.currentStake = ((this.stake * this.lossStreak) * 0.94);
+               // console.log('this.currentStake',this.currentStake);
+                let profit = Math.abs(this.profit);
+                let newStake =(profit * 0.5) + ((profit * 0.5) * 0.07);
+                this.currentStake = Number((newStake * 2).toFixed(2));
+               // console.log('this.currentStake',this.currentStake);
             }
 
         } else {
