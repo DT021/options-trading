@@ -40,6 +40,7 @@ let View = {
         this.takingABreak = document.querySelector('#takingABreak');
         this.isVolatile = document.querySelector('#isVolatile');
         this.addListeners();
+        this.startTime.textContent = this.formatDate(new Date());
     },
     addListeners() {
         this.startButton.addEventListener('click', this.onStartClicked.bind(this));
@@ -67,7 +68,7 @@ let View = {
         App.EventBus.dispatch(App.EVENT.START_TRADING);
         this.stopButton.removeAttribute('disabled');
         this.startButton.setAttribute('disabled', '');
-        this.startTime.textContent = this.formatDate(new Date());
+        
     },
     updateCounts(wins, loses, loseStreak) {
         this.winElement.textContent = wins;

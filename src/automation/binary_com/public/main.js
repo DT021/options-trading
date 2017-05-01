@@ -448,7 +448,7 @@ const Main = {
                     this.currentStake = Math.abs(this.profit);
                 }
             } else {
-                this.currentStake = this.stake + (this.lossStreak * 0.94);
+                this.currentStake =  ((this.stake* this.lossStreak) * 0.94);
             }
 
         } else {

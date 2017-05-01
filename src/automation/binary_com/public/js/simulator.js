@@ -93,15 +93,16 @@ const Simulator = {
             History.forEach((historyCollection) => {
                 let volatileCount = 0;
                 historyCollection.forEach((price, index) => {
+                  let collection = historyCollection.slice(0, index + 1);
                     volatileCount++;
                     if (volatileCount >= 5) {
-                        Volatility.end();
+                        Volatility.end(collection);
                         volatileCount = 0;
                     } else {
                         Volatility.check(price, true);
                     }
                     if (!this.pauseTrading && !this.isProposal) {
-                        let collection = historyCollection.slice(0, index + 1);
+                        
                         this.predictionModels[key].predict(collection);
                     } else if (this.isProposal) {
                         this.checkPurchase(price);

@@ -4,7 +4,7 @@ const Volatility = {
     priceChangeDuration: 30,
     priceChangeBarrier: 10,
     timer: null,
-    check(price,override) {
+    check(price, override) {
         if (!this.timer && !override) {
             this.start();
         } else {
@@ -17,19 +17,19 @@ const Volatility = {
             this.end();
         }, this.duration);
     },
-    end() {
+    end(collection) {
         let count = this.tickCollection.length;
-      //console.log('Volatility', count);
-      let change= this.priceChangeSmall();
-         if (change) {
-        //if ( this.isVolatile() || count > 5) {
+        let change = this.priceChangeSmall(collection);
+        if (change) {
+            //if ( this.isVolatile() || count > 5) {
             Main.pauseTrading = true;
-            View.updateVolatile(true,change);
+            View.updateVolatile(true, change);
         } else {
             Main.pauseTrading = false;
-            View.updateVolatile(false,change);
+            View.updateVolatile(false, change);
         }
         this.timer = null;
+        this.tickCollection = [];
     },
     isVolatile() {
         let bottomCollection = [];
@@ -48,8 +48,9 @@ const Volatility = {
         if (bottomCollection.length < 2 && topCollection.length < 2) return false;
         return true;
     },
-    priceChangeSmall() {
-        let collection = Main.history.slice(Main.history.length - (this.priceChangeDuration + 1), Main.history.length);
+    priceChangeSmall(_ticks) {
+        let ticks = _ticks ? _ticks : Main.history;
+        let collection = ticks.slice(ticks.length - (this.priceChangeDuration + 1), ticks.length);
         let lastPrice = collection[0];
         let currentPrice = collection[collection.length - 1];
         //console.log('Volatile Dif', Math.abs(lastPrice - currentPrice),this.priceChangeBarrier)
