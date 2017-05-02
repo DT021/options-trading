@@ -6,6 +6,7 @@ const Main = {
     trendUpDuration: 10,
     trendUpLongDuration: 300,
     trendingUpBarrier: 10,
+    longBreakLossCount: 6,
     ws: null,
     history: [],
     winCount: 0,
@@ -398,7 +399,7 @@ const Main = {
             this.end(profit <= this.lossLimit);
         }
         if (this.lossStreak >= 4) {
-            let isGreaterThanFive = this.lossStreak > 5;
+            let isGreaterThanFive = this.lossStreak > this.longBreakLossCount;
             this.takeABreak(isGreaterThanFive);
         }
         View.updateMartingale(this.startMartingale);

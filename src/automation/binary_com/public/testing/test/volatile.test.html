@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+  <script type="text/javascript" src="js/volatile.data.js"></script>
+  <script type="text/javascript" src="js/volatile.data.2.js"></script>
+  <script type="text/javascript" src="js/volatile.data.3.js"></script>
+</head>
+
+<body>
+  <script type="text/javascript">
+  let Test = {
+    run() {
+      this.checkChange(History.prices);
+      this.checkChange(History2.prices);
+      this.checkChange(History3.prices);
+      this.checkDirectionChange(History.prices);
+      this.checkDirectionChange(History2.prices);
+      this.checkDirectionChange(History3.prices);
+
+    },
+    checkChange(collection) {
+      let previousPrice = collection[0];
+      let changeCollection = [];
+      let highest = collection[0];
+      let lowest = collection[0];
+      let sum = 0;
+      let obj = {
+
+      };
+      collection.forEach((price, index) => {
+        if (index > 0) {
+          let change = Math.abs(previousPrice - price);
+          changeCollection.push(change);
+          sum += change;
+          if (change > highest) highest = change;
+          if (change < lowest) lowest = change;
+          let key = change.toFixed(0)
+          if (!obj[key]) obj[key] = 0;
+          obj[key]++;
+        }
+        previousPrice = price;
+      });
+
+
+      console.log('checkChange');
+      console.log(sum / changeCollection.length);
+      console.log(obj);
+    },
+    checkDirectionChange(collection) {
+      let previousPrice = collection[0];
+      let changeCollection = [];
+      let highest = collection[0];
+      let lowest = collection[0];
+      let sum = 0;
+      let tickCount = 0;
+      let changeCount=0;
+      let obj = {
+      };
+      let currentDirection = collection[0] > collection[1] ? 'FALL' : 'RAISE';
+      collection.forEach((price, index) => {
+        if (index > 1) {
+          if (price > previousPrice && currentDirection == 'FALL' || price < previousPrice && currentDirection == 'RAISE') {
+            changeCount++;
+            let change = Math.abs(previousPrice - price);
+            changeCollection.push(change);
+            sum += change;
+            if (change > highest) highest = change;
+            if (change < lowest) lowest = change;
+            let key = change.toFixed(0)
+            if (!obj[key]) obj[key] = 0;
+            obj[key]++;
+
+            currentDirection = price > previousPrice ? 'RAISE':'FALL';
+          }
+
+        }
+        previousPrice = price;
+
+        if(tickCount > 30)
+        {
+          console.log(changeCount);
+          changeCollection = [];
+          sum=0;
+          tickCount=0;
+          changeCount=0;
+        }
+        tickCount++;
+      });
+
+      console.log('checkDirectionChange');
+      
+      console.log(obj);
+    }
+  };
+  Test.run();
+  </script>
+</body>
+
+</html>
