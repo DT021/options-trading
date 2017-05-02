@@ -436,16 +436,12 @@ const Main = {
     },
     setStake(isLoss) {
         if (isLoss && this.startMartingale) {
-            if (!this.disableMartingale) {
-                let doubleStake = (this.currentStake * 2);
-               // console.log('double');
-                this.currentStake = doubleStake ;
-            } else {
-               // console.log('this.currentStake',this.currentStake);
                 let profit = Math.abs(this.profit);
+            if (!this.disableMartingale) {
+                this.currentStake = Math.round((profit + (profit * 0.06)) * 100) / 100;
+            } else {
                 let newStake =(profit * 0.5) + ((profit * 0.5) * 0.07);
                 this.currentStake = Number((newStake * 2).toFixed(2));
-               // console.log('this.currentStake',this.currentStake);
             }
 
         } else {

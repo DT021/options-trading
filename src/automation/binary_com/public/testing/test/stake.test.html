@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+</head>
+
+<body>
+  <p>Initial Stake:<span data-model="initialStake"></span></p>
+  <table class="table">
+    <thead>
+      <tr>
+        <td>Loss Streak</td>
+        <td>Stake</td>
+        <td>Profit on Loss</td>
+        <td>Profit on Win</td>
+        <td>Funds Required</td>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script type="text/javascript">
+  let Test = {
+    initialStake: 0.5,
+    lastProfit: 0,
+    funds: 0,
+    profit: 0,
+    totalLoses: 12,
+    stake: 0,
+    run() {
+      this.update('initialStake', this.initialStake);
+      this.stake = this.initialStake;
+      this.profit = -this.initialStake;
+      this.funds = this.initialStake;
+      this.updateTable(1);
+      for (let a = 2; a <= this.totalLoses; a++) {
+        this.calculate();
+        this.setProfit();
+        this.updateTable(a);
+      }
+    },
+    calculate() {
+      let profitAbs = Math.abs(this.profit);
+      let _stake =  Math.round((profitAbs + (profitAbs * 0.06)) * 100) / 100;
+      this.setStake(_stake);
+    },
+    setStake(stake) {
+      this.stake = stake;
+    },
+    setProfit(index) {
+      this.lastProfit = this.profit;
+      this.profit -= this.stake;
+      this.funds =  Math.abs(this.profit) + this.stake;
+    },
+    updateTable(index) {
+      let tr = document.createElement('tr');
+      tr.innerHTML = '<td>' + index + '</td><td>£' + this.stake + '</td><td>£' + this.profit.toFixed(2) + '</td><td>£' + (this.lastProfit + this.stake + (this.stake * 0.94)).toFixed(3) + '</td><td>' + this.funds.toFixed(2) + '</td>';
+      document.querySelector('tbody').appendChild(tr);
+    },
+    update(key, value) {
+      document.querySelector('[data-model="' + key + '"]').innerHTML = value;
+    }
+  };
+  Test.run();
+  </script>
+</body>
+
+</html>
