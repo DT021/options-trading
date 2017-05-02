@@ -63,6 +63,7 @@ const Main = {
     lastBalance: 0,
     //breakDuration: 1000,
     breakDuration: 30000, //LIVE
+    longBreakDuration: 30000, //LIVE
     idleStartTime: 0,
     volatileChecker: true,
     martingaleStakeLevel: 8,
@@ -151,7 +152,7 @@ const Main = {
         View.updatePredictionType('');
         View.ended(false);
     },
-    end() {
+    end(ignoreReload) {
         clearTimeout(this.volatileTimer);
         View.ended(true);
         this.ws.send(JSON.stringify({
@@ -163,7 +164,7 @@ const Main = {
         this.ws.send(JSON.stringify({
             "forget_all": "transaction"
         }));
-        location.reload();
+        if(!ignoreReload)location.reload();
 
 
     },
@@ -394,10 +395,11 @@ const Main = {
             this.setSuccess();
         }
         if (profit <= this.lossLimit || this.accountBalance <= 0 || profit >= this.profitLimit) {
-            this.end();
+            this.end(profit <= this.lossLimit);
         }
         if (this.lossStreak >= 4) {
-            this.takeABreak();
+            let isGreaterThanFive = this.lossStreak > 5;
+            this.takeABreak(isGreaterThanFive);
         }
         View.updateMartingale(this.startMartingale);
         this.prediction = '';
@@ -409,13 +411,13 @@ const Main = {
         this.isProposal = false;
         this.proposalTickCount = 0;
     },
-    takeABreak() {
+    takeABreak(isLong) {
         this.isTrading = false;
         View.setBreak(true);
         setTimeout(function() {
             this.isTrading = true;
             View.setBreak(false);
-        }.bind(this), this.breakDuration);
+        }.bind(this), isLong ? this.longBreakDuration: this.breakDuration);
     },
     setLossLimit() {
         let profit = this.accountBalance - this.startBalance;
@@ -438,7 +440,7 @@ const Main = {
         if (isLoss && this.startMartingale) {
                 let profit = Math.abs(this.profit);
             if (!this.disableMartingale) {
-                this.currentStake = Math.round((profit + (profit * 0.06)) * 100) / 100;
+                this.currentStake = Math.round((profit + (profit * 0.07)) * 100) / 100;
             } else {
                 let newStake =(profit * 0.5) + ((profit * 0.5) * 0.07);
                 this.currentStake = Number((newStake * 2).toFixed(2));
@@ -447,6 +449,7 @@ const Main = {
         } else {
             this.currentStake = this.stake;
         }
+        if(this.profit - this.currentStake <= this.lossLimit)this.end(true);
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
     },
     setPositions() {
