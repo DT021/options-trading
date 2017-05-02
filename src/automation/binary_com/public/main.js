@@ -1,5 +1,5 @@
 const Main = {
-    isVirtual: false,
+    isVirtual: true,
     chanelPrediction: false,
     trendPrediction: true,
     trendingUpPrediction: false,
@@ -88,11 +88,17 @@ const Main = {
         this.ws.onclose = this.onClose.bind(this);
         this.ws.onmessage = this.onMessage.bind(this);
 
+        
+    },
+    onLoaded() {
         ChartComponent.create();
         View.init();
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
-    },
-    onLoaded() {
+
+        if(Tester && Tester.isTesting) {
+            Tester.start();
+            return;
+        }
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
         this.addListener();
     },
@@ -110,22 +116,22 @@ const Main = {
 
     },
     authorize() {
-        this.ws.send(JSON.stringify({ "authorize": Config.apiKey }));
+        if( this.ws)this.ws.send(JSON.stringify({ "authorize": Config.apiKey }));
     },
     buyContract() {
-        this.ws.send(JSON.stringify({
+        if( this.ws)this.ws.send(JSON.stringify({
             "buy": this.proposalID,
             "price": 100
         }));
     },
     getAvailableAssets() {
-        this.ws.send(JSON.stringify({ asset_index: 1 }));
+        if( this.ws)this.ws.send(JSON.stringify({ asset_index: 1 }));
     },
     getBalance() {
-        this.ws.send(JSON.stringify({ balance: 1, subscribe: 1 }));
+        if( this.ws)this.ws.send(JSON.stringify({ balance: 1, subscribe: 1 }));
     },
     addFunds() {
-        this.ws.send(JSON.stringify({ topup_virtual: '100' }));
+        if( this.ws)this.ws.send(JSON.stringify({ topup_virtual: '100' }));
     },
     getDateTimeString() {
         var currentdate = new Date();
@@ -275,7 +281,7 @@ const Main = {
                 this.getHistory();
                 break;
             case 'history':
-                console.log('history', data);
+               // console.log('history', data);
                 if (!this.started) {
                     this.history = data.history.prices;
                     this.historyTimes = data.history.times;
@@ -299,7 +305,7 @@ const Main = {
                 //console.log('buy', data);
                 break;
             case 'transaction':
-                //console.log('transaction', data.transaction);
+               // console.log('transaction', data.transaction);
                 if (data.transaction && data.transaction.action && data.transaction.action == 'sell') {
                     let isLoss = false;
                     if (data.transaction.amount === '0.00') {
@@ -383,6 +389,7 @@ const Main = {
             //console.log(isLoss);
         }
         let profit = this.accountBalance - this.startBalance;
+        console.log(this.accountBalance , this.startBalance);
         if (isLoss == true) {
             this.lossStreak++;
             this.startMartingale = true;
@@ -441,7 +448,7 @@ const Main = {
         if (isLoss && this.startMartingale) {
                 let profit = Math.abs(this.profit);
             if (!this.disableMartingale) {
-                this.currentStake = Math.round((profit + (profit * 0.07)) * 100) / 100;
+                this.currentStake = 11((profit + (profit * 0.07)) * 100) / 100;
             } else {
                 let newStake =(profit * 0.5) + ((profit * 0.5) * 0.07);
                 this.currentStake = Number((newStake * 2).toFixed(2));
