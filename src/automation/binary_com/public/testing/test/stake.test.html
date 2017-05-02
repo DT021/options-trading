@@ -52,6 +52,7 @@
 
     },
     runTest(tableIndex,method) {
+      this.lastProfit =0;
       this.stake = this.initialStake;
       this.profit = -this.initialStake;
       this.funds = this.initialStake;
@@ -64,7 +65,7 @@
     },
     calculateMartingale() {
       let profitAbs = Math.abs(this.profit);
-      let _stake = Math.round((profitAbs + (profitAbs * 0.06)) * 100) / 100;
+      let _stake = Math.round((profitAbs + (profitAbs * 0.07)) * 100) / 100;
       this.setStake(_stake);
     },
     calculateNonMartingale() {
@@ -83,7 +84,7 @@
     },
     updateTable(index, tableIndex) {
       let tr = document.createElement('tr');
-      tr.innerHTML = '<td>' + index + '</td><td>£' + this.stake + '</td><td>£' + this.profit.toFixed(2) + '</td><td>£' + (this.lastProfit + this.stake + (this.stake * 0.94)).toFixed(3) + '</td><td>' + this.funds.toFixed(2) + '</td>';
+      tr.innerHTML = '<td>' + index + '</td><td>£' + this.stake + '</td><td>£' + this.profit.toFixed(2) + '</td><td>£' + (this.profit + (this.stake + (this.stake * 0.94))).toFixed(3) + '</td><td>' + this.funds.toFixed(2) + '</td>';
       document.querySelectorAll('tbody')[tableIndex].appendChild(tr);
     },
     update(key, value) {
