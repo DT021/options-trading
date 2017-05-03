@@ -1,5 +1,6 @@
 const Tester = {
     isTesting: false,
+    testBalance:false,
     history: [
         "11906.28",
         "11905.66",
@@ -58,7 +59,8 @@ const Tester = {
     assetArray: [],
     stake: 0.5,
     currentStake: 0.5,
-    balance: 500,
+    startBalance:1000,
+    balance: 1000,
     ws: {
         send(str) {
             console.log(str);
@@ -76,6 +78,11 @@ const Tester = {
         }
     },
     start() {
+        if(this.testBalance) {
+            this.balance = Storage.get(Storage.keys.balance)?Number(Storage.get(Storage.keys.balance)):this.startBalance;
+            this.startBalance = this.balance;
+        }
+        if(!this.isTesting)return;
         Main.ws = this.ws;
         Main.assetArray = this.assetArray;
         Main.startBalance = this.balance;
@@ -99,6 +106,20 @@ const Tester = {
                 epoch: 12121212
             }
         });
+    },
+    setBalance(profit){
+        console.log('setBalance',profit);
+        if(!this.startBalance)this.startBalance = this.balance;
+        this.balance = this.balance + profit;
+        Main.startBalance = this.startBalance;
+        Main.balance = this.balance;
+        View.updateBalance(this.balance, profit);
+    },
+    storeBalance(){
+        if(this.testBalance)
+        {
+            Storage.setBalance(this.balance);
+        }
     },
     setLoss() {
         Main.getPriceProposal('CALL');

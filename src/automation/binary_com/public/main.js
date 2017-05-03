@@ -1,5 +1,11 @@
 const Main = {
     isVirtual: true,
+    disableMartingale: false,
+    stakeTicks: 6,
+    profitLimit: 0.01, //DEBUG
+    lossLimit: -50,
+    stake: 0.5,
+    currentStake: 0.5,
     chanelPrediction: false,
     trendPrediction: true,
     trendingUpPrediction: false,
@@ -15,24 +21,18 @@ const Main = {
     startBalance: 0,
     accountBalance: 0,
     payout: 0.94,
-    stake: 0.5,
-    currentStake: 0.5,
     lossStreak: 0,
     maxLossStreak: 0,
     started: false,
     currentTick: 0,
-    stakeTicks: 6,
     currentContract: null,
     ended: false,
     startMartingale: false,
-    disableMartingale: true,
     currentPrice: 0,
     localWS: null,
     highestPrice: null,
     lowestPrice: null,
-    lossLimit: -50,
     lossLimitDefault: 0,
-    profitLimit: 0.01, //DEBUG
     prediction: '',
     ASSET_NAME: 'R_100',
     predictionItem: null,
@@ -95,9 +95,9 @@ const Main = {
         View.init();
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
 
-        if(Tester && Tester.isTesting) {
+        if(Tester) {
             Tester.start();
-            return;
+            if(Tester.isTesting)return;
         }
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
         this.addListener();
@@ -163,6 +163,8 @@ const Main = {
         this.ended = true;
         clearTimeout(this.volatileTimer);
         View.ended(true);
+        Storage.setWins(this.winCount,this.lossCount);
+        Tester.storeBalance();
         this.ws.send(JSON.stringify({
             "forget_all": "ticks"
         }));
@@ -274,6 +276,7 @@ const Main = {
                 this.lossLimit = -(this.accountBalance - 10);//dynamic lose limit
                 this.setLossLimit();
                 if (!this.started) this.getAvailableAssets();
+
                 break;
             case 'asset_index':
                 this.assetArray = data.asset_index;
@@ -398,6 +401,7 @@ const Main = {
         if (isLoss == true) {
             //this.profit -= this.currentStake;
             this.lossStreak++;
+            Storage.setStreak(this.lossStreak);
             this.startMartingale = true;
             this.lossCount++;
             if (this.isShort) this.shortLossStreak++;
@@ -450,12 +454,13 @@ const Main = {
         }
         View.updateProfit(this.lowestProfit, this.highestProfit);
         View.updateBalance(this.accountBalance, profit);
+        if(Tester && Tester.testBalance)Tester.setBalance(this.accountBalance  - this.startBalance );
     },
     setStake(isLoss) {
         if (isLoss && this.startMartingale) {
                 let profit = Math.abs(this.profit);
             if (!this.disableMartingale) {
-                this.currentStake = ((profit + (profit * 0.07)) * 100) / 100;
+                 this.currentStake = Math.ceil(Math.abs(this.profit) + (Math.abs(this.profit) * 0.06));
             } else {
                 let newStake =(profit * 0.5) + ((profit * 0.5) * 0.07);
                 this.currentStake = Number((newStake * 2).toFixed(2));

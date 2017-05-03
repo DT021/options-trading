@@ -1,4 +1,0 @@
-const Config = {
-  appID:'',
-  apiKey: ''
-};
