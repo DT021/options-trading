@@ -1,5 +1,5 @@
 const Tester = {
-    isTesting: true,
+    isTesting: false,
     history: [
         "11906.28",
         "11905.66",
@@ -78,6 +78,7 @@ const Tester = {
     start() {
         Main.ws = this.ws;
         Main.assetArray = this.assetArray;
+        Main.startBalance = this.balance;
         this.send({
             msg_type: 'balance',
             balance: {
@@ -136,6 +137,9 @@ const Tester = {
                 action: 'sell'
             }
         });
+    },
+    closeAndOpenConnection(){
+        Main.onClose();
     },
     loseConnection(){
         Main.authorize();

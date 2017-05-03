@@ -64,7 +64,7 @@ const Main = {
     lastBalance: 0,
     //breakDuration: 1000,
     breakDuration: 30000, //LIVE
-    longBreakDuration: 30000, //LIVE
+    longBreakDuration: 300000, //LIVE
     idleStartTime: 0,
     volatileChecker: true,
     martingaleStakeLevel: 8,
@@ -160,6 +160,7 @@ const Main = {
         View.ended(false);
     },
     end(ignoreReload) {
+        this.ended = true;
         clearTimeout(this.volatileTimer);
         View.ended(true);
         this.ws.send(JSON.stringify({
@@ -171,6 +172,7 @@ const Main = {
         this.ws.send(JSON.stringify({
             "forget_all": "transaction"
         }));
+        this.ws = null;
         if(!ignoreReload)location.reload();
 
 
@@ -248,15 +250,16 @@ const Main = {
         this.ws.send(JSON.stringify({ ticks: this.ASSET_NAME }));
     },
     onMessage(event) {
+        if(this.ended )return;
         var data = JSON.parse(event.data);
-        // console.log(data);
+        if(data.msg_type != 'tick')console.log('onMessage',data);
         switch (data.msg_type) {
             case 'authorize':
-                console.log(data);
                 //this.addFunds();
                 if (!this.startTime) {
                     this.getBalance();
                 } else {
+                    this.getBalance();
                     this.getTicks();
                     this.getTranscations();
                 }
@@ -350,7 +353,7 @@ const Main = {
                         lowestPrice: highLowClose.lowest,
                         highestPrice: highLowClose.highest
                     });
-                    this.proposalCompleteCheck();
+                    //this.proposalCompleteCheck();
                     Volatility.check(this.currentPrice);
                     if (this.idleStartTime) this.checkIdleTime();
                 }
@@ -376,6 +379,7 @@ const Main = {
     proposalCompleteCheck() {
         if (this.isProposal) {
             if (this.proposalTickCount > this.stakeTicks + 5) {
+                console.log('proposalCompleteCheck');
                 this.doTransaction();
             } else {
                 this.proposalTickCount++;
@@ -383,20 +387,23 @@ const Main = {
         }
     },
     doTransaction(isLoss) {
+        this.isProposal = false;
+        this.proposalTickCount = 0;
         this.idleStartTime = null;
         if (isLoss == undefined) {
             isLoss = this.lastBalance < this.accountBalance;
             //console.log(isLoss);
         }
         let profit = this.accountBalance - this.startBalance;
-        console.log(this.accountBalance , this.startBalance);
         if (isLoss == true) {
+            //this.profit -= this.currentStake;
             this.lossStreak++;
             this.startMartingale = true;
             this.lossCount++;
             if (this.isShort) this.shortLossStreak++;
             this.setFail();
         } else if (isLoss == false) {
+            //this.profit += (this.currentStake + (this.currentStake * 0.94));
             this.lossStreak = 0;
             this.startMartingale = false;
             this.winCount++;
@@ -416,8 +423,8 @@ const Main = {
         ChartComponent.updatePredictionChart([]);
         this.setStake(isLoss);
         View.updateCounts(this.winCount, this.lossCount, this.maxLossStreak);
-        this.isProposal = false;
-        this.proposalTickCount = 0;
+        
+        
     },
     takeABreak(isLong) {
         this.isTrading = false;
@@ -433,13 +440,13 @@ const Main = {
         if (profit > this.highestProfit) this.highestProfit = profit;
         if (this.lowestProfit == null || profit < this.lowestProfit) this.lowestProfit = profit;
         if (profit / 30 > 0.95) {
-            this.lossLimit = 29;
+            //this.lossLimit = 29;
         } else if (profit / 20 >= 0.95) {
-            this.lossLimit = 19;
+            //this.lossLimit = 19;
         } else if (profit > 0 && this.highestProfit >= 10) {
             // this.lossLimit = 1;
         } else if (profit < -10 && this.highestProfit < 5 && (this.lossCount + this.winCount) > 30) {
-            this.profitLimit = 1;
+            //this.profitLimit = 1;
         }
         View.updateProfit(this.lowestProfit, this.highestProfit);
         View.updateBalance(this.accountBalance, profit);
