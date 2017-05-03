@@ -1,5 +1,5 @@
 const Tester = {
-    isTesting: false,
+    isTesting: true,
     history: [
         "11906.28",
         "11905.66",
@@ -136,6 +136,9 @@ const Tester = {
                 action: 'sell'
             }
         });
+    },
+    loseConnection(){
+        Main.authorize();
     },
     send(value) {
         Main.onMessage({
