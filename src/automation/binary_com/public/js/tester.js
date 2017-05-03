@@ -1,6 +1,11 @@
 const Tester = {
     isTesting: false,
-    testBalance:false,
+    testBalance: false,
+    assetArray: [],
+    stake: 0.5,
+    currentStake: 0.5,
+    startBalance: 700,
+    balance: 700,
     history: [
         "11906.28",
         "11905.66",
@@ -56,11 +61,6 @@ const Tester = {
         "11924.58",
         "11935.18"
     ],
-    assetArray: [],
-    stake: 0.5,
-    currentStake: 0.5,
-    startBalance:1000,
-    balance: 1000,
     ws: {
         send(str) {
             console.log(str);
@@ -78,11 +78,11 @@ const Tester = {
         }
     },
     start() {
-        if(this.testBalance) {
-            this.balance = Storage.get(Storage.keys.balance)?Number(Storage.get(Storage.keys.balance)):this.startBalance;
+        if (this.testBalance) {
+            this.balance = Storage.get(Storage.keys.balance) ? Number(Storage.get(Storage.keys.balance)) : this.startBalance;
             this.startBalance = this.balance;
         }
-        if(!this.isTesting)return;
+        if (!this.isTesting) return;
         Main.ws = this.ws;
         Main.assetArray = this.assetArray;
         Main.startBalance = this.balance;
@@ -107,17 +107,16 @@ const Tester = {
             }
         });
     },
-    setBalance(profit){
-        console.log('setBalance',profit);
-        if(!this.startBalance)this.startBalance = this.balance;
+    setBalance(profit) {
+        console.log('setBalance', profit);
+        if (!this.startBalance) this.startBalance = this.balance;
         this.balance = this.balance + profit;
         Main.startBalance = this.startBalance;
         Main.balance = this.balance;
         View.updateBalance(this.balance, profit);
     },
-    storeBalance(){
-        if(this.testBalance)
-        {
+    storeBalance() {
+        if (this.testBalance) {
             Storage.setBalance(this.balance);
         }
     },
@@ -137,13 +136,13 @@ const Tester = {
                 action: 'sell'
             }
         });
-      console.log('loss',Main.currentStake)
-        
+        console.log('loss', Main.currentStake)
+
     },
     setWin() {
 
         Main.getPriceProposal('CALL');
-        
+
         this.balance += Main.currentStake + (Main.currentStake * 0.94);
         this.send({
             msg_type: 'balance',
@@ -159,10 +158,10 @@ const Tester = {
             }
         });
     },
-    closeAndOpenConnection(){
+    closeAndOpenConnection() {
         Main.onClose();
     },
-    loseConnection(){
+    loseConnection() {
         Main.authorize();
     },
     send(value) {
