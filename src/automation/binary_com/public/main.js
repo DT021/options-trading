@@ -254,7 +254,7 @@ const Main = {
     onMessage(event) {
         if (this.ended) return;
         var data = JSON.parse(event.data);
-        if (data.msg_type != 'tick') console.log('onMessage', data);
+        //if (data.msg_type != 'tick') console.log('onMessage', data);
         switch (data.msg_type) {
             case 'authorize':
                 //this.addFunds();
@@ -334,7 +334,7 @@ const Main = {
                     this.setPositions();
 
                     if (this.isTrading) {
-                        TrendPrediction.predict(this.history);
+                        this.doPrediction();
                     }
                     let collection = this.history.slice(this.history.length - 200, this.history.length);
                     let collectionClose = this.history.slice(this.history.length - 30, this.history.length);
@@ -361,6 +361,17 @@ const Main = {
                     if (this.idleStartTime) this.checkIdleTime();
                 }
                 break;
+        }
+
+    },
+    doPrediction(){
+        if(this.trendPrediction)
+        {
+            TrendPrediction.predict(this.history);
+        }
+        if(this.chanelPrediction)
+        {
+            ChannelPrediction.predict(this.history);
         }
 
     },
@@ -428,6 +439,7 @@ const Main = {
         if (profit <= this.lossLimit || this.accountBalance <= 0 || profit >= this.profitLimit) {
             this.end(profit <= this.lossLimit);
         }
+        if(!isLoss) this.end();
 
     },
     takeABreak(isLong) {

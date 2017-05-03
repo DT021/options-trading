@@ -1,7 +1,7 @@
 const ChannelPrediction = {
     highest: 0,
     lowest: 0,
-    collectionCount: 5,
+    collectionCount: 6,
     predict(history) {
         if (!Main.chanelPrediction || Main.isProposal || Main.pauseTrading) return;
         let index = history.length;
@@ -59,12 +59,29 @@ const ChannelPrediction = {
         });
     },
     checkChannelDirection(collection) {
-        let obj = this.getTopAndBottomCollections(collection);
-        let direction = '';
-        //if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'FALL';
-        // if(obj.bottomDirection.length > 8 && collection[0] > collection[collection.length-1]) direction = 'RAISE';
-        direction = obj.bottomDirection == obj.topDirection && obj.bottomDirection.length >= 1 ? obj.bottomDirection : '';
-        return direction;
+        let bottoms = [];
+        let previous = collection[0];
+        let direction = collection[0] > collection[1] ? 'FALL' : 'RAISE';
+        collection.forEach((price, index) => {
+            if (index > 1 && previous < price && previous > collection[index - 2]) {
+                bottoms.push(previous);
+            }
+            previous = price;
+        });
+        if(bottoms.length < 2)return;
+        let foundRaise = true;
+        let foundFall = true;
+        previous = bottoms[0];
+        direction = bottoms[0] > bottoms[1] ? 'FALL' : 'RAISE';
+        bottoms.forEach((price, index) => {
+            if (index > 1) {
+                if (index && price < previous && direction == 'RAISE') foundRaise = false;
+                if (index && price > previous && direction == 'FALL') foundFall = false;
+            }
+
+            previous = price;
+        });
+        return foundRaise ? 'RAISE' : (foundFall ? 'FALL' : '');
     },
     getTopAndBottomCollections(collection) {
         let bottomCollection = [];
@@ -74,7 +91,7 @@ const ChannelPrediction = {
         let topDirection = '';
         // find top and bottom prices
         collection.forEach(function(price, index) {
-            collection[index] =  Number(price);
+            collection[index] = Number(price);
             price = Number(price);
             if (index > 1) {
                 if (price > previousPrice && previousPrice < collection[index - 2]) bottomCollection.push(previousPrice);
