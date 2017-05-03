@@ -448,7 +448,7 @@ const Main = {
         if (isLoss && this.startMartingale) {
                 let profit = Math.abs(this.profit);
             if (!this.disableMartingale) {
-                this.currentStake = 11((profit + (profit * 0.07)) * 100) / 100;
+                this.currentStake = ((profit + (profit * 0.07)) * 100) / 100;
             } else {
                 let newStake =(profit * 0.5) + ((profit * 0.5) * 0.07);
                 this.currentStake = Number((newStake * 2).toFixed(2));
