@@ -382,9 +382,11 @@ const Main = {
             clearTimeout(this.transactionTimer);
             if(this.isTransaction)
             {
+                this.isTransaction = false;
                 let isLoss = change < 0 ? true: false;
                 console.log('balanceChanged triggered. is loss',isLoss);
                 this.doTransaction(isLoss);
+                clearTimeout(this.transactionTimer);
             }
         }.bind(this), this.transactionTimerDuration);
     },
