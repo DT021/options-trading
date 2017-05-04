@@ -63,8 +63,8 @@ const Tester = {
     ],
     ws: {
         send(str) {
-            console.log(str);
             let data = JSON.parse(str);
+            console.log(data);
             if (data.proposal) {
                 Tester.currentStake = data.amount;
                 Tester.send({
@@ -86,7 +86,11 @@ const Tester = {
         Main.ws = this.ws;
         Main.assetArray = this.assetArray;
         Main.startBalance = this.balance;
-        this.send({
+        Main.accountBalance = this.balance;
+       
+    },
+    predict(){
+         this.send({
             msg_type: 'balance',
             balance: {
                 balance: this.balance,
@@ -138,6 +142,25 @@ const Tester = {
         });
         console.log('loss', Main.currentStake)
 
+    },
+    setLossWithoutTransaction(){
+        Main.getPriceProposal('CALL');
+        this.balance -= Main.currentStake;
+        this.send({
+            msg_type: 'transaction',
+            transaction: {
+                amount: '0.00',
+                action: 'buy'
+            }
+        });
+        this.send({
+            msg_type: 'balance',
+            balance: {
+                balance: this.balance,
+            }
+        });
+        
+        
     },
     setWin() {
 

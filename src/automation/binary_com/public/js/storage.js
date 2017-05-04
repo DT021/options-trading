@@ -26,6 +26,7 @@ const Storage = {
 		return content ;
 	},
 	set(key, value){
+		if(Tester.isTesting)return;
 		localStorage.setItem(key,value);
 	},
 	setStreak(key){

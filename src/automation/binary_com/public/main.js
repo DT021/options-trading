@@ -68,6 +68,9 @@ const Main = {
     idleStartTime: 0,
     volatileChecker: true,
     martingaleStakeLevel: 8,
+    transactionTimer:null,
+    transactionTimerDuration:30000,
+    isTransaction:false,
     log: {
 
     },
@@ -95,12 +98,13 @@ const Main = {
         View.init();
         View.updateStake(this.currentStake, this.lossLimit, this.profitLimit);
 
-        if (Tester) {
-            Tester.start();
-            if (Tester.isTesting) return;
-        }
-        this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
-        this.addListener();
+         Tester.start();
+         if (!Tester.isTesting) 
+         {
+            this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
+            this.addListener();
+         }
+        
     },
     onClose(event) {
         this.ws = new WebSocket('wss://ws.binaryws.com/websockets/v3?app_id=' + Config.appID);
@@ -271,6 +275,10 @@ const Main = {
                 break;
             case 'balance':
                 if (!this.startBalance) this.startBalance = data.balance.balance;
+                //if transaction fails this will ensure we still set the correct profit
+                if(this.accountBalance != Number(data.balance.balance)) {
+                    this.balanceChanged(Number(data.balance.balance)-this.accountBalance);
+                }
                 this.accountBalance = data.balance.balance;
                 this.setDefaultStake();
                 this.lossLimit = -(this.accountBalance - 10); //dynamic lose limit
@@ -311,14 +319,18 @@ const Main = {
                 //console.log('buy', data);
                 break;
             case 'transaction':
-                // console.log('transaction', data.transaction);
                 if (data.transaction && data.transaction.action && data.transaction.action == 'sell') {
+                    //stop transaction timer
+                    this.isTransaction = false;
+                    clearTimeout(this.transactionTimer);
                     let isLoss = false;
                     if (data.transaction.amount === '0.00') {
                         isLoss = true;
                     }
                     this.doTransaction(isLoss);
 
+                }else if (data.transaction && data.transaction.action && data.transaction.action == 'buy'){
+                    this.isTransaction = true;
                 }
                 break;
             case 'forget_all':
@@ -363,6 +375,18 @@ const Main = {
                 break;
         }
 
+    },
+    balanceChanged(change){
+        clearTimeout(this.transactionTimer);
+        this.transactionTimer = setTimeout(function(){
+            clearTimeout(this.transactionTimer);
+            if(this.isTransaction)
+            {
+                let isLoss = change < 0 ? true: false;
+                console.log('balanceChanged triggered. is loss',isLoss);
+                this.doTransaction(isLoss);
+            }
+        }.bind(this), this.transactionTimerDuration);
     },
     doPrediction(){
         if(this.trendPrediction)
