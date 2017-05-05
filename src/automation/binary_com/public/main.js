@@ -125,7 +125,7 @@ const Main = {
     buyContract() {
         if (this.ws) this.ws.send(JSON.stringify({
             "buy": this.proposalID,
-            "price": 100
+            "price": this.currentStake + 200
         }));
     },
     getAvailableAssets() {
@@ -258,7 +258,7 @@ const Main = {
     onMessage(event) {
         if (this.ended) return;
         var data = JSON.parse(event.data);
-        //if (data.msg_type != 'tick') console.log('onMessage', data);
+        if (data.msg_type != 'tick') console.log('onMessage', data);
         switch (data.msg_type) {
             case 'authorize':
                 //this.addFunds();
