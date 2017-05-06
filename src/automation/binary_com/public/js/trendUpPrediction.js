@@ -3,7 +3,7 @@ const TrendUpPrediction = {
     trendUpLongDuration: 30,
     trendingUpBarrier: 50,
     predict(ticks) {
-        if (!Main.trendingUpPrediction) return;
+         if ( Main.isProposal || Main.pauseTrading) return;
         let collection = ticks.slice(ticks.length - this.trendUpDuration, ticks.length);
         let highestPosition = collection[0];
         let lowestPosition = collection[0];

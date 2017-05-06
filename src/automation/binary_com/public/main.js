@@ -7,6 +7,7 @@ const Main = {
     stake: 0.5,
     currentStake: 0.5,
     chanelPrediction: false,
+    bullishPrediction: false,
     trendPrediction: true,
     trendingUpPrediction: false,
     trendUpDuration: 10,
@@ -398,6 +399,10 @@ const Main = {
         if(this.chanelPrediction)
         {
             ChannelPrediction.predict(this.history);
+        }
+        if(this.bullishPrediction)
+        {
+            BullishPrediction.predict(this.history);
         }
 
     },

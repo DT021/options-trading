@@ -17,6 +17,7 @@ const Simulator = {
         TrendPrediction: TrendPrediction,
         TrendUpPrediction: TrendUpPrediction,
         ChannelPrediction: ChannelPrediction,
+        BullishPrediction: BullishPrediction,
         TrendCombined: null
     },
     loseStreaks: {},
