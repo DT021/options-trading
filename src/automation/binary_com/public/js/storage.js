@@ -12,7 +12,10 @@ const Storage = {
 	loses:0,
 	init(){
 		let str = this.get(this.keys.streaks);
-		console.log('init',JSON.parse(str));
+		console.log('loss streak',JSON.parse(str));
+		console.log('total wins',this.get(Storage.keys.wins));
+		console.log('total loses',this.get(Storage.keys.loses));
+
 		if(str)this.streaks = JSON.parse(str);
 
 		str = this.get(this.keys.wins);
@@ -35,6 +38,7 @@ const Storage = {
 		this.set(this.keys.streaks,JSON.stringify(this.streaks));
 	},
 	setWins(count,loses){
+		console.log('setWins');
 		this.wins+=count;
 		this.loses+=loses;
 		this.set(this.keys.wins,this.wins);

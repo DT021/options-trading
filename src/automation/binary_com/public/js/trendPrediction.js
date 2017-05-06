@@ -31,7 +31,7 @@ const TrendPrediction = {
         let trendFirst = collection[index];
         let shortIndex = this.shortTrendLength;
         let isShorter = false;
-        if (this.isShort || Main.lossStreak > 2) {
+        if (Main.lossStreak < 5 &&  Main.lossStreak > 2 || this.isShort) {
             shortIndex = this.shortTrendLength - 5;
             isShorter = true;
         } else {

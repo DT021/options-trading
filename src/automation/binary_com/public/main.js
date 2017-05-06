@@ -63,7 +63,7 @@ const Main = {
     proposalTickCount: 0,
     lastBalance: 0,
     //breakDuration: 1000,
-    breakDuration: 30000, //LIVE
+    breakDuration: 120000, //LIVE
     longBreakDuration: 300000, //LIVE
     idleStartTime: 0,
     volatileChecker: true,
@@ -316,7 +316,7 @@ const Main = {
                 this.buyContract();
                 break;
             case 'buy':
-                //console.log('buy', data);
+                console.log('buy', data);
                 break;
             case 'transaction':
                 if (data.transaction && data.transaction.action && data.transaction.action == 'sell') {
